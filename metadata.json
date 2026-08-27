@@ -1,0 +1,8 @@
+{
+  "name": "تنخور | TANKHOR - پلتفرم تخصصی مدیریت انبار و سایزبندی پوشاک",
+  "description": "پلتفرم تخصصی مدیریت محصول، ماتریس رنگ و سایز، و انبارداری پوشاک، کیف و کفش ویژه تولیدی‌ها، مزون‌ها و فروشگاه‌ها",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "app": "tankhor-landing",
+  "platform": "next",
+  "port": 3000,
+  "build": {
+    "location": "iran"
+  },
+  "disks": []
+}
