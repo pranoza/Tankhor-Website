@@ -3,18 +3,11 @@
 import React from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import InteractiveDashboardPreview from './InteractiveDashboardPreview';
-import { Download, Monitor, Smartphone, Apple, Play } from 'lucide-react';
+import { Download, Monitor, Smartphone, Apple } from 'lucide-react';
 
 export default function Hero() {
   const { language } = useLanguageAndTheme();
   const latestReleaseUrl = 'https://github.com/brandyar/Tankhor/releases/latest';
-
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="relative pt-32 sm:pt-44 pb-24 sm:pb-36 overflow-hidden bg-neutral-50 dark:bg-[#0a0a0a] text-neutral-900 dark:text-neutral-100 mesh-gradient-bg">
@@ -81,17 +74,8 @@ export default function Hero() {
               className="px-7 py-3.5 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-semibold text-sm shadow-vercel-md transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
             >
               <span className="w-2 h-2 rounded-full bg-teal-200 animate-ping" />
-              <span>{language === 'fa' ? 'ورود به پنل ابری (my.tankhor.com)' : 'Web Panel (my.tankhor.com)'}</span>
+              <span>{language === 'fa' ? 'ورود به پنل ابری' : 'Web Panel (my.tankhor.com)'}</span>
             </a>
-
-            {/* Secondary Live Demo Button */}
-            <button
-              onClick={() => scrollToSection('showcase')}
-              className="px-6 py-3.5 rounded-full bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 font-semibold text-sm border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all flex items-center justify-center gap-2 shadow-vercel-sm"
-            >
-              <Play className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 fill-teal-600/20" />
-              <span>{language === 'fa' ? 'مشاهده دمو' : 'Live Demo'}</span>
-            </button>
           </div>
 
           {/* Multi-Platform Download Link Options Bar */}
