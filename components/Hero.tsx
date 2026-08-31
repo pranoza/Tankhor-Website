@@ -10,10 +10,7 @@ export default function Hero() {
   const latestReleaseUrl = 'https://github.com/brandyar/Tankhor/releases/latest';
 
   return (
-    <section className="relative pt-32 sm:pt-44 pb-24 sm:pb-36 overflow-hidden bg-neutral-50 dark:bg-[#0a0a0a] text-neutral-900 dark:text-neutral-100 mesh-gradient-bg">
-      {/* Soft Subtle Mesh Backdrop */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-tr from-cyan-500/10 via-teal-500/10 to-violet-500/10 rounded-full blur-[160px] pointer-events-none" />
-
+    <section className="relative pt-32 sm:pt-44 pb-24 sm:pb-36 overflow-hidden bg-neutral-50 dark:bg-[#0a0a0a] text-neutral-900 dark:text-neutral-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Minimal Uncluttered Header */}
         <div className="text-center space-y-8 max-w-4xl mx-auto">

@@ -61,60 +61,63 @@ export interface MatrixSampleVariant {
 export const siteContent = {
   meta: {
     title: {
-      fa: "تنخور | پلتفرم تخصصی مدیریت محصول و انبارداری پوشاک، کیف و کفش",
-      en: "TANKHOR | Next-Gen Apparel Product & Inventory Management Platform",
+      fa: "نرم افزار مدیریت فروشگاه پوشاک رایگان | تنخور",
+      en: "Free Apparel Store Management Software | Tankhor",
     },
     description: {
-      fa: "پلتفرم تخصصی تنخور با قابلیت کارکرد کاملاً آفلاین، همگام‌سازی ابری، ماتریس رنگ و سایز و راهنمای سایز هوشمند؛ ویژه تولیدی‌ها، مزون‌ها و آنلاین‌شاپ‌های پوشاک.",
-      en: "Tankhor: Offline-capable B2B SaaS platform with smart size & color matrix, interactive size guide engine, multi-warehouse inventory for apparel & footwear.",
+      fa: "تنخور، نرم افزار رایگان مدیریت فروشگاه پوشاک برای مدیریت محصولات، رنگ و سایز، موجودی، انبار و سفارش‌ها. رایگان، آفلاین و مخصوص کسب‌وکارهای پوشاک.",
+      en: "Tankhor: Free apparel store management software for managing products, color & size variants, inventory, stock & orders. Free, offline, and purpose-built for fashion.",
     },
     keywords: [
-      "نرم‌افزار مدیریت موجودی و انبارداری پوشاک",
-      "نرم‌افزار راهنمای سایز هوشمند و اختصاصی لباس و کفش",
-      "نرم‌افزار حسابداری و مدیریت فروشگاه پوشاک و مزون",
-      "سیستم بارکدخوان و مدیریت تنوع رنگ و سایز (ماتریس واریانت)",
-      "نرم‌افزار آفلاین و ابری مدیریت بوتیک و فروشگاه مد و فشن",
-      "Apparel Inventory Management Software",
-      "Clothing Size Guide Software",
-      "Fashion ERP Matrix",
+      "نرم افزار مدیریت فروشگاه پوشاک رایگان",
+      "نرم افزار انبارداری پوشاک رایگان",
+      "نرم افزار مدیریت موجودی پوشاک رایگان",
+      "نرم افزار مدیریت فروشگاه لباس رایگان",
+      "نرم افزار مدیریت بوتیک رایگان",
+      "نرم افزار حسابداری پوشاک رایگان",
+      "نرم افزار فروش پوشاک رایگان",
+      "نرم افزار مدیریت محصولات پوشاک",
+      "نرم افزار مدیریت موجودی لباس",
+      "نرم افزار انبارداری لباس",
+      "نرم افزار فروشگاهی پوشاک",
+      "نرم افزار مدیریت مزون رایگان",
     ],
   },
 
   navLinks: [
     { id: "features", label: { fa: "قابلیت‌ها", en: "Features" }, href: "#features" },
-    { id: "size-guide", label: { fa: "راهنمای سایز", en: "Size Guide" }, href: "#size-guide" },
-    { id: "inventory-matrix", label: { fa: "ماتریس واریانت", en: "Variant Matrix" }, href: "#inventory-matrix" },
-    { id: "pricing", label: { fa: "تعرفه‌ها", en: "Pricing" }, href: "#pricing" },
-    { id: "testimonials", label: { fa: "نظرات", en: "Testimonials" }, href: "#testimonials" },
+    { id: "free-version", label: { fa: "نسخه رایگان", en: "Free Version" }, href: "#free-version" },
+    { id: "pro-version", label: { fa: "تنخور پرو", en: "Tankhor Pro" }, href: "#pro-version" },
+    { id: "why-tankhor", label: { fa: "چرا تنخور؟", en: "Why Tankhor?" }, href: "#why-tankhor" },
     { id: "faq", label: { fa: "سوالات متداول", en: "FAQ" }, href: "#faq" },
   ] as NavigationLink[],
 
   hero: {
     badge: {
-      fa: "🚀 اولین پلتفرم تخصصی مدیریت محصول و انبارداری صنعت مد و پوشاک ایران",
-      en: "🚀 Iran's First Specialized Product & Inventory ERP for Fashion Industry",
+      fa: "رایگان • آفلاین • مخصوص پوشاک",
+      en: "Free • Offline • Purpose-Built for Apparel",
     },
     h1: {
-      fa: "مدیریت هوشمند محصولات، ماتریس رنگ و سایز، و انبارداری تخصصی پوشاک",
-      en: "Smart Product Management, Color-Size Matrix & Specialized Apparel Inventory",
+      fa: "نرم افزار مدیریت فروشگاه پوشاک، رایگان و آفلاین",
+      en: "Free & Offline Apparel Store Management Software",
     },
     subheadline: {
-      fa: "پلتفرم دوزبانه تنخور با قابلیت کارکرد کاملاً آفلاین (رایگان) و همگام‌سازی ابری؛ ویژه تولیدی‌ها، مزون‌ها، بوتیک‌ها و فروشگاه‌های آنلاین لباس، کیف و کفش.",
-      en: "Dual-language platform with zero-latency offline mode and cloud backup; purpose-built for factories, maisons, boutiques, and fashion e-commerce.",
+      fa: "محصولات، رنگ و سایز، موجودی، انبار و سفارش‌های فروشگاه پوشاک خود را ساده مدیریت کنید؛ رایگان و بدون نیاز به اینترنت.",
+      en: "Effortlessly manage your clothing store products, color & size variants, inventory, warehouse, and orders — 100% free and offline.",
     },
     ctaPrimary: {
-      fa: "شروع رایگان بدون نیاز به کارت بانکی",
-      en: "Start Free - No Credit Card Required",
+      fa: "دانلود رایگان تنخور",
+      en: "Download Tankhor Free",
     },
     ctaSecondary: {
-      fa: "مشاهده دموی زنده و تعاملی",
-      en: "Explore Interactive Live Demo",
+      fa: "آشنایی با نسخه Pro",
+      en: "Explore Tankhor Pro",
     },
     quickStats: [
-      { value: "۱۰۰,۰۰۰+", label: { fa: "محصول ثبت شده", en: "Products Managed" } },
-      { value: "۶۵٪", label: { fa: "کاهش مرجوعی سایز", en: "Return Rate Reduction" } },
-      { value: "۱۰۰٪", label: { fa: "افلاین و بدون اینترنت", en: "Full Offline Capability" } },
-      { value: "۹۹.۹٪", label: { fa: "آپتایم ابری مطمئن", en: "Cloud Service Uptime" } },
+      { value: "۱۰۰٪", label: { fa: "رایگان و بدون محدودیت زمانی", en: "100% Free Forever" } },
+      { value: "آفلاین", label: { fa: "کارکرد کامل بدون اینترنت", en: "Full Offline Resilience" } },
+      { value: "مخصوص پوشاک", label: { fa: "ماتریس رنگ، سایز و بارکد", en: "Color & Size Matrix" } },
+      { value: "دسکتاپ", label: { fa: "نصب سریع روی ویندوز و مک", en: "Windows & macOS App" } },
     ],
     trustedBrands: [
       { name: "هپکو فشن | Hakupian Style", logoText: "HAKUPIAN" },
@@ -124,6 +127,205 @@ export const siteContent = {
       { name: "بوتیک وانیا | Vaniya Boutique", logoText: "VANIYA" },
       { name: "تولیدی تن‌پوش | Tanpoosh Factory", logoText: "TANPOOSH" },
     ],
+  },
+
+  whyTankhor: {
+    title: {
+      fa: "چرا تنخور؟ راهکار تخصصی برای صنعت پوشاک",
+      en: "Why Tankhor? Purpose-Built for Apparel Businesses",
+    },
+    subtitle: {
+      fa: "برخلاف نرم‌افزارهای عمومی که ساختار رنگ و سایز را درک نمی‌کنند، تنخور از ابتدا مخصوص پوشاک طراحی شده است.",
+      en: "Unlike generic business software that treats clothing like single items, Tankhor natively supports color and size variant matrices.",
+    },
+    advantages: [
+      {
+        title: { fa: "مخصوص صنعت پوشاک", en: "Tailor-Made for Apparel" },
+        desc: { fa: "طراحی شده بر اساس الزامات واقعی بوتیک‌ها، مزون‌ها، تولیدی‌ها و فروشگاه‌های آنلاین لباس و کفش.", en: "Engineered specifically for the real-world workflow of clothing stores, boutiques, maisons, and footwear shops." },
+      },
+      {
+        title: { fa: "مدیریت رنگ و سایز (ماتریس)", en: "Color & Size Matrix" },
+        desc: { fa: "تعریف یکباره محصول با ده‌ها واریانت رنگ و سایز (S تا 5XL، سایزهای عددی و اروپایی) بدون ایجاد کدهای سردرگرم‌کننده.", en: "Create one product with dozens of color/size combinations without duplicating items or mess." },
+      },
+      {
+        title: { fa: "مدیریت محصولات و تنوع‌ها", en: "Product Variant Management" },
+        desc: { fa: "دسته‌بندی تخصصی بر اساس پارچه، فصل، برند و بارکد اختصاصی برای هر واریانت.", en: "Categorize by fabric, season, brand, and unique barcodes for each color/size option." },
+      },
+      {
+        title: { fa: "مدیریت موجودی دقیق", en: "Accurate Inventory Tracking" },
+        desc: { fa: "مشاهده لحظه‌ای موجودی هر سایز و رنگ در تمامی انبارها و شعب فروشگاه.", en: "Real-time stock visibility for every single size and color across all locations." },
+      },
+      {
+        title: { fa: "مدیریت انبار و ورود/خروج", en: "Warehouse & Stock Movement" },
+        desc: { fa: "کارتکس کالا، ثبت ورود/خروج با اسکنر بارکد و انبارگردانی سریع با موبایل.", en: "Stock ledgers, barcode scan check-ins, and lightning-fast smartphone inventory audits." },
+      },
+      {
+        title: { fa: "ثبت و مدیریت سفارش‌ها", en: "Sales Order Processing" },
+        desc: { fa: "ثبت سریع فاکتور فروش، مرجوعی، تعویض سایز و چاپ اتیکت قیمت و بارکد پوشاک.", en: "Fast invoice creation, item exchanges, size adjustments, and price tag printing." },
+      },
+      {
+        title: { fa: "کارکرد ۱۰۰٪ آفلاین", en: "100% Offline Capability" },
+        desc: { fa: "بدون حتی ۱ ثانیه وابستگی به اینترنت؛ فروشگاه شما در زمان قطعی شبکه متوقف نمی‌شود.", en: "Operates 100% locally. Zero sales interruption during network outages." },
+      },
+      {
+        title: { fa: "نسخه رایگان دسکتاپ (Tankhor Free)", en: "Tankhor Free Desktop App" },
+        desc: { fa: "دانلود رایگان، نصب آسان روی ویندوز و مک، بدون پرداخت هزینه اشتراک برای استفاده پایه.", en: "Free download, instant installation on Windows & macOS, no subscription fees for core operations." },
+      },
+      {
+        title: { fa: "امکان ارتقا به Cloud (Tankhor Pro)", en: "Seamless Upgrade to Tankhor Pro Cloud" },
+        desc: { fa: "هر زمان کسب‌وکار شما رشد کرد، اطلاعات آفلاین خود را با یک کلیک به ابری منتقل و سینک کنید.", en: "Migrate your local data to the cloud with one click when your team or branches expand." },
+      },
+    ],
+  },
+
+  freeVersion: {
+    title: { fa: "نرم افزار مدیریت پوشاک رایگان (Tankhor Free)", en: "Tankhor Free Apparel Management Software" },
+    subtitle: {
+      fa: "تنخور را رایگان دانلود کنید و بدون پرداخت اشتراک، مدیریت محصولات و موجودی کسب‌وکار پوشاک خود را شروع کنید.",
+      en: "Download Tankhor Free today and start managing your fashion products and inventory without subscription fees.",
+    },
+    benefits: [
+      { fa: "۱۰۰٪ رایگان و بدون محدودیت زمانی (اصلاً نسخه آزمایشی یا Trial نیست)", en: "100% Free forever (Not a trial or limited demo)" },
+      { fa: "نصب و کارکرد کاملاً آفلاین روی رایانه و دسکتاپ", en: "Runs completely offline on Desktop computers" },
+      { fa: "بدون نیاز به اینترنت و بدون قطعی در فروشگاه", en: "No internet required for day-to-day operations" },
+      { fa: "مناسب برای بوتیک‌ها، مزون‌ها و فروشگاه‌های پوشاک و کفش", en: "Perfect for boutiques, ateliers, clothing & footwear shops" },
+      { fa: "مدیریت کامل تنوع رنگ و سایز با ماتریس هوشمند", en: "Full color & size variant matrix management" },
+      { fa: "مدیریت کامل محصولات، بارکد و اتیکت قیمت", en: "Complete product database, barcode & tag printing" },
+      { fa: "مدیریت موجودی انبار و کارتکس کالا", en: "Inventory stock control & item movements" },
+      { fa: "ثبت سریع سفارش‌ها، فاکتور و مرجوعی سایز", en: "Fast sales invoices, order entries & size exchanges" },
+    ],
+    ctaText: { fa: "دانلود رایگان تنخور", en: "Download Tankhor Free" },
+  },
+
+  fashionFeatures: [
+    {
+      id: "products",
+      iconName: "Package",
+      title: { fa: "محصولات", en: "Products" },
+      subtitle: { fa: "مدیریت اطلاعات کامل محصولات پوشاک", en: "Full Apparel Product Data" },
+      description: {
+        fa: "تعریف کامل مشخصات لباس، پارچه، جنس، برند و قیمت‌های خرید و فروش با رابط کاربری بسیار سریع.",
+        en: "Maintain comprehensive product specs including fabric composition, brand, and pricing.",
+      },
+    },
+    {
+      id: "matrix",
+      iconName: "Grid",
+      title: { fa: "رنگ و سایز", en: "Color & Size" },
+      subtitle: { fa: "مدیریت تنوع‌های مختلف هر محصول", en: "Multi-Dimensional Variant Grid" },
+      description: {
+        fa: "ایجاد اتوماتیک ماتریس واریانت‌ها برای انواع سایزبندی (S/M/L/XL یا سایزهای عددی) به همراه کد SKU و بارکد اختصاصی.",
+        en: "Auto-generate variant matrices for letter/numeric sizing with dedicated SKUs and barcode generation.",
+      },
+    },
+    {
+      id: "inventory",
+      iconName: "Layers",
+      title: { fa: "موجودی", en: "Inventory" },
+      subtitle: { fa: "مشاهده و مدیریت موجودی هر محصول و تنوع", en: "Variant-Level Stock Tracking" },
+      description: {
+        fa: "کنترل لحظه‌ای موجودی دقیق هر سایز و رنگ؛ جلوگیری از تمام شدن سایزهای پرفروش با هشدارهای هوشمند.",
+        en: "Track exact stock levels per size and color. Receive low-stock threshold alerts for top-selling sizes.",
+      },
+    },
+    {
+      id: "warehouse",
+      iconName: "Boxes",
+      title: { fa: "انبار", en: "Warehouse" },
+      subtitle: { fa: "مدیریت موجودی در انبارها و موقعیت‌های مختلف", en: "Multi-Store Warehouse Controls" },
+      description: {
+        fa: "انبارداری دقیق، صدور حواله بین انبار مرکزی و فروشگاه، انبارگردانی سریع با دستگاه بارکدخوان.",
+        en: "Manage central stock and store locations with barcode-based stock check-ins and transfers.",
+      },
+    },
+    {
+      id: "orders",
+      iconName: "ShoppingCart",
+      title: { fa: "سفارش‌ها", en: "Sales Orders" },
+      subtitle: { fa: "ثبت و مدیریت سفارش‌های فروش", en: "Order & Invoice Processing" },
+      description: {
+        fa: "ثبت فاکتور فروش، مدیریت سفارش‌های مشتریان، ثبت مرجوعی سایز و محاسبه سریع تخفیف‌ها.",
+        en: "Process customer orders, manage returns, size exchanges, and apply discounts.",
+      },
+    },
+    {
+      id: "size-guide",
+      iconName: "Ruler",
+      title: { fa: "راهنمای سایز", en: "Size Specs" },
+      subtitle: { fa: "مدیریت اطلاعات سایزبندی محصولات", en: "Interactive Sizing Specifications" },
+      description: {
+        fa: "ثبت جدول اندازه‌گیری دقیق سانتیمتری (دور سینه، قد آستین، عرض شانه، دور کمر) جهت کاهش مرجوعی.",
+        en: "Store garment measurements (chest, sleeve, waist, shoulder) to guide buyers and slash return rates.",
+      },
+    },
+  ],
+
+  freeVsPro: {
+    title: { fa: "از رایگان شروع کن، هر وقت آماده بودی به Cloud برو", en: "Start Free, Upgrade to Cloud Whenever Ready" },
+    subtitle: {
+      fa: "نسخه رایگان تنخور تمام نیازهای پایه شما را برآورده می‌کند. نسخه Pro برای همگام‌سازی ابری و تیم‌های بزرگتر آماده است.",
+      en: "Tankhor Free satisfies all your essential store needs. Tankhor Pro adds real-time cloud sync for growing teams.",
+    },
+    freeCard: {
+      title: { fa: "Tankhor Free", en: "Tankhor Free" },
+      badge: { fa: "۱۰۰٪ رایگان و آفلاین", en: "100% Free & Offline" },
+      features: [
+        { fa: "نسخه دسکتاپ (Desktop App)", en: "Desktop App (Windows & macOS)" },
+        { fa: "کارکرد ۱۰۰٪ آفلاین (بدون نیاز به اینترنت)", en: "100% Offline (No Internet Needed)" },
+        { fa: "رایگان همیشگی بدون پرداخت اشتراک", en: "Forever Free without subscription" },
+        { fa: "مدیریت کامل محصولات پوشاک", en: "Full Apparel Product Management" },
+        { fa: "مدیریت کامل ماتریس رنگ و سایز", en: "Complete Color & Size Matrix" },
+        { fa: "مدیریت موجودی انبار", en: "Warehouse Stock Tracking" },
+        { fa: "ثبت فاکتور و سفارش‌های فروش", en: "Sales Orders & Invoicing" },
+        { fa: "چاپ بارکد و لیبل قیمت پوشاک", en: "Barcode & Tag Printing" },
+      ],
+      ctaText: { fa: "دانلود رایگان تنخور", en: "Download Tankhor Free" },
+    },
+    proCard: {
+      title: { fa: "Tankhor Pro", en: "Tankhor Pro Cloud" },
+      badge: { fa: "همگام‌سازی ابری", en: "Cloud & Multi-User" },
+      features: [
+        { fa: "تمامی امکانات نسخه Tankhor Free", en: "Includes all Tankhor Free features" },
+        { fa: "همگام‌سازی ابری خودکار داده‌ها (Cloud Sync)", en: "Automated Cloud Sync Across Devices" },
+        { fa: "دسترسی آنلاین از وب، دسکتاپ و موبایل", en: "Multi-Device Access (Web, Desktop, Mobile)" },
+        { fa: "همگام‌سازی اطلاعات بین چند شعبه و چند انبار", en: "Multi-Store & Multi-Warehouse Sync" },
+        { fa: "امکانات پیشرفته‌تر برای تیم‌های در حال رشد", en: "Advanced Tools for Growing Teams" },
+        { fa: "تعریف چندین کاربر با سطح دسترسی پرسنل", en: "Multi-User Roles & Permissions (RBAC)" },
+      ],
+      ctaText: { fa: "مشاهده Tankhor Pro", en: "Explore Tankhor Pro" },
+    },
+  },
+
+  seoContent: {
+    title: {
+      fa: "نرم افزار مدیریت فروشگاه پوشاک رایگان چیست؟",
+      en: "What is Free Apparel Store Management Software?",
+    },
+    paragraphs: [
+      {
+        fa: "مدیریت یک فروشگاه پوشاک، بوتیک یا مزون با سایر فروشگاه‌های خرده‌فروشی تفاوت‌های بنیادی دارد. در فروشگاه لباس، شما با یک محصول ساده مواجه نیستید؛ بلکه هر مدل پوشاک دارای ترکیب‌های متعددی از رنگ‌ها (مشکی، سفید، سرمه‌ای، کرم) و سایزها (S, M, L, XL, XXL یا سایزهای عددی ۳۶ تا ۵۲) است. استفاده از دفترچه‌های سنتی، فایل‌های اکسل پیچیده یا نرم‌افزارهای عمومی باعث ایجاد صدها کد کالای تکراری و سردرگمی شدید در انبارداری می‌شود.",
+        en: "Managing a clothing store, boutique, or fashion maison differs fundamentally from ordinary retail stores. In apparel retail, a single garment style comes with dozens of color and size combinations. Using manual ledgers or generic tools causes item duplication and severe inventory chaos.",
+      },
+      {
+        fa: "نرم افزار مدیریت فروشگاه پوشاک رایگان تنخور (Tankhor Free) راهکاری تخصصی و آفلاین است که دقیقاً برای حل این چالش طراحی شده است. تنخور با ارائه «ماتریس واریانت رنگ و سایز»، به شما اجازه می‌دهد محصول را فقط یک‌بار ثبت کنید و تمام واریانت‌های رنگی و سایزی آن را در یک جدول ماتریسی منظم مدیریت نمایید. این نرم‌افزار بدون نیاز به اینترنت اجرا می‌شود و مدیریت موجودی، ورود و خروج انبار، ثبت سفارش‌های فروش و چاپ لیبل بارکد پوشاک را با بالاترین سرعت امکان‌پذیر می‌سازد.",
+        en: "Tankhor Free is a specialized offline software tailored to solve this exact bottleneck. By providing a smart variant matrix grid, Tankhor lets you define a garment once and manage all color/size combinations seamlessly. It runs completely offline on your desktop computer, providing lightning-fast stock control, order processing, and tag printing.",
+      },
+      {
+        fa: "چه صاحب یک بوتیک کوچک لباس مردانه یا زنانه باشید، چه یک مزون تولید لباس مجلسی یا آنلاین‌شاپ پوشاک، نرم افزار مدیریت بوتیک رایگان تنخور به شما کمک می‌کند تا موجودی دقیق انبار خود را بدانید، از ناموجود شدن سایزهای پرفروش جلوگیری کنید و سفارش‌های مشتریان را بدون خطا ثبت نمایید. علاوه بر این، هر زمان که کسب‌وکار شما توسعه پیدا کرد، می‌توانید به راحتی به نسخه ابری Tankhor Pro ارتقا پیدا کرده و داده‌های خود را بین شعب و فروشگاه اینترنتی همگام‌سازی کنید.",
+        en: "Whether you operate a boutique, a maison, or a fashion e-commerce store, Tankhor Free empowers you to know your exact variant inventory, prevent stockouts of popular sizes, and eliminate order mistakes. As your business grows, seamless one-click migration to Tankhor Pro Cloud keeps all your branches synced.",
+      },
+    ],
+
+    accountingIntentQA: {
+      question: {
+        fa: "آیا تنخور نرم افزار حسابداری پوشاک است؟",
+        en: "Is Tankhor an Accounting Software for Clothing Stores?",
+      },
+      answer: {
+        fa: "خیر. تنخور یک نرم افزار تخصصی مدیریت محصولات، موجودی، انبار و سفارش‌های کسب‌وکارهای پوشاک است و جایگزین نرم‌افزار حسابداری نیست. نرم‌افزارهای عمومی حسابداری فاقد امکاناتی مانند ماتریس رنگ و سایز، راهنمای سایز هوشمند و چاپ تگ لباس هستند. اگر به دنبال نرم افزار حسابداری پوشاک هستید، تنخور می‌تواند در کنار سیستم حسابداری شما برای مدیریت عملیات روزمره محصول، موجودی و انبارداری پوشاک استفاده شود.",
+        en: "No. Tankhor is a specialized product, variant, inventory, and order management platform for fashion businesses, and is not a general accounting or tax system. Generic accounting software lacks apparel-native features like color-size matrices and garment measurement specs. If you are searching for clothing accounting software, Tankhor runs seamlessly alongside your financial accounting system to handle product operations.",
+      },
+    },
   },
 
   painPointsVsSolution: {
@@ -412,62 +614,146 @@ export const siteContent = {
     {
       id: "faq-1",
       question: {
-        fa: "آیا نرم‌افزار تنخور بدون اتصال به اینترنت هم کار می‌کند؟",
-        en: "Does Tankhor software work without an internet connection?",
+        fa: "آیا نرم افزار مدیریت فروشگاه پوشاک تنخور واقعاً رایگان است؟",
+        en: "Is Tankhor apparel management software truly free?",
       },
       answer: {
-        fa: "بله، ۱۰۰٪! تنخور با معماری هیبریدی طراحی شده است. تمام عملیات ثبت فاکتور، اسکن بارکد، اصلاح موجودی و انبارداری به صورت محلی روی رایانه یا تبلت شما انجام می‌شود و هیچ نیازی به اینترنت ندارد. به محض وصل شدن اینترنت، اطلاعات به صورت امن با ابر همگام‌سازی می‌شوند.",
-        en: "Yes, 100%! Tankhor features a hybrid architecture. All sales transactions, barcode scanning, stock adjustments, and print jobs execute locally on your device with zero internet dependency. Once connected, data encrypts and syncs automatically with the cloud.",
+        fa: "بله، نسخه دسکتاپ تنخور (Tankhor Free) کاملاً رایگان است و هیچ محدودیت زمانی (تست یا Trial) ندارد. شما می‌توانید آن را بدون نیاز به کارت بانکی یا پرداخت وجه دانلود کرده و برای مدیریت محصولات، موجودی، رنگ و سایز و سفارش‌های فروشگاه خود استفاده کنید.",
+        en: "Yes, the desktop version (Tankhor Free) is 100% free with no time limit or trial expiration. You can download and run it without any credit card or payment.",
       },
-      category: { fa: "امکانات و آفلاین", en: "Features & Offline" },
+      category: { fa: "نسخه رایگان", en: "Free Version" },
     },
     {
       id: "faq-2",
       question: {
-        fa: "تفاوت تنخور با نرم‌افزارهای حسابداری عمومی (مثل سپیدار یا هلو) چیست؟",
-        en: "How does Tankhor differ from generic accounting software?",
+        fa: "آیا تنخور بدون اتصال به اینترنت هم کار می‌کند؟",
+        en: "Does Tankhor work completely offline without internet?",
       },
       answer: {
-        fa: "نرم‌افزارهای عمومی حسابداری مفهوم «ماتریس رنگ و سایز» را نمی‌شناسند و شما مجبورید برای ۱ مدل لباس با ۵ رنگ و ۴ سایز، ۲۰ کالای مجزا تعریف کنید که انبار را آشفته می‌کند. تنخور تخصصی پوشاک است: با یک کلیک ماتریس ۲۰ تایی می‌سازد، جدول سایز اختصاصی تولید می‌کند و چاپ لیبل پوشاک دارد.",
-        en: "Generic software forces you to create separate item codes for every single color and size combination. Tankhor is tailor-made for apparel: 1-click matrix creation, built-in size guide engine, thermal hangtag printing, and variant barcode mapping.",
+        fa: "بله، ۱۰۰٪! نسخه رایگان تنخور به صورت کاملاً آفلاین روی رایانه و دسکتاپ شما نصب شده و تمام اطلاعات را روی دیتابیس محلی دستگاه شما ذخیره می‌کند. قطعی اینترنت هیچ خللی در فروشگاه یا انبار شما ایجاد نخواهد کرد.",
+        en: "Yes, 100%! Tankhor Free runs locally on your desktop computer, storing all data in a local database with zero internet dependency.",
       },
-      category: { fa: "مقایسه و برتری", en: "Comparison" },
+      category: { fa: "کارکرد آفلاین", en: "Offline Capabilities" },
     },
     {
       id: "faq-3",
       question: {
-        fa: "چگونه راهنمای سایز تعاملی تنخور باعث کاهش مرجوعی فروشگاه آنلاین می‌شود؟",
-        en: "How does the interactive size guide engine reduce online return rates?",
+        fa: "ماتریس رنگ و سایز تنخور چگونه کار می‌کند؟",
+        en: "How does Tankhor's color & size matrix work?",
       },
       answer: {
-        fa: "تنخور به شما اجازه می‌دهد جداول دقیق اندازه‌گیری (دور سینه، قد آستین، عرض شانه، دور کمر، طول کفی کفش) را ثبت کنید. خریدار با وارد کردن ابعاد بدن خود، دقیق‌ترین سایز پیشنهادی را دریافت می‌کند. این کار تا ۶۵٪ از اشتباهات انتخاب سایز توسط مشتری جلوگیری می‌نماید.",
-        en: "Tankhor lets you build precise garment sizing metrics (chest, shoulder, sleeve, waist, insole). Customers enter their measurements or fit preferences to get calculated size recommendations, cutting fit-related returns by up to 65%.",
+        fa: "در تنخور نیاز نیست برای ۱ مدل لباس با ۵ رنگ و ۴ سایز، ۲۰ کالای مجزا ثبت کنید. شما محصول را ۱ بار تعریف می‌کنید و سیستم به صورت خودکار ماتریس ۲۰ تایی از ترکیب رنگ‌ها و سایزها همراه با بارکد و SKU اختصاصی برای هر واریانت تولید می‌کند.",
+        en: "Instead of creating 20 separate items for a shirt with 5 colors and 4 sizes, you define the style once. Tankhor auto-generates a 20-cell matrix grid with individual SKUs and barcodes for every single combination.",
       },
-      category: { fa: "راهنمای سایز", en: "Size Guide Engine" },
+      category: { fa: "رنگ و سایز", en: "Variant Matrix" },
     },
     {
       id: "faq-4",
       question: {
-        fa: "آیا امکان اتصال تنخور به سایت اینترنتی (ووکامرس / شاپیفای) وجود دارد؟",
-        en: "Can Tankhor integrate with e-commerce stores like WooCommerce or Shopify?",
+        fa: "تفاوت تنخور با نرم‌افزارهای عمومی حسابداری چیست؟",
+        en: "How does Tankhor differ from general accounting software?",
       },
       answer: {
-        fa: "بله، در پلن‌های حرفه‌ای و سازمانی افزونه رسمی تنخور برای ووکامرس ارائه می‌شود. موجودی رنگ‌ها و سایزها بین انبار حضوری و سایت اینترنتی به صورت خودکار و لحظه‌ای همگام می‌شود تا از فروش کالای ناموجود جلوگیری شود.",
-        en: "Yes! Professional and Enterprise plans include native API sync plugins for WooCommerce and Shopify. Inventory levels across physical branches and online stores sync instantly in real-time.",
+        fa: "نرم‌افزارهای عمومی حسابداری ساختار تخصصی پوشاک (ماتریس رنگ و سایز، جدول اندازه‌گیری، چاپ اتیکت قیمت پوشاک) را ندارند و انبارداری لباس را پیچیده می‌کنند. تنخور از پایه برای مدیریت محصولات، موجودی و سفارش‌های پوشاک ساخته شده است.",
+        en: "General accounting software lacks fashion-native structures like color/size matrix grids, garment sizing specs, and clothing tag printing. Tankhor is tailor-made specifically for apparel workflow.",
       },
-      category: { fa: "اتصالات و API", en: "Integrations & API" },
+      category: { fa: "مقایسه", en: "Comparison" },
     },
     {
       id: "faq-5",
       question: {
-        fa: "امنیت داده‌ها و فایل‌های پشتیبان چگونه تضمین می‌شود؟",
-        en: "How are data security and backups handled?",
+        fa: "آیا تنخور نرم افزار حسابداری پوشاک است؟",
+        en: "Is Tankhor an accounting software?",
       },
       answer: {
-        fa: "اطلاعات شما با رمزنگاری AES-256 ذخیره می‌شوند. در حالت آفلاین داده‌ها در دیتابیس محلی دستگاه خودتان قرار دارند. در حالت ابری، فایل‌های پشتیبان روزانه در ۳ سرور مجزای ابری پشتیبان‌گیری می‌شوند و امکان خروجی کامل اکسل در هر لحظه وجود دارد.",
-        en: "Your data is secured with AES-256 encryption. In offline mode, data stays strictly local on your machine. In cloud mode, automated daily redundant backups take place across encrypted servers, and full Excel export is available anytime.",
+        fa: "خیر. تنخور یک نرم افزار تخصصی مدیریت محصولات، موجودی، انبار و سفارش‌های پوشاک است. تنخور صورت‌های مالی پیچیده یا اظهارنامه مالیاتی ارائه نمی‌دهد، اما می‌تواند در کنار نرم افزار حسابداری شما به عنوان موتور اصلی مدیریت محصول و انبار استفاده شود.",
+        en: "No. Tankhor specializes in product, variant, inventory, and order operations for apparel. It handles day-to-day store operations and runs seamlessly alongside your financial accounting software.",
       },
-      category: { fa: "امنیتی و پشتیبان", en: "Security & Backup" },
+      category: { fa: "حسابداری", en: "Accounting" },
+    },
+    {
+      id: "faq-6",
+      question: {
+        fa: "آیا برای استفاده از تنخور نیاز به اینترنت داریم؟",
+        en: "Do we need an internet connection to use Tankhor?",
+      },
+      answer: {
+        fa: "خیر، برای استفاده از نسخه دسکتاپ Tankhor Free نیازی به اینترنت ندارید. تنها در صورتی که بخواهید از نسخه ابری Tankhor Pro برای همگام‌سازی بین چند شعب استفاده کنید به اینترنت نیاز خواهید داشت.",
+        en: "No, Tankhor Free runs 100% offline. Internet is only required if you upgrade to Tankhor Pro Cloud to sync data across multiple physical branches.",
+      },
+      category: { fa: "اینترنت", en: "Internet & Cloud" },
+    },
+    {
+      id: "faq-7",
+      question: {
+        fa: "تفاوت نسخه Tankhor Free با Tankhor Pro چیست؟",
+        en: "What is the difference between Tankhor Free and Tankhor Pro?",
+      },
+      answer: {
+        fa: "نسخه Free کاملاً رایگان و آفلاین روی دسکتاپ اجرا می‌شود و برای ۱ فروشگاه عالی است. نسخه Pro امکان همگام‌سازی ابری، دسترسی آنلاین از چند دستگاه (موبایل و وب) و مدیریت چند شعبه و چند انبار را اضافه می‌کند.",
+        en: "Tankhor Free is desktop-offline and 100% free. Tankhor Pro adds real-time cloud sync, multi-device web/mobile access, and multi-store multi-warehouse management.",
+      },
+      category: { fa: "نسخه‌ها", en: "Versions" },
+    },
+    {
+      id: "faq-8",
+      question: {
+        fa: "آیا امکان ثبت محصولات با سایزهای غیراستاندارد یا بزرگ وجود دارد؟",
+        en: "Can we configure non-standard or plus-size variations?",
+      },
+      answer: {
+        fa: "بله! در تنخور می‌توانید هر نوع سایزبندی (حروفی S تا 5XL، عددی، بچه‌گانه، کفش و سایزهای اختصاصی مزون) را تعریف کنید و حتی برای سایزهای بزرگ قیمت متفاوت تعیین نمایید.",
+        en: "Yes! Tankhor supports all size formats (letter sizes S-5XL, numeric trousers/shoes, kids, and custom atelier sizing) with differential price tags for larger sizes.",
+      },
+      category: { fa: "سایزبندی", en: "Sizing Options" },
+    },
+    {
+      id: "faq-9",
+      question: {
+        fa: "آیا امکان چاپ بارکد و اتیکت قیمت برای لباس‌ها وجود دارد؟",
+        en: "Can we print clothing barcodes and price hangtags?",
+      },
+      answer: {
+        fa: "بله، تنخور سیستم چاپ اتوماتیک بارکد و لیبل قیمت پوشاک را دارد که با انواع لیبل‌پرینترها و پرینترهای حرارتی سازگار است.",
+        en: "Yes, Tankhor includes automated barcode and price hangtag design & printing compatible with all standard thermal label printers.",
+      },
+      category: { fa: "بارکد و لیبل", en: "Barcodes & Labels" },
+    },
+    {
+      id: "faq-10",
+      question: {
+        fa: "آیا اطلاعات و موجودی‌های ما در نسخه رایگان امن هستند؟",
+        en: "Is our inventory data secure in the Free version?",
+      },
+      answer: {
+        fa: "کاملاً. در نسخه رایگان، داده‌ها روی دیتابیس محلی رایانه شما قرار دارند و هیچ دسترسی خارجی به آن‌ها وجود ندارد. همچنین می‌توانید در هر زمان خروجی اکسل و پشتیبان محلی بگیرید.",
+        en: "Absolutely. In Tankhor Free, your database is stored strictly locally on your machine with zero external access. You can export complete Excel backups anytime.",
+      },
+      category: { fa: "امنیت", en: "Security" },
+    },
+    {
+      id: "faq-11",
+      question: {
+        fa: "چگونه می‌توانیم اطلاعات خود را از نسخه رایگان به Tankhor Pro منتقل کنیم؟",
+        en: "How do we upgrade local data from Free to Tankhor Pro Cloud?",
+      },
+      answer: {
+        fa: "انتقال داده‌ها تنها با یک کلیک انجام می‌شود. نرم‌افزار دسکتاپ تنخور خروجی استاندارد ابری تولید کرده و تمام محصولات، موجودی‌ها و واریانت‌های شما را بدون تغییر به ابری منتقل می‌کند.",
+        en: "Migration takes a single click. Tankhor Desktop generates an encrypted export file that populates your new cloud account seamlessly.",
+      },
+      category: { fa: "ارتقا", en: "Upgrade Path" },
+    },
+    {
+      id: "faq-12",
+      question: {
+        fa: "تنخور برای چه کسب‌وکارهایی مناسب است؟",
+        en: "Which fashion businesses benefit most from Tankhor?",
+      },
+      answer: {
+        fa: "تنخور تخصصی برای تمامی فعالان صنعت مد و پوشاک طراحی شده است: فروشگاه‌های لباس زنانه و مردانه، بوتیک‌ها، مزون‌ها، فروشگاه‌های کیف و کفش، تولیدی‌های پوشاک و آنلاین‌شاپ‌های اینستاگرامی و وب‌سایت‌ها.",
+        en: "Tankhor is purpose-built for all fashion apparel stakeholders: boutiques, ateliers, menswear/womenswear stores, shoe shops, clothing manufacturers, and online fashion brands.",
+      },
+      category: { fa: "مخاطبان", en: "Target Audience" },
     },
   ] as FAQItem[],
 };
