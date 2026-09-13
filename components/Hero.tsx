@@ -3,12 +3,13 @@
 import React from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
+import { siteContent } from '@/data/content';
 import InteractiveDashboardPreview from './InteractiveDashboardPreview';
 import AnimatedDotPyramid from './AnimatedDotPyramid';
 import { Download, Monitor, Apple, Smartphone, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
-  const { language } = useLanguageAndTheme();
+  const { language, openMacModal } = useLanguageAndTheme();
   const downloadLinks = useDownloadLinks();
 
   const brandLogos = [
@@ -31,29 +32,15 @@ export default function Hero() {
           <div className="lg:col-span-5 space-y-6 text-right rtl:text-right ltr:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-[11px] font-caption-mono text-neutral-600 dark:text-neutral-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>{language === 'fa' ? 'رایگان • آفلاین • مخصوص پوشاک' : 'Free • Offline • Apparel ERP'}</span>
+              <span>{siteContent.hero.badge[language]}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.15]">
-              {language === 'fa' ? (
-                <>
-                  نرم افزار مدیریت فروشگاه پوشاک، <br className="hidden sm:block" />
-                  <span className="text-neutral-900 dark:text-white underline decoration-teal-500 decoration-2 underline-offset-8">
-                    رایگان و آفلاین
-                  </span>
-                </>
-              ) : (
-                <>
-                  Free & Offline <br />
-                  Apparel Store ERP
-                </>
-              )}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white leading-[1.2]">
+              {siteContent.hero.h1[language]}
             </h1>
 
             <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal max-w-xl">
-              {language === 'fa'
-                ? 'محصولات، رنگ و سایز، موجودی، انبار و سفارش‌های فروشگاه پوشاک خود را ساده مدیریت کنید؛ ۱۰۰٪ رایگان و بدون نیاز به اینترنت.'
-                : 'Effortlessly manage clothing products, color & size matrices, inventory, stock, and orders — 100% free & offline.'}
+              {siteContent.hero.subheadline[language]}
             </p>
 
             {/* Vercel Pill Action Buttons */}
@@ -65,16 +52,14 @@ export default function Hero() {
                 className="px-6 py-3 rounded-md bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold text-xs shadow-sm hover:opacity-90 transition-all flex items-center gap-2"
               >
                 <Download className="w-4 h-4 text-teal-400 dark:text-teal-600" />
-                <span>{language === 'fa' ? 'دانلود رایگان تنخور' : 'Free Download'}</span>
+                <span>{siteContent.hero.ctaPrimary[language]}</span>
               </a>
 
               <a
-                href="https://my.tankhor.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#accounting"
                 className="px-6 py-3 rounded-md bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-900 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 font-medium text-xs transition-all flex items-center gap-1.5"
               >
-                <span>{language === 'fa' ? 'ورود به پنل ابری' : 'Web Panel'}</span>
+                <span>{siteContent.hero.ctaSecondary[language]}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
               </a>
             </div>
@@ -96,16 +81,15 @@ export default function Hero() {
                 <span>ویندوز</span>
               </a>
 
-              <a
-                href={downloadLinks.macos_setup}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-1 rounded bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200/80 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-[11px] font-caption-mono flex items-center gap-1 transition-colors"
+              <button
+                type="button"
+                onClick={openMacModal}
+                className="px-2.5 py-1 rounded bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200/80 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-[11px] font-caption-mono flex items-center gap-1 transition-colors cursor-pointer"
                 title="macOS Desktop Setup"
               >
                 <Apple className="w-3 h-3 text-neutral-600 dark:text-neutral-400" />
                 <span>مک (macOS)</span>
-              </a>
+              </button>
 
               <a
                 href={downloadLinks.android_setup}

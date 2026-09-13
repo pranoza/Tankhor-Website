@@ -38,6 +38,16 @@ export interface FeatureModule {
   metricBadge?: { fa: string; en: string };
 }
 
+export interface AccountingFeature {
+  id: string;
+  iconName: string;
+  title: { fa: string; en: string };
+  subtitle: { fa: string; en: string };
+  description: { fa: string; en: string };
+  benefits: Array<{ fa: string; en: string }>;
+  tag: string;
+}
+
 export interface Testimonial {
   id: string;
   name: { fa: string; en: string };
@@ -61,63 +71,65 @@ export interface MatrixSampleVariant {
 export const siteContent = {
   meta: {
     title: {
-      fa: "نرم افزار مدیریت فروشگاه پوشاک رایگان | تنخور",
-      en: "Free Apparel Store Management Software | Tankhor",
+      fa: "نرم افزار مدیریت و حسابداری فروشگاه پوشاک، بوتیک و مزون | تنخور",
+      en: "Clothing Store, Boutique & Apparel Management Software | Tankhor",
     },
     description: {
-      fa: "تنخور، نرم افزار رایگان مدیریت فروشگاه پوشاک برای مدیریت محصولات، رنگ و سایز، موجودی، انبار و سفارش‌ها. رایگان، آفلاین و مخصوص کسب‌وکارهای پوشاک.",
-      en: "Tankhor: Free apparel store management software for managing products, color & size variants, inventory, stock & orders. Free, offline, and purpose-built for fashion.",
+      fa: "تنخور؛ نرم افزار مدیریت و حسابداری تخصصی فروشگاه پوشاک، بوتیک، مزون و تولیدی لباس. مدیریت یکپارچه محصولات، انبارداری رنگ/سایز، حسابداری مالی و چک صیادی؛ رایگان و آفلاین.",
+      en: "Tankhor: Clothing store, boutique, maison & fashion manufacturing accounting software. Integrated product management, variant inventory, 360° financial accounting; 100% free & offline.",
     },
     keywords: [
-      "نرم افزار مدیریت فروشگاه پوشاک رایگان",
-      "نرم افزار انبارداری پوشاک رایگان",
-      "نرم افزار مدیریت موجودی پوشاک رایگان",
-      "نرم افزار مدیریت فروشگاه لباس رایگان",
-      "نرم افزار مدیریت بوتیک رایگان",
+      "نرم افزار مدیریت فروشگاه پوشاک",
+      "نرم افزار حسابداری بوتیک",
+      "نرم افزار حسابداری بوتیک رایگان",
+      "نرم افزار حسابداری مزون",
+      "نرم افزار حسابداری تولیدی پوشاک",
+      "نرم افزار حسابداری تولیدی لباس",
+      "نرم افزار انبارداری پوشاک",
+      "نرم افزار انبارداری لباس و کفش",
       "نرم افزار حسابداری پوشاک رایگان",
-      "نرم افزار فروش پوشاک رایگان",
-      "نرم افزار مدیریت محصولات پوشاک",
-      "نرم افزار مدیریت موجودی لباس",
-      "نرم افزار انبارداری لباس",
-      "نرم افزار فروشگاهی پوشاک",
-      "نرم افزار مدیریت مزون رایگان",
+      "نرم افزار انبارداری ماتریسی رنگ و سایز",
+      "محاسبه بهای تمام شده پوشاک Landed Cost",
+      "نرم افزار مدیریت بوتیک و مزون",
+      "دانلود نرم افزار مدیریت پوشاک رایگان",
     ],
   },
 
   navLinks: [
-    { id: "features", label: { fa: "قابلیت‌ها", en: "Features" }, href: "#features" },
-    { id: "free-version", label: { fa: "نسخه رایگان", en: "Free Version" }, href: "#free-version" },
-    { id: "pro-version", label: { fa: "تنخور پرو", en: "Tankhor Pro" }, href: "#pro-version" },
     { id: "why-tankhor", label: { fa: "چرا تنخور؟", en: "Why Tankhor?" }, href: "#why-tankhor" },
+    { id: "solutions", label: { fa: "راهکارها", en: "Solutions" }, href: "#solutions" },
+    { id: "accounting", label: { fa: "حسابداری تخصصی", en: "Specialized Accounting" }, href: "#accounting" },
+    { id: "features", label: { fa: "امکانات تخصصی", en: "Fashion Features" }, href: "#features" },
+    { id: "free-version", label: { fa: "نسخه رایگان", en: "Free Version" }, href: "#free-version" },
     { id: "faq", label: { fa: "سوالات متداول", en: "FAQ" }, href: "#faq" },
   ] as NavigationLink[],
 
   hero: {
     badge: {
-      fa: "رایگان • آفلاین • مخصوص پوشاک",
-      en: "Free • Offline • Purpose-Built for Apparel",
+      fa: "رایگان • آفلاین • مخصوص پوشاک، کیف و کفش",
+      en: "Free • Offline • Purpose-Built for Fashion",
     },
     h1: {
-      fa: "نرم افزار مدیریت فروشگاه پوشاک، رایگان و آفلاین",
-      en: "Free & Offline Apparel Store Management Software",
+      fa: "نرم افزار مدیریت و حسابداری فروشگاه پوشاک",
+      en: "Clothing Store Management & Accounting Software",
     },
     subheadline: {
-      fa: "محصولات، رنگ و سایز، موجودی، انبار و سفارش‌های فروشگاه پوشاک خود را ساده مدیریت کنید؛ رایگان و بدون نیاز به اینترنت.",
-      en: "Effortlessly manage your clothing store products, color & size variants, inventory, warehouse, and orders — 100% free and offline.",
+      fa: "پلتفرم یکپارچه مدیریت فروشگاه، انبارداری ماتریسی رنگ/سایز و حسابداری تخصصی برای بوتیک‌ها، مزون‌ها و تولیدی‌های لباس؛ رایگان، آفلاین و سریع.",
+      en: "Unified store management, variant matrix inventory, and dedicated accounting for boutiques, ateliers, and apparel manufacturers — free & offline.",
     },
     ctaPrimary: {
-      fa: "دانلود رایگان تنخور",
-      en: "Download Tankhor Free",
+      fa: "دریافت نسخه رایگان / دانلود نسخه دسکتاپ و وب",
+      en: "Download Free Version / Desktop & Web",
     },
     ctaSecondary: {
-      fa: "آشنایی با نسخه Pro",
-      en: "Explore Tankhor Pro",
+      fa: "بررسی امکانات حسابداری و ابری",
+      en: "Explore Accounting & Cloud Features",
     },
     quickStats: [
-      { value: "۱۰۰٪", label: { fa: "رایگان و بدون محدودیت زمانی", en: "100% Free Forever" } },
-      { value: "آفلاین", label: { fa: "کارکرد کامل بدون اینترنت", en: "Full Offline Resilience" } },
-      { value: "مخصوص پوشاک", label: { fa: "ماتریس رنگ، سایز و بارکد", en: "Color & Size Matrix" } },
-      { value: "دسکتاپ", label: { fa: "نصب سریع روی ویندوز و مک", en: "Windows & macOS App" } },
+      { value: "یکپارچه", label: { fa: "فروشگاه + انبار + حسابداری", en: "Retail + Inventory + Accounting" } },
+      { value: "۱۰۰٪ آفلاین", label: { fa: "دیتابیس SQLite + همگام‌سازی ابری", en: "SQLite DB + Auto Cloud Sync" } },
+      { value: "Landed Cost", label: { fa: "محاسبه بهای تمام‌شده واقعی", en: "True Landed Cost Engine" } },
+      { value: "چک صیادی", label: { fa: "مدیریت خزانه و سامانه مؤدیان", en: "Treasury & Sayad Check Lifecycle" } },
     ],
     trustedBrands: [
       { name: "هپکو فشن | Hakupian Style", logoText: "HAKUPIAN" },
@@ -131,251 +143,347 @@ export const siteContent = {
 
   whyTankhor: {
     title: {
-      fa: "چرا تنخور؟ راهکار تخصصی برای صنعت پوشاک",
-      en: "Why Tankhor? Purpose-Built for Apparel Businesses",
+      fa: "چرا تنخور؟ پلتفرم یکپارچه مدیریت، انبار و حسابداری پوشاک",
+      en: "Why Tankhor? All-in-One Fashion ERP Architecture",
     },
     subtitle: {
-      fa: "برخلاف نرم‌افزارهای عمومی که ساختار رنگ و سایز را درک نمی‌کنند، تنخور از ابتدا مخصوص پوشاک طراحی شده است.",
-      en: "Unlike generic business software that treats clothing like single items, Tankhor natively supports color and size variant matrices.",
+      fa: "پایان دادن به پراکندگی داده‌ها و نیاز به خرید چندین نرم‌افزار مجزا (حسابداری عمومی + اکسل انبار + نرم‌افزار فروشگاهی).",
+      en: "Eliminate fragmented data and stop paying for multiple mismatched tools (generic accounting + warehouse spreadsheets + basic POS).",
     },
     advantages: [
       {
-        title: { fa: "مخصوص صنعت پوشاک", en: "Tailor-Made for Apparel" },
-        desc: { fa: "طراحی شده بر اساس الزامات واقعی بوتیک‌ها، مزون‌ها، تولیدی‌ها و فروشگاه‌های آنلاین لباس و کفش.", en: "Engineered specifically for the real-world workflow of clothing stores, boutiques, maisons, and footwear shops." },
+        title: { fa: "یکپارچگی ۳۶۰ درجه فروش، انبار و مالی", en: "360° Unified Retail & Finance" },
+        desc: { fa: "ترکیب کامل فروشگاهی، انبارداری ماتریسی رنگ و سایز، و حسابداری مالی تخصصی در یک بستر یکپارچه و هوشمند.", en: "Unifying retail store operations, matrix inventory, and dedicated fashion accounting into one central platform." },
       },
       {
-        title: { fa: "مدیریت رنگ و سایز (ماتریس)", en: "Color & Size Matrix" },
-        desc: { fa: "تعریف یکباره محصول با ده‌ها واریانت رنگ و سایز (S تا 5XL، سایزهای عددی و اروپایی) بدون ایجاد کدهای سردرگرم‌کننده.", en: "Create one product with dozens of color/size combinations without duplicating items or mess." },
+        title: { fa: "انبارداری ماتریسی رنگ، سایز و واریانت", en: "Color & Size Variant Matrix Grid" },
+        desc: { fa: "تعریف یکباره محصول و ساخت اتوماتیک ده‌ها ترکیب رنگ و سایز (حروفی، عددی، کفش) با بارکد و SKU اختصاصی.", en: "Single-entry product style creation that auto-generates infinite color/size combinations with dedicated SKUs." },
       },
       {
-        title: { fa: "مدیریت محصولات و تنوع‌ها", en: "Product Variant Management" },
-        desc: { fa: "دسته‌بندی تخصصی بر اساس پارچه، فصل، برند و بارکد اختصاصی برای هر واریانت.", en: "Categorize by fabric, season, brand, and unique barcodes for each color/size option." },
+        title: { fa: "حسابداری مالی و مدیریت چک صیادی", en: "Financial Accounting & Sayad Checks" },
+        desc: { fa: "دفتر معین، حسابداری اشخاص، مدیریت صندوق‌ها، حساب‌های بانکی و چرخه کامل چک‌های صیادی و سامانه مؤدیان.", en: "Subsidiary ledgers, accounts receivable/payable, multi-cashbox treasury, and full Sayad check status workflows." },
       },
       {
-        title: { fa: "مدیریت موجودی دقیق", en: "Accurate Inventory Tracking" },
-        desc: { fa: "مشاهده لحظه‌ای موجودی هر سایز و رنگ در تمامی انبارها و شعب فروشگاه.", en: "Real-time stock visibility for every single size and color across all locations." },
+        title: { fa: "محاسبه بهای تمام‌شده واقعی (Landed Cost)", en: "True Landed Cost Calculation" },
+        desc: { fa: "ثبت هزینه‌های حمل، گمرک، خیاطی و بسته‌بندی و تسهیم هوشمند آن روی تک‌تک محصولات برای محاسبه سود واقعی.", en: "Track transport, customs, stitching, and packaging costs, distributing them across items for accurate net profit." },
       },
       {
-        title: { fa: "مدیریت انبار و ورود/خروج", en: "Warehouse & Stock Movement" },
-        desc: { fa: "کارتکس کالا، ثبت ورود/خروج با اسکنر بارکد و انبارگردانی سریع با موبایل.", en: "Stock ledgers, barcode scan check-ins, and lightning-fast smartphone inventory audits." },
+        title: { fa: "کارکرد ۱۰۰٪ آفلاین با دیتابیس SQLite", en: "100% Offline Resilience (SQLite DB)" },
+        desc: { fa: "پایگاه داده داخلی سریع و ایمن روی دسکتاپ Windows و macOS بدون ۱ ثانیه وابستگی یا توقف در قطعی اینترنت.", en: "Ultra-fast embedded SQLite database running locally on Windows & macOS. Zero downtime during internet outages." },
       },
       {
-        title: { fa: "ثبت و مدیریت سفارش‌ها", en: "Sales Order Processing" },
-        desc: { fa: "ثبت سریع فاکتور فروش، مرجوعی، تعویض سایز و چاپ اتیکت قیمت و بارکد پوشاک.", en: "Fast invoice creation, item exchanges, size adjustments, and price tag printing." },
+        title: { fa: "همگام‌سازی ابری متصل به سرور اختصاصی", en: "Real-Time Cloud Sync" },
+        desc: { fa: "اتصال امن به سرور اختصاصی، همگام‌سازی لحظه‌ای اطلاعات بین چندین شعبه، انبار مرکزی و PWA وب.", en: "Secure encrypted sync connecting physical retail branches, central warehouses, and web/mobile apps." },
       },
       {
-        title: { fa: "کارکرد ۱۰۰٪ آفلاین", en: "100% Offline Capability" },
-        desc: { fa: "بدون حتی ۱ ثانیه وابستگی به اینترنت؛ فروشگاه شما در زمان قطعی شبکه متوقف نمی‌شود.", en: "Operates 100% locally. Zero sales interruption during network outages." },
+        title: { fa: "موتور راهنمای سایز هوشمند (کاهش مرجوعی)", en: "Dynamic Size Guide Engine" },
+        desc: { fa: "ارائه جدول اندازه‌گیری دقیق سانتیمتری جهت کاهش مرجوعی‌های فروشگاه آنلاین و اینستاگرامی.", en: "Interactive centimeter sizing specs that dramatically reduce size exchanges for online buyers." },
       },
       {
-        title: { fa: "نسخه رایگان دسکتاپ (Tankhor Free)", en: "Tankhor Free Desktop App" },
-        desc: { fa: "دانلود رایگان، نصب آسان روی ویندوز و مک، بدون پرداخت هزینه اشتراک برای استفاده پایه.", en: "Free download, instant installation on Windows & macOS, no subscription fees for core operations." },
+        title: { fa: "گزارش‌های مالیاتی و خروجی استانداردهایی مثل سپیدار", en: "Tax Reports & Sepidar/Holo Export" },
+        desc: { fa: "تولید گزارش‌های فصلی ماده ۱۶۹، ارزش افزوده و قابلیت خروجی دادن داده‌ها به سیستم‌های مالی جانبی.", en: "Generate Article 169 seasonal tax reports, VAT statements, and export standardized data to external accounting software." },
       },
       {
-        title: { fa: "امکان ارتقا به Cloud (Tankhor Pro)", en: "Seamless Upgrade to Tankhor Pro Cloud" },
-        desc: { fa: "هر زمان کسب‌وکار شما رشد کرد، اطلاعات آفلاین خود را با یک کلیک به ابری منتقل و سینک کنید.", en: "Migrate your local data to the cloud with one click when your team or branches expand." },
+        title: { fa: "دسترسی همزمان وب PWA + دسکتاپ نیتیو", en: "Multi-Platform (Desktop + Web PWA)" },
+        desc: { fa: "استفاده همزمان روی رایانه‌های فروشگاه، تبلت صندوق و گوشی هوشمند مدیران با سطح دسترسی پیشرفته (RBAC).", en: "Cross-platform access across desktop, tablet POS, and smartphone web PWA with granular RBAC permissions." },
       },
     ],
   },
 
-  freeVersion: {
-    title: { fa: "نرم افزار مدیریت پوشاک رایگان (Tankhor Free)", en: "Tankhor Free Apparel Management Software" },
+  accountingModule: {
+    title: {
+      fa: "ماژول تخصصی حسابداری و مدیریت مالی پوشاک",
+      en: "Specialized Apparel Accounting & Financial Management Module",
+    },
     subtitle: {
-      fa: "تنخور را رایگان دانلود کنید و بدون پرداخت اشتراک، مدیریت محصولات و موجودی کسب‌وکار پوشاک خود را شروع کنید.",
-      en: "Download Tankhor Free today and start managing your fashion products and inventory without subscription fees.",
+      fa: "شفافیت کامل ریال به ریال درآمدها، هزینه‌ها، چک‌های صیادی و بهای تمام‌شده واقعی در کسب‌وکارهای پوشاک و کیف و کفش",
+      en: "Complete 360° visibility over revenue, expenses, Sayad checks, and landed product costs for fashion enterprises",
+    },
+    features: [
+      {
+        id: "ledger",
+        iconName: "BookOpen",
+        title: { fa: "دفتر معین و حسابداری اشخاص", en: "Subsidiary Ledger & People Accounts" },
+        subtitle: { fa: "مدیریت بدهکاری، بستانکاری و گردش حساب", en: "Receivables, Payables & Account Statements" },
+        description: {
+          fa: "مدیریت دقیق تراکنش‌های مالی، صورت‌حساب مشتریان، بنکداران، خیاطان و تامین‌کنندگان پوشاک با قابلیت ارسال ریزفاکتور و تسویه‌حساب سریع.",
+          en: "Manage financial transactions, customer ledgers, apparel wholesalers, tailors, and fabric supplier balances with instant statement exports.",
+        },
+        benefits: [
+          { fa: "ثبت گردش حساب طرف‌حساب‌ها با جزییات فاکتور", en: "Detailed transaction ledgers per counterparty" },
+          { fa: "محاسبه سقف اعتبار خریداران عمده و بنکداران", en: "Credit limits for wholesale buyers" },
+          { fa: "صدور قبض دریافت/پرداخت نقد، کارتخوان و حواله", en: "POS, cash, and bank transfer receipts" },
+        ],
+        tag: "LEDGER_ACCOUNTS",
+      },
+      {
+        id: "treasury",
+        iconName: "Landmark",
+        title: { fa: "خزانه و مدیریت چک صیادی", en: "Treasury & Sayad Check Management" },
+        subtitle: { fa: "کنترل صندوق‌ها، بانک‌ها و چرخه اسناد دریافت/پرداختی", en: "Multi-Cashbox & Full Check Status Workflow" },
+        description: {
+          fa: "مدیریت صندوق‌های فروشگاه، حساب‌های بانکی متعدد، انتقال وجوه و پیگیری هوشمند چرخه چک‌های صیادی (وصول، سررسید، پاس‌نشده، برگشتی و خرج‌شده).",
+          en: "Monitor store cashboxes, multiple bank accounts, fund transfers, and track Sayad check lifecycles (deposited, bounced, endorsed, or cashed).",
+        },
+        benefits: [
+          { fa: "هشدار سررسید چک‌های صیادی دریافتی و پرداختی", en: "Automated due-date alerts for Sayad checks" },
+          { fa: "مغایرت‌گیری بانکی و مدیریت کارتخوان‌های شعب", en: "Bank reconciliation & POS terminal tracking" },
+          { fa: "ثبت چرخه کامل واگذاری، خرج و استرداد چک", en: "Check endorsement, deposit & refund tracking" },
+        ],
+        tag: "TREASURY_SAYAD",
+      },
+      {
+        id: "landed-cost",
+        iconName: "Calculator",
+        title: { fa: "محاسبه بهای تمام‌شده واقعی (Landed Cost)", en: "True Landed Cost Engine" },
+        subtitle: { fa: "تسهیم هزینه‌های حمل، گمرک، خیاطی و بسته‌بندی", en: "Cost Allocation over Individual Items" },
+        description: {
+          fa: "محاسبه قیمت واقعی هر تکه لباس با ثبت هزینه‌های جانبی خرید (باربری، گمرک، بسته‌بندی، کمیسیون) و تسهیم هوشمند آن بر اساس تعداد یا ارزش کالا جهت محاسبه سود خالص دقیق.",
+          en: "Determine the true cost per garment by factoring in freight, customs, stitching, and packaging fees, allocating them across items for accurate gross margins.",
+        },
+        benefits: [
+          { fa: "تسهیم هزینه‌های جانبی خرید روی قیمت تمام‌شده کالا", en: "Automated overhead allocation on SKU unit cost" },
+          { fa: "جلوگیری از بیش‌برآورد سود خالص به دلیل هزینه‌های پنهان", en: "Prevent overestimating profits due to hidden shipping fees" },
+          { fa: "تحلیل دقیق حاشیه سود واقعی هر مدل لباس و واریانت", en: "True profit margin analysis per garment model" },
+        ],
+        tag: "LANDED_COST_ENGINE",
+      },
+      {
+        id: "tax-reports",
+        iconName: "FileSpreadsheet",
+        title: { fa: "گزارش‌های مالیاتی و سامانه مؤدیان", en: "Tax Reports & Taxpayer System" },
+        subtitle: { fa: "ارزش افزوده، گزارش‌های فصلی و خروجی سپیدار/هلو", en: "VAT, Article 169 & Sepidar/Holo Export" },
+        description: {
+          fa: "تولید اتوماتیک گزارش ارزش افزوده، گزارش‌های فصلی ماده ۱۶۹ مالیاتی و ارسال فاکتورها به سامانه مؤدیان، به همراه خروجی استاندارد جهت همگام‌سازی با سپیدار و هلو.",
+          en: "Auto-generate VAT reports, Article 169 seasonal statements, Taxpayer System electronic invoices, and export clean data to external financial systems.",
+        },
+        benefits: [
+          { fa: "ارسال الکترونیکی صورت‌حساب به سامانه مؤدیان", en: "Direct electronic invoicing for Taxpayer portal" },
+          { fa: "گزارش ارزش افزوده خرید و فروش با ۱ کلیک", en: "One-click VAT purchase & sales statements" },
+          { fa: "خروجی استاندارد اکسل جهت سیستم‌های سپیدار و هلو", en: "Standardized Excel output for Sepidar and Holo" },
+        ],
+        tag: "TAX_COMPLIANCE",
+      },
+      {
+        id: "pnl",
+        iconName: "TrendingUp",
+        title: { fa: "صورت سود و زیان لحظه‌ای", en: "Real-time P&L Statement" },
+        subtitle: { fa: "محاسبه سود خالص واقعی با احتساب هزینه‌های جاری", en: "Live Net Profit & Operating Expenses" },
+        description: {
+          fa: "مشاهده سود خالص دقیق فروشگاه در هر بازه زمانی؛ با کسر هزینه‌های جاری (اجاره، حقوق پرسنل، تبلیغات) و بهای تمام‌شده واقعی کالاهای فروخته‌شده.",
+          en: "Real-time P&L analytics deducting store operational expenses (rent, salaries, marketing) and true COGS to reveal exact net profitability.",
+        },
+        benefits: [
+          { fa: "محاسبه دقیق سود ناخالص و سود خالص کسب‌وکار", en: "Gross & net profit computation in real time" },
+          { fa: "دسته‌بندی هزینه‌های جاری بوتیک و شعب", en: "Categorization of store operational expenses" },
+          { fa: "نمودارهای تحلیل مالی و مقایسه عملکرد ماه‌های قبل", en: "Visual financial trends & monthly store benchmarks" },
+        ],
+        tag: "LIVE_PNL_ANALYTICS",
+      },
+    ] as AccountingFeature[],
+  },
+
+  freeVersion: {
+    title: { fa: "نرم افزار مدیریت و حسابداری پوشاک رایگان (Tankhor Free)", en: "Tankhor Free Apparel Management Software" },
+    subtitle: {
+      fa: "تنخور را رایگان دانلود کنید و بدون پرداخت هزینه اشتراک، مدیریت محصولات، موجودی و حسابداری پایه فروشگاه پوشاک خود را شروع کنید.",
+      en: "Download Tankhor Free today and start managing your fashion products, inventory, and basic accounting without subscription fees.",
     },
     benefits: [
-      { fa: "۱۰۰٪ رایگان و بدون محدودیت زمانی (اصلاً نسخه آزمایشی یا Trial نیست)", en: "100% Free forever (Not a trial or limited demo)" },
-      { fa: "نصب و کارکرد کاملاً آفلاین روی رایانه و دسکتاپ", en: "Runs completely offline on Desktop computers" },
-      { fa: "بدون نیاز به اینترنت و بدون قطعی در فروشگاه", en: "No internet required for day-to-day operations" },
-      { fa: "مناسب برای بوتیک‌ها، مزون‌ها و فروشگاه‌های پوشاک و کفش", en: "Perfect for boutiques, ateliers, clothing & footwear shops" },
-      { fa: "مدیریت کامل تنوع رنگ و سایز با ماتریس هوشمند", en: "Full color & size variant matrix management" },
-      { fa: "مدیریت کامل محصولات، بارکد و اتیکت قیمت", en: "Complete product database, barcode & tag printing" },
-      { fa: "مدیریت موجودی انبار و کارتکس کالا", en: "Inventory stock control & item movements" },
-      { fa: "ثبت سریع سفارش‌ها، فاکتور و مرجوعی سایز", en: "Fast sales invoices, order entries & size exchanges" },
+      { fa: "۱۰۰٪ رایگان و بدون محدودیت زمانی (بدون انقضا یا Trial بودن)", en: "100% Free forever (Not a trial or limited demo)" },
+      { fa: "نصب و کارکرد کاملاً آفلاین با دیتابیس ایمن SQLite روی ویندوز و مک", en: "Runs completely offline using secure local SQLite DB on Windows & macOS" },
+      { fa: "بدون نیاز به اینترنت و بدون قطعی در صندوق فروشگاه", en: "No internet required for uninterrupted daily cashier operations" },
+      { fa: "مناسب برای بوتیک‌ها، مزون‌ها، تولیدی‌ها و فروشگاه‌های کیف و کفش", en: "Perfect for boutiques, ateliers, clothing & footwear shops" },
+      { fa: "مدیریت کامل تنوع رنگ و سایز با ماتریس هوشمند", en: "Full color & size variant matrix grid management" },
+      { fa: "دفتر معین، حسابداری اشخاص و ثبت فاکتورهای خرید و فروش", en: "Subsidiary ledgers, customer/supplier accounts & invoices" },
+      { fa: "مدیریت موجودی انبار، کارتکس کالا و چاپ بارکد و لیبل قیمت", en: "Warehouse stock ledgers, barcode & price tag printing" },
+      { fa: "ثبت سریع سفارش‌ها، مرجوعی، تعویض سایز و ثبت دریافتی نقد/کارتخوان", en: "Fast sales invoices, size exchanges & POS payment entries" },
     ],
-    ctaText: { fa: "دانلود رایگان تنخور", en: "Download Tankhor Free" },
+    ctaText: { fa: "دانلود رایگان نسخه دسکتاپ تنخور", en: "Download Tankhor Free Desktop" },
   },
 
   fashionFeatures: [
     {
       id: "products",
       iconName: "Package",
-      title: { fa: "محصولات", en: "Products" },
-      subtitle: { fa: "مدیریت اطلاعات کامل محصولات پوشاک", en: "Full Apparel Product Data" },
+      title: { fa: "محصولات و دسته پوشاک", en: "Products & Fashion Specs" },
+      subtitle: { fa: "مدیریت اطلاعات کامل پوشاک، جنس و برند", en: "Comprehensive Apparel Data" },
       description: {
-        fa: "تعریف کامل مشخصات لباس، پارچه، جنس، برند و قیمت‌های خرید و فروش با رابط کاربری بسیار سریع.",
-        en: "Maintain comprehensive product specs including fabric composition, brand, and pricing.",
+        fa: "تعریف کامل مشخصات لباس، پارچه، جنس، کشور تولیدکننده، برند و قیمت‌های خرده‌فروشی و عمده‌فروشی با رابط کاربری لمسی و سریع.",
+        en: "Maintain comprehensive product specs including fabric composition, brand, origin, and retail/wholesale price tiers.",
       },
     },
     {
       id: "matrix",
       iconName: "Grid",
-      title: { fa: "رنگ و سایز", en: "Color & Size" },
-      subtitle: { fa: "مدیریت تنوع‌های مختلف هر محصول", en: "Multi-Dimensional Variant Grid" },
+      title: { fa: "ماتریس رنگ و سایز", en: "Color & Size Matrix" },
+      subtitle: { fa: "مدیریت تنوع‌های مختلف هر مدل لباس", en: "Multi-Dimensional Variant Grid" },
       description: {
-        fa: "ایجاد اتوماتیک ماتریس واریانت‌ها برای انواع سایزبندی (S/M/L/XL یا سایزهای عددی) به همراه کد SKU و بارکد اختصاصی.",
-        en: "Auto-generate variant matrices for letter/numeric sizing with dedicated SKUs and barcode generation.",
+        fa: "ایجاد اتوماتیک ماتریس واریانت‌ها برای انواع سایزبندی (S/M/L/XL یا سایزهای عددی و کفش) به همراه کد SKU و بارکد اختصاصی.",
+        en: "Auto-generate variant matrices for letter/numeric/footwear sizing with dedicated SKUs and barcode generation.",
       },
     },
     {
       id: "inventory",
       iconName: "Layers",
-      title: { fa: "موجودی", en: "Inventory" },
-      subtitle: { fa: "مشاهده و مدیریت موجودی هر محصول و تنوع", en: "Variant-Level Stock Tracking" },
+      title: { fa: "موجودی و Landed Cost", en: "Variant Stock & Landed Cost" },
+      subtitle: { fa: "کنترل دقیق موجودی با بهای تمام‌شده واقعی", en: "Variant-Level Stock & Costing" },
       description: {
-        fa: "کنترل لحظه‌ای موجودی دقیق هر سایز و رنگ؛ جلوگیری از تمام شدن سایزهای پرفروش با هشدارهای هوشمند.",
-        en: "Track exact stock levels per size and color. Receive low-stock threshold alerts for top-selling sizes.",
+        fa: "کنترل لحظه‌ای موجودی دقیق هر سایز و رنگ، محاسبه بهای تمام‌شده با هزینه‌های جانبی و هشدارهای نقطه سفارش مجدد.",
+        en: "Track exact stock levels per size/color, calculate true landed unit cost including shipping, and receive reorder alerts.",
       },
     },
     {
       id: "warehouse",
       iconName: "Boxes",
-      title: { fa: "انبار", en: "Warehouse" },
-      subtitle: { fa: "مدیریت موجودی در انبارها و موقعیت‌های مختلف", en: "Multi-Store Warehouse Controls" },
+      title: { fa: "انبارداری و حواله شعب", en: "Multi-Warehouse Transfers" },
+      subtitle: { fa: "مدیریت موجودی در انبار مرکزی و بوتیک‌ها", en: "Central Warehouse & Boutique Sync" },
       description: {
-        fa: "انبارداری دقیق، صدور حواله بین انبار مرکزی و فروشگاه، انبارگردانی سریع با دستگاه بارکدخوان.",
-        en: "Manage central stock and store locations with barcode-based stock check-ins and transfers.",
+        fa: "انبارداری دقیق، صدور حواله بین انبار مرکزی و فروشگاه‌ها، انبارگردانی سریع با دستگاه بارکدخوان و موبایل.",
+        en: "Manage central stock and store locations with barcode-based stock check-ins, inter-branch transfers, and mobile audits.",
       },
     },
     {
       id: "orders",
       iconName: "ShoppingCart",
-      title: { fa: "سفارش‌ها", en: "Sales Orders" },
-      subtitle: { fa: "ثبت و مدیریت سفارش‌های فروش", en: "Order & Invoice Processing" },
+      title: { fa: "سفارش‌ها و صندوق POS", en: "Sales Orders & Touch POS" },
+      subtitle: { fa: "ثبت سریع فاکتور و مدیریت مرجوعی سایز", en: "Fast Order & Invoice Processing" },
       description: {
-        fa: "ثبت فاکتور فروش، مدیریت سفارش‌های مشتریان، ثبت مرجوعی سایز و محاسبه سریع تخفیف‌ها.",
-        en: "Process customer orders, manage returns, size exchanges, and apply discounts.",
+        fa: "ثبت فاکتور فروش در چند ثانیه، تسویه‌حساب با کارتخوان، مدیریت مرجوعی سایز، تعویض کالا و محاسبه تخفیف‌ها.",
+        en: "Process customer orders in seconds, settle via POS terminals, manage size exchanges, and handle returns seamlessly.",
       },
     },
     {
       id: "size-guide",
       iconName: "Ruler",
-      title: { fa: "راهنمای سایز", en: "Size Specs" },
-      subtitle: { fa: "مدیریت اطلاعات سایزبندی محصولات", en: "Interactive Sizing Specifications" },
+      title: { fa: "راهنمای سایز داینامیک", en: "Interactive Size Specs" },
+      subtitle: { fa: "جدول اندازه‌گیری سانتیمتری ضد مرجوعی", en: "Garment Measurement Specifications" },
       description: {
-        fa: "ثبت جدول اندازه‌گیری دقیق سانتیمتری (دور سینه، قد آستین، عرض شانه، دور کمر) جهت کاهش مرجوعی.",
-        en: "Store garment measurements (chest, sleeve, waist, shoulder) to guide buyers and slash return rates.",
+        fa: "ثبت جدول اندازه‌گیری دقیق سانتیمتری (دور سینه، قد آستین، عرض شانه، دور کمر) جهت کاهش مرجوعی آنلاین‌شاپ‌ها.",
+        en: "Store garment measurements (chest, sleeve, waist, shoulder) to guide online buyers and slash return rates.",
       },
     },
-  ],
+  ] as FeatureModule[],
 
   freeVsPro: {
-    title: { fa: "از رایگان شروع کن، هر وقت آماده بودی به Cloud برو", en: "Start Free, Upgrade to Cloud Whenever Ready" },
+    title: { fa: "از نسخه رایگان شروع کنید، هر زمان نیاز داشتید به ابری بروید", en: "Start Free, Seamlessly Upgrade to Cloud" },
     subtitle: {
-      fa: "نسخه رایگان تنخور تمام نیازهای پایه شما را برآورده می‌کند. نسخه Pro برای همگام‌سازی ابری و تیم‌های بزرگتر آماده است.",
-      en: "Tankhor Free satisfies all your essential store needs. Tankhor Pro adds real-time cloud sync for growing teams.",
+      fa: "نسخه رایگان دسکتاپ تنخور تمامی نیازهای اصلی یک فروشگاه را پوشش می‌دهد. نسخه Pro برای همگام‌سازی ابری و چندین شعبه آماده است.",
+      en: "Tankhor Free covers all core store operations on desktop. Tankhor Pro adds real-time cloud sync for multi-branch brands.",
     },
     freeCard: {
-      title: { fa: "Tankhor Free", en: "Tankhor Free" },
+      title: { fa: "Tankhor Free", en: "Tankhor Free Desktop" },
       badge: { fa: "۱۰۰٪ رایگان و آفلاین", en: "100% Free & Offline" },
       features: [
-        { fa: "نسخه دسکتاپ (Desktop App)", en: "Desktop App (Windows & macOS)" },
-        { fa: "کارکرد ۱۰۰٪ آفلاین (بدون نیاز به اینترنت)", en: "100% Offline (No Internet Needed)" },
-        { fa: "رایگان همیشگی بدون پرداخت اشتراک", en: "Forever Free without subscription" },
-        { fa: "مدیریت کامل محصولات پوشاک", en: "Full Apparel Product Management" },
-        { fa: "مدیریت کامل ماتریس رنگ و سایز", en: "Complete Color & Size Matrix" },
-        { fa: "مدیریت موجودی انبار", en: "Warehouse Stock Tracking" },
-        { fa: "ثبت فاکتور و سفارش‌های فروش", en: "Sales Orders & Invoicing" },
-        { fa: "چاپ بارکد و لیبل قیمت پوشاک", en: "Barcode & Tag Printing" },
+        { fa: "اپلیکیشن نیتیو دسکتاپ (Windows و macOS)", en: "Native Desktop App (Windows & macOS)" },
+        { fa: "دیتابیس سریع محلی SQLite (۱۰۰٪ آفلاین)", en: "Fast local SQLite DB (100% Offline)" },
+        { fa: "رایگان همیشگی بدون پرداخت حق اشتراک", en: "Forever Free without monthly subscription" },
+        { fa: "مدیریت کامل محصولات پوشاک، کیف و کفش", en: "Full Apparel, Bag & Footwear Management" },
+        { fa: "ماتریس نامحدود رنگ و سایز", en: "Unlimited Color & Size Variant Matrix" },
+        { fa: "دفتر معین، حسابداری اشخاص و صندوق", en: "Subsidiary Ledgers & Cashbox Accounts" },
+        { fa: "مدیریت موجودی انبار و کارتکس کالا", en: "Warehouse Stock Tracking & Item Movements" },
+        { fa: "ثبت فاکتور فروش، مرجوعی و تعویض سایز", en: "Sales Invoices, Returns & Size Exchanges" },
+        { fa: "چاپ بارکد و اتیکت قیمت حرارتی پوشاک", en: "Thermal Barcode & Price Hangtag Printing" },
       ],
-      ctaText: { fa: "دانلود رایگان تنخور", en: "Download Tankhor Free" },
+      ctaText: { fa: "دانلود رایگان نسخه دسکتاپ", en: "Download Tankhor Free Desktop" },
     },
     proCard: {
-      title: { fa: "Tankhor Pro", en: "Tankhor Pro Cloud" },
-      badge: { fa: "همگام‌سازی ابری", en: "Cloud & Multi-User" },
+      title: { fa: "Tankhor Pro", en: "Tankhor Pro Cloud ERP" },
+      badge: { fa: "همگام‌سازی ابری + حسابداری پیشرفته", en: "Cloud Sync + Full Accounting" },
       features: [
         { fa: "تمامی امکانات نسخه Tankhor Free", en: "Includes all Tankhor Free features" },
-        { fa: "همگام‌سازی ابری خودکار داده‌ها (Cloud Sync)", en: "Automated Cloud Sync Across Devices" },
-        { fa: "دسترسی آنلاین از وب، دسکتاپ و موبایل", en: "Multi-Device Access (Web, Desktop, Mobile)" },
-        { fa: "همگام‌سازی اطلاعات بین چند شعبه و چند انبار", en: "Multi-Store & Multi-Warehouse Sync" },
-        { fa: "امکانات پیشرفته‌تر برای تیم‌های در حال رشد", en: "Advanced Tools for Growing Teams" },
-        { fa: "تعریف چندین کاربر با سطح دسترسی پرسنل", en: "Multi-User Roles & Permissions (RBAC)" },
+        { fa: "همگام‌سازی ابری خودکار متصل به سرور اختصاصی", en: "Automated Cloud Sync via Dedicated Server" },
+        { fa: "دسترسی همزمان از وب PWA، دسکتاپ و موبایل", en: "Multi-Platform Access (Web PWA, Desktop, Mobile)" },
+        { fa: "ماژول کامل خزانه، چک صیادی و سامانه مؤدیان", en: "Full Treasury, Sayad Check & Taxpayer System" },
+        { fa: "موتور محاسبه بهای تمام‌شده واقعی (Landed Cost)", en: "True Landed Cost Calculation Engine" },
+        { fa: "همگام‌سازی اطلاعات بین چند شعبه و چند انبار", en: "Multi-Store & Multi-Warehouse Live Sync" },
+        { fa: "مدیریت کاربران با سطح دسترسی پیشرفته (RBAC)", en: "Role-Based Access Control & Staff Audit Logs" },
+        { fa: "گزارش‌های فصلی مالیاتی و خروجی سپیدار/هلو", en: "Article 169 Tax Statements & Sepidar/Holo Export" },
       ],
-      ctaText: { fa: "مشاهده Tankhor Pro", en: "Explore Tankhor Pro" },
+      ctaText: { fa: "مشاهده امکانات و تست Pro", en: "Explore Tankhor Pro Cloud" },
     },
   },
 
   seoContent: {
     title: {
-      fa: "نرم افزار مدیریت فروشگاه پوشاک رایگان چیست؟",
-      en: "What is Free Apparel Store Management Software?",
+      fa: "پلتفرم یکپارچه مدیریت، انبارداری و حسابداری پوشاک چیست؟",
+      en: "What is an Integrated Apparel ERP & Accounting Platform?",
     },
     paragraphs: [
       {
-        fa: "مدیریت یک فروشگاه پوشاک، بوتیک یا مزون با سایر فروشگاه‌های خرده‌فروشی تفاوت‌های بنیادی دارد. در فروشگاه لباس، شما با یک محصول ساده مواجه نیستید؛ بلکه هر مدل پوشاک دارای ترکیب‌های متعددی از رنگ‌ها (مشکی، سفید، سرمه‌ای، کرم) و سایزها (S, M, L, XL, XXL یا سایزهای عددی ۳۶ تا ۵۲) است. استفاده از دفترچه‌های سنتی، فایل‌های اکسل پیچیده یا نرم‌افزارهای عمومی باعث ایجاد صدها کد کالای تکراری و سردرگمی شدید در انبارداری می‌شود.",
-        en: "Managing a clothing store, boutique, or fashion maison differs fundamentally from ordinary retail stores. In apparel retail, a single garment style comes with dozens of color and size combinations. Using manual ledgers or generic tools causes item duplication and severe inventory chaos.",
+        fa: "مدیریت تخصصی یک فروشگاه، بوتیک، مزون یا برند تولیدی پوشاک، کیف و کفش نیازمند ابزاری است که ماهیت پیچیده محصولات این صنعت را درک کند. در کسب‌وکارهای پوشاک، هر مدل لباس تنها یک کالا نیست؛ بلکه ترکیبی از ده‌ها رنگ و سایز (حروفی، عددی و کفش) است. نرم‌افزارهای عمومی حسابداری یا فایل‌های پراکنده اکسل باعث ایجاد صدها کد کالای تکراری، سردرگمی شدید در انبارداری، عدم محاسبه هزینه‌های جانبی خرید (Landed Cost) و خطاهای بزرگ مالی می‌شوند.",
+        en: "Managing a clothing boutique, footwear store, or apparel manufacturing brand requires software natively designed for fashion complexity. A single garment style comes with dozens of color/size combinations. Generic accounting tools and manual spreadsheets create item duplication, inventory chaos, and hidden financial leaks.",
       },
       {
-        fa: "نرم افزار مدیریت فروشگاه پوشاک رایگان تنخور (Tankhor Free) راهکاری تخصصی و آفلاین است که دقیقاً برای حل این چالش طراحی شده است. تنخور با ارائه «ماتریس واریانت رنگ و سایز»، به شما اجازه می‌دهد محصول را فقط یک‌بار ثبت کنید و تمام واریانت‌های رنگی و سایزی آن را در یک جدول ماتریسی منظم مدیریت نمایید. این نرم‌افزار بدون نیاز به اینترنت اجرا می‌شود و مدیریت موجودی، ورود و خروج انبار، ثبت سفارش‌های فروش و چاپ لیبل بارکد پوشاک را با بالاترین سرعت امکان‌پذیر می‌سازد.",
-        en: "Tankhor Free is a specialized offline software tailored to solve this exact bottleneck. By providing a smart variant matrix grid, Tankhor lets you define a garment once and manage all color/size combinations seamlessly. It runs completely offline on your desktop computer, providing lightning-fast stock control, order processing, and tag printing.",
+        fa: "پلتفرم یکپارچه تنخور (Tankhor) یک سیستم ERP سبک و مدرن است که دقیقاً برای حل این چالش‌ها توسعه یافته است. تنخور با ترکیب «مدیریت فروشگاهی»، «انبارداری ماتریسی رنگ و سایز» و «حسابداری مالی ۳۶۰ درجه» در یک ابزار واحد، نیاز شما به خرید چندین نرم‌افزار مجزا را کاملاً برطرف می‌کند. این سیستم با دیتابیس داخلی سریع SQLite به صورت ۱۰۰٪ آفلاین روی دسکتاپ اجرا می‌شود و در صورت نیاز، اطلاعات را با سرور اختصاصی ابری همگام‌سازی می‌کند.",
+        en: "Tankhor is a lightweight, modern ERP engineered to solve these exact bottlenecks. By unifying retail operations, variant matrix inventory, and 360° financial accounting into a single platform, Tankhor eliminates the need for multiple mismatched software tools. Powered by a local SQLite engine, it operates 100% offline on desktop and seamlessly syncs to dedicated cloud servers.",
       },
       {
-        fa: "چه صاحب یک بوتیک کوچک لباس مردانه یا زنانه باشید، چه یک مزون تولید لباس مجلسی یا آنلاین‌شاپ پوشاک، نرم افزار مدیریت بوتیک رایگان تنخور به شما کمک می‌کند تا موجودی دقیق انبار خود را بدانید، از ناموجود شدن سایزهای پرفروش جلوگیری کنید و سفارش‌های مشتریان را بدون خطا ثبت نمایید. علاوه بر این، هر زمان که کسب‌وکار شما توسعه پیدا کرد، می‌توانید به راحتی به نسخه ابری Tankhor Pro ارتقا پیدا کرده و داده‌های خود را بین شعب و فروشگاه اینترنتی همگام‌سازی کنید.",
-        en: "Whether you operate a boutique, a maison, or a fashion e-commerce store, Tankhor Free empowers you to know your exact variant inventory, prevent stockouts of popular sizes, and eliminate order mistakes. As your business grows, seamless one-click migration to Tankhor Pro Cloud keeps all your branches synced.",
+        fa: "با تنخور، شما علاوه بر مدیریت موجودی انبارها و صدور فاکتور فروش، دفتر معین و حسابداری اشخاص، مدیریت کامل چک‌های صیادی، محاسبه بهای تمام‌شده واقعی (با احتساب هزینه‌های حمل، گمرک و بسته‌بندی)، گزارش‌های ارزش افزوده و ماده ۱۶۹ مالیاتی را در اختیار دارید. هر زمان که بخواهید، داده‌های شما قابل خروجی گرفتن استاندارد جهت نرم‌افزارهایی مثل سپیدار و هلو است و انتقال اطلاعات از سیستم‌های قدیمی تنها در چند دقیقه انجام می‌شود.",
+        en: "With Tankhor, alongside variant inventory and POS invoicing, you gain full subsidiary ledger accounts, Sayad check treasury workflows, true landed cost calculations (accounting for freight, customs, and packaging), VAT reports, and Article 169 tax statements. Standardized data exports ensure effortless migration from legacy systems like Sepidar or Holo in minutes.",
       },
     ],
 
     accountingIntentQA: {
       question: {
-        fa: "آیا تنخور نرم افزار حسابداری پوشاک است؟",
-        en: "Is Tankhor an Accounting Software for Clothing Stores?",
+        fa: "آیا تنخور شامل سیستم حسابداری کامل تخصصی پوشاک است؟",
+        en: "Does Tankhor include a complete specialized accounting system?",
       },
       answer: {
-        fa: "خیر. تنخور یک نرم افزار تخصصی مدیریت محصولات، موجودی، انبار و سفارش‌های کسب‌وکارهای پوشاک است و جایگزین نرم‌افزار حسابداری نیست. نرم‌افزارهای عمومی حسابداری فاقد امکاناتی مانند ماتریس رنگ و سایز، راهنمای سایز هوشمند و چاپ تگ لباس هستند. اگر به دنبال نرم افزار حسابداری پوشاک هستید، تنخور می‌تواند در کنار سیستم حسابداری شما برای مدیریت عملیات روزمره محصول، موجودی و انبارداری پوشاک استفاده شود.",
-        en: "No. Tankhor is a specialized product, variant, inventory, and order management platform for fashion businesses, and is not a general accounting or tax system. Generic accounting software lacks apparel-native features like color-size matrices and garment measurement specs. If you are searching for clothing accounting software, Tankhor runs seamlessly alongside your financial accounting system to handle product operations.",
+        fa: "بله! تنخور پلتفرم یکپارچه مدیریت، انبارداری و حسابداری مالی ۳۶۰ درجه برای صنعت پوشاک است. تنخور علاوه بر مدیریت موجودی و واریانت‌ها، دفتر معین، حسابداری اشخاص (خریداران، بنکداران، تامین‌کنندگان)، مدیریت صندوق‌ها، چک‌های صیادی، محاسبه بهای تمام‌شده واقعی (Landed Cost)، گزارش ارزش افزوده و ماده ۱۶۹ مالیاتی را به صورت کاملاً یکپارچه ارائه می‌دهد.",
+        en: "Yes! Tankhor is an integrated 360° management, inventory, and financial accounting platform for the fashion industry. Beyond variant stock, it delivers subsidiary ledgers, accounts receivable/payable, Sayad check treasury, true landed costing, VAT statements, and Article 169 tax reporting.",
       },
     },
   },
 
   painPointsVsSolution: {
     title: {
-      fa: "چرا نرم‌افزارهای عمومی حسابداری برای پوشاک شکست می‌خورند؟",
-      en: "Why Generic Accounting Software Fails in Fashion & Apparel?",
+      fa: "چرا استفاده از چند نرم‌افزار مجزا برای پوشاک شکست می‌خورد؟",
+      en: "Why Using Multiple Disjointed Tools Fails in Fashion Retail?",
     },
     subtitle: {
-      fa: "مقایسه روش‌های سنتی و نرم‌افزارهای عمومی با راهکار یکپارچه و تخصصی تنخور",
-      en: "Compare traditional spreadsheets & standard accounting tools with Tankhor's specialized fashion architecture",
+      fa: "مقایسه ترکیب نرم‌افزارهای عمومی حسابداری و اکسل با پلتفرم یکپارچه تنخور",
+      en: "Compare combining generic accounting tools & spreadsheets with Tankhor's unified fashion ERP",
     },
     traditional: {
-      title: { fa: "روش‌های سنتی و نرم‌افزارهای عمومی", en: "Traditional Methods & Generic Tools" },
+      title: { fa: "استفاده از چند نرم‌افزار مجزا و اکسل", en: "Disjointed Generic Software & Spreadsheets" },
       points: [
         {
-          title: { fa: "ثبت جداگانه هر رنگ و سایز", en: "Separate creation for each color & size" },
-          desc: { fa: "برای یک تیشرت با ۵ رنگ و ۴ سایز باید ۲۰ کالا با کدهای متفاوت تعریف کنید!", en: "Creating 20 separate item codes for a single t-shirt with 5 colors & 4 sizes!" },
+          title: { fa: "عدم پشتیبانی حسابداری عمومی از ماتریس رنگ/سایز", en: "Generic accounting lacks color/size matrices" },
+          desc: { fa: "برای ۱ مدل لباس با ۵ رنگ و ۴ سایز مجبورید ۲۰ کالای مجزا تعریف کرده و حسابداری را سردرگم کنید!", en: "Forcing creators to build 20 separate product codes for a single shirt in basic accounting software!" },
         },
         {
-          title: { fa: "نرخ مرجوعی ۳۵٪ به دلیل سایز اشتباه", en: "35% online return rate due to size confusion" },
-          desc: { fa: "عدم وجود راهنمای سایز دقیق و اندازه‌گیری استانداردهای لباس", en: "Lack of interactive garment size specs leads to customer sizing errors." },
+          title: { fa: "محاسبه اشتباه سود به دلیل نادیده گرفتن هزینه‌های جانبی", en: "Distorted profit calculations ignoring landed fees" },
+          desc: { fa: "عدم محاسبه هزینه‌های حمل، گمرک و خیاطی (Landed Cost) روی تک‌تک محصولات و نمایش سود غیرواقعی.", en: "Failing to allocate freight, customs, and stitching overhead causes false profit metrics." },
         },
         {
-          title: { fa: "قطعی اینترنت = توقف فروشگاه", en: "Internet outage halts physical store sales" },
-          desc: { fa: "وابستگی کامل نرم‌افزارهای ابری به اینترنت و کندی صندوق فروش", en: "Pure cloud systems freeze when internet drops during peak shopping hours." },
+          title: { fa: "پیچیدگی مدیریت چک‌های صیادی و حساب تامین‌کنندگان", en: "Manual Sayad check & supplier account errors" },
+          desc: { fa: "ثبت دستی چک‌ها در فایل اکسل و بروز خطا در سررسید و بدهکاری بنکداران و خیاطان.", en: "Manual check tracking in spreadsheets leads to overdue payments and supplier balance disputes." },
         },
         {
-          title: { fa: "عدم پشتیبانی از حواله انبار شعب", en: "No multi-warehouse branch transfers" },
-          desc: { fa: "سردرگمی موجودی انبار مرکزی و فروشگاه آنلاین هنگام ترانسفر کالا", en: "Stock mismatches between central warehouse and retail branches." },
+          title: { fa: "قطعی اینترنت و توقف صندوق فروشگاه", en: "Internet outage freezes retail POS cashiers" },
+          desc: { fa: "وابستگی نرم‌افزارهای ابری عمومی به اینترنت و فلج شدن صندوق فروش در ساعات شلوغ.", en: "Pure cloud POS systems freeze when internet drops during peak shopping store hours." },
         },
       ],
     },
     tankhorSolution: {
-      title: { fa: "راهکار یکپارچه و تخصصی تنخور", en: "Tankhor's Specialized Fashion Solution" },
+      title: { fa: "پلتفرم یکپارچه تنخور (ERP پوشاک)", en: "Tankhor's Unified Fashion ERP Solution" },
       points: [
         {
-          title: { fa: "ماتریس یکبار تعریف (Matrix Grid)", en: "Single-Entry Color & Size Matrix" },
-          desc: { fa: "تعریف یکباره محصول اصلی و ساخت خودکار جدول ماتریسی تمام سایزها و رنگ‌ها با بارکد اختصاصی.", en: "Define the main style once; Tankhor instantly auto-generates matrix variants with distinct SKUs." },
+          title: { fa: "یکپارچگی کامل ماتریس واریانت و حسابداری مالی", en: "Unified Variant Matrix & Financial Ledger" },
+          desc: { fa: "تعریف یکباره محصول و ساخت اتوماتیک ماتریس رنگ/سایز همراه با ثبت خودکار اسناد حسابداری.", en: "Single-style creation auto-generates variant matrices while seamlessly posting accounting entries." },
         },
         {
-          title: { fa: "موتور راهنمای سایز هوشمند (کاهش ۶۵٪ مرجوعی)", en: "Dynamic Size Engine (65% return reduction)" },
-          desc: { fa: "ارائه جدول اندازه‌گیری دقیق بر اساس سانتیمتر و توصیه سایز پیشنهادی به مشتری آنلاین.", en: "Interactive size recommendation based on chest, shoulder, waist, or foot length in centimeters." },
+          title: { fa: "موتور محاسبه بهای تمام‌شده واقعی (Landed Cost)", en: "True Landed Cost Allocation Engine" },
+          desc: { fa: "تسهیم هوشمند هزینه‌های حمل، گمرک و بسته‌بندی روی قیمت تمام‌شده کالا جهت محاسبه سود واقعی.", en: "Smart allocation of overhead freight & stitching expenses directly onto unit cost for true margins." },
+        },
+        {
+          title: { fa: "مدیریت ۳۶۰ درجه خزانه، چک صیادی و مؤدیان", en: "360° Treasury, Sayad Checks & Tax Portal" },
+          desc: { fa: "کنترل کامل چک‌های صیادی، حساب‌های بانکی، گزارش فصلی ماده ۱۶۹ و اتصال به سامانه مؤدیان.", en: "Complete Sayad check status workflows, bank accounts, Article 169 reports, and Taxpayer portal integration." },
         },
         {
           title: { fa: "معماری هیبرید: ۱۰۰٪ آفلاین + سینک ابری", en: "Hybrid Architecture: 100% Offline + Cloud Sync" },
-          desc: { fa: "صندوق فروش و انبارداری بدون حتی ۱ ثانیه قطعی کار می‌کنند و در وصل مجدد سینک می‌شوند.", en: "Uninterrupted offline checkout with automatic secure cloud synchronization upon connection." },
-        },
-        {
-          title: { fa: "انبارداری چندگانه و حواله‌جات هوشمند", en: "Multi-Store Warehouse & Smart Transfers" },
-          desc: { fa: "مدیریت لحظه‌ای کارتکس کالا، جابه‌جایی بین شعب و رزرو موجودی فروشگاه آنلاین.", en: "Real-time stock movement tracking, branch transfers, and automated online re-order triggers." },
+          desc: { fa: "دیتابیس سریع SQLite روی دسکتاپ بدون وابستگی به اینترنت، همراه با سینک ابری خودکار.", en: "Embedded SQLite DB for zero-latency offline checkout, automatically syncing with dedicated cloud servers." },
         },
       ],
     },
@@ -385,34 +493,50 @@ export const siteContent = {
     {
       id: "matrix",
       iconName: "Grid",
-      title: { fa: "ماتریس هوشمند تنوع محصول", en: "Smart Color & Size Matrix" },
-      subtitle: { fa: "مدیریت بی‌دردسر تنوع رنگ و سایز", en: "Effortless Variant Architecture" },
+      title: { fa: "ماتریس هوشمند رنگ و سایز", en: "Smart Color & Size Matrix" },
+      subtitle: { fa: "مدیریت تنوع محصولات بدون سردرگمی", en: "Effortless Variant Architecture" },
       description: {
-        fa: "تعریف محصول فقط در چند ثانیه با ماتریس چندبعدی. افزودن رنگ‌ها، سایزها (S تا 5XL، سایزهای عددی و اروپایی/آمریکایی) و صدور بارکد اتوماتیک برای هر واریانت.",
+        fa: "تعریف محصول در چند ثانیه با ماتریس چندبعدی. افزودن رنگ‌ها، سایزها (حروفی S تا 5XL، عددی، بچه‌گانه و کفش) و صدور بارکد اتوماتیک برای هر واریانت.",
         en: "Create products in seconds with multi-dimensional matrix. Manage infinite colors, letter/numeric sizes, and auto-generated SKUs per variant.",
       },
       benefits: [
-        { fa: "ایجاد اتوماتیک SKU و بارکد EAN-13", en: "Auto SKU & EAN-13 Barcode generation" },
-        { fa: "مدیریت قیمت متفاوت برای سایزهای بزرگ", en: "Differential pricing for plus sizes" },
-        { fa: "مشاهده لحظه‌ای موجودی کل در یک نگاه", en: "At-a-glance stock matrix view" },
+        { fa: "ایجاد اتوماتیک SKU و بارکد اختصاصی برای هر واریانت", en: "Auto SKU & EAN-13 Barcode generation per variant" },
+        { fa: "مدیریت قیمت متفاوت برای سایزهای بزرگ یا رنگ‌های خاص", en: "Differential pricing for plus sizes or special colors" },
+        { fa: "مشاهده کارتکس و موجودی لحظه‌ای کل در یک نگاه", en: "At-a-glance stock matrix view across all stores" },
       ],
-      metricBadge: { fa: "سرعت ثبت ۱۰ برابر", en: "10x Faster Product Entry" },
+      metricBadge: { fa: "ثبت ۱۰ برابر سریع‌تر", en: "10x Faster Product Entry" },
     },
     {
-      id: "size-engine",
-      iconName: "Ruler",
-      title: { fa: "راهنمای سایز داینامیک و ضد مرجوعی", en: "Interactive Size Guide Engine" },
-      subtitle: { fa: "تجربه خرید آنلاین بدون شک و تردید", en: "Zero-Doubt Sizing Experience" },
+      id: "accounting",
+      iconName: "Calculator",
+      title: { fa: "حسابداری مالی و Landed Cost", en: "360° Accounting & Landed Cost" },
+      subtitle: { fa: "محاسبه دقیق سود واقعی و بهای تمام‌شده", en: "True Costing & Financial Ledgers" },
       description: {
-        fa: "ساخت جداول استاندارد اندازه‌گیری برای انواع کاپشن، شلوار، کفش، کیف و کت. قابلیت قرارگیری در وب‌سایت فروشگاهی با الگوریتم پیش‌بینی سایز دقیق مشتری.",
-        en: "Build custom measurement tables for jackets, trousers, shoes, bags & suits. Embedded size recommendation algorithm reduces sizing return rates.",
+        fa: "دفتر معین اشخاص، محاسبه بهای تمام‌شده واقعی با تسهیم هزینه‌های حمل و گمرک، صورت سود و زیان لحظه‌ای و گزارش ارزش افزوده.",
+        en: "Subsidiary ledger, true landed cost allocation (freight & customs), real-time P&L analytics, and automated VAT reporting.",
       },
       benefits: [
-        { fa: "کاهش ۶۵ درصدی هزینه‌های مرجوعی و تعویض", en: "65% reduction in size exchange costs" },
-        { fa: "توضیحات بصری نحوه اندازه‌گیری با متر", en: "Visual measurement guide for buyers" },
-        { fa: "خروجی لینک و کد Embed برای ووکامرس/شاپیفای", en: "WooCommerce/Shopify embed widget" },
+        { fa: "تسهیم هزینه‌های جانبی خرید بر روی قیمت تمام‌شده کالا", en: "Automated freight & overhead cost allocation" },
+        { fa: "دفتر معین و ریزگردش حساب مشتریان و تامین‌کنندگان", en: "Detailed customer and fabric supplier ledgers" },
+        { fa: "صورت سود و زیان دقیق با احتساب هزینه‌های جاری", en: "Real-time net P&L with store operating expenses" },
       ],
-      metricBadge: { fa: "کاهش ۶۵٪ مرجوعی", en: "65% Less Returns" },
+      metricBadge: { fa: "محاسبه سود ۱۰۰٪ واقعی", en: "100% Accurate Margins" },
+    },
+    {
+      id: "sayad-checks",
+      iconName: "Landmark",
+      title: { fa: "مدیریت خزانه و چک صیادی", en: "Treasury & Sayad Check Lifecycle" },
+      subtitle: { fa: "پیگیری کامل اسناد دریافت/پرداختی", en: "Complete Check Status Workflow" },
+      description: {
+        fa: "مدیریت صندوق‌ها، حساب‌های بانکی متعدد، ثبت کامل چرخه چک‌های صیادی (دریافتی/پرداختی، سررسید، وصول، پاس‌نشده، برگشتی) و سامانه مؤدیان.",
+        en: "Manage store cashboxes, bank accounts, track Sayad check lifecycles (deposited, bounced, endorsed), and Taxpayer system reports.",
+      },
+      benefits: [
+        { fa: "هشدار هوشمند سررسید چک‌های دریافتی و پرداختی", en: "Automated check due-date reminders" },
+        { fa: "گزارش‌های فصلی ماده ۱۶۹ و اتصال به سامانه مؤدیان", en: "Article 169 seasonal tax reports & Taxpayer portal" },
+        { fa: "خروجی استاندارد و همگام‌سازی با سپیدار و هلو", en: "Standardized data export for Sepidar & Holo" },
+      ],
+      metricBadge: { fa: "مدیریت کامل خزانه", en: "360° Treasury Control" },
     },
     {
       id: "warehouse",
@@ -424,67 +548,51 @@ export const siteContent = {
         en: "Barcode-driven stock check-in/out, inter-warehouse transfers, smartphone auditing, and automated reorder threshold alerts.",
       },
       benefits: [
-        { fa: "حواله مستقیم بین انبار مرکزی و شعب", en: "Direct branch-to-warehouse transfers" },
+        { fa: "حواله مستقیم بین انبار مرکزی و شعب بوتیک", en: "Direct branch-to-warehouse transfers" },
         { fa: "هشدار هوشمند اتمام موجودی سایزهای پرفروش", en: "Low stock alert for top-selling sizes" },
-        { fa: "انبارگردانی لحظه‌ای با اسکن سریع", en: "Real-time stock audit via mobile scanner" },
+        { fa: "انبارگردانی لحظه‌ای با اسکن سریع بارکد", en: "Real-time stock audit via mobile scanner" },
       ],
       metricBadge: { fa: "دقت ۹۹.۸٪ انبار", en: "99.8% Audit Accuracy" },
     },
     {
       id: "offline",
       iconName: "WifiOff",
-      title: { fa: "معماری هیبرید: آفلاین + ابری", en: "Hybrid Architecture: Offline + Cloud" },
-      subtitle: { fa: "بدون قطعی در شلوغ‌ترین ساعات فروش", en: "Unstoppable Offline Checkout" },
+      title: { fa: "معماری هیبرید: SQLite + ابری", en: "Hybrid SQLite DB & Cloud Sync" },
+      subtitle: { fa: "پایداری کامل در قطعی اینترنت", en: "Unstoppable Offline Checkout" },
       description: {
-        fa: "پایگاه داده محلی سریع روی دسکتاپ و تبلت؛ در صورت قطعی اینترنت فروشگاه شما به کار ادامه می‌دهد و پس از اتصال، داده‌ها با سرور ابری همگام می‌شوند.",
-        en: "Fast local storage engine on desktop & tablets. Keep selling when internet fails; all transactions seamlessly auto-sync when online.",
+        fa: "پایگاه داده سریع محلی SQLite روی دسکتاپ؛ در صورت قطعی اینترنت صندوق فروشگاه بدون ۱ ثانیه وقفه کار می‌کند و پس از اتصال سینک می‌شود.",
+        en: "Embedded SQLite local database. Keep selling with zero latency when internet fails; all transactions auto-sync when back online.",
       },
       benefits: [
-        { fa: "کارکرد ۱۰۰٪ مستقل از قطعی شبکه", en: "100% resilient during network downtime" },
-        { fa: "همگام‌سازی امن و خودکار با سرور ابری", en: "End-to-end encrypted cloud sync" },
-        { fa: "پشتیبان‌گیری اتوماتیک محلی و ابری", en: "Automated dual local/cloud backup" },
+        { fa: "کارکرد ۱۰۰٪ مستقل از قطعی شبکه اینترنت", en: "100% resilient during network downtime" },
+        { fa: "همگام‌سازی امن و رمزنگاری‌شده با سرور اختصاصی", en: "Encrypted cloud sync with dedicated servers" },
+        { fa: "پشتیبان‌گیری اتوماتیک محلی و ابری", en: "Automated dual local/cloud backups" },
       ],
       metricBadge: { fa: "پایداری ۱۰۰٪", en: "100% Uptime Guarantee" },
     },
     {
-      id: "rbac",
-      iconName: "Users",
-      title: { fa: "مدیریت چند سازمانی و سطح دسترسی", en: "Multi-Tenant & Role-Based Access" },
-      subtitle: { fa: "امنیت داده‌ها و مدیریت دقیق پرسنل", en: "Enterprise Staff Security" },
+      id: "size-engine",
+      iconName: "Ruler",
+      title: { fa: "راهنمای سایز داینامیک و ضد مرجوعی", en: "Interactive Size Guide Engine" },
+      subtitle: { fa: "کاهش ۶۵ درصدی مرجوعی آنلاین", en: "Zero-Doubt Sizing Experience" },
       description: {
-        fa: "تعریف نقش‌های کاربردی: صندوق‌دار، مدیر انبار، حسابدار، مدیر شعبه و فروشنده. محدودسازی دیدن قیمت‌های خرید و سود برای پرسنل غیرمجاز.",
-        en: "Pre-configured roles for cashiers, warehouse managers, accountants, and store managers. Restrict access to purchase costs & margins.",
+        fa: "ساخت جداول استاندارد اندازه‌گیری سانتیمتری برای کاپشن، شلوار، کفش، کیف و کت جهت درج در وب‌سایت با الگوریتم پیش‌بینی سایز دقیق.",
+        en: "Build custom measurement tables for garments & shoes. Embedded size recommendation widget slashes online returns.",
       },
       benefits: [
-        { fa: "تعریف لاگ کامل تغییرات و فعالیت کاربران", en: "Complete audit logs of every operation" },
-        { fa: "پشتیبانی از چند شعبه و چند برند", en: "Multi-store and multi-brand support" },
-        { fa: "صندوق فروش با رابط کاربری لمسی سریع", en: "Touchscreen-optimized cashier POS" },
+        { fa: "کاهش ۶۵ درصدی هزینه‌های مرجوعی و تعویض سایز", en: "65% reduction in size exchange costs" },
+        { fa: "توضیحات بصری نحوه اندازه‌گیری با متر", en: "Visual measurement guide for buyers" },
+        { fa: "خروجی لینک و کد ویجت برای ووکامرس/شاپیفای", en: "WooCommerce/Shopify embed widget" },
       ],
-      metricBadge: { fa: "امنیت بانکی", en: "Bank-Grade RBAC" },
-    },
-    {
-      id: "barcode",
-      iconName: "QrCode",
-      title: { fa: "چاپ بارکد و لیبل قیمت پوشاک", en: "Clothing Barcode & Label Printer" },
-      subtitle: { fa: "طراحی تخصصی تگ لباس و کفش", en: "Custom Hangtag & Sticker Printing" },
-      description: {
-        fa: "طراحی و چاپ سریع لیبل‌های دوتایی و سه‌تایی، اتیکت قیمت، بارکد، مشخصات پارچه، شستشو و سایز روی انواع لیبل‌پرینتر حرارتی و حرارتی مستقیم.",
-        en: "Design and print dual/triple stickers, price tags, washing instructions, and barcodes on thermal label printers.",
-      },
-      benefits: [
-        { fa: "سازگار با تمامی لیبل‌پرینترهای بازار (Xprinter, Bixolon, TSC)", en: "Compatible with all thermal printers" },
-        { fa: "پشتیبانی از قالب‌های استاندارد تگ آویز و چسبی", en: "Preset hangtag and adhesive templates" },
-        { fa: "چاپ دسته‌ای بر اساس سفارش خرید", en: "Batch print directly from PO orders" },
-      ],
-      metricBadge: { fa: "چاپ ۱۰۰ لیبل/دقیقه", en: "Fast Thermal Printing" },
+      metricBadge: { fa: "کاهش ۶۵٪ مرجوعی", en: "65% Less Returns" },
     },
   ] as FeatureModule[],
 
   pricing: {
-    title: { fa: "طرح‌ها و تعرفه‌های شفاف و مقرون‌به‌صرفه", en: "Transparent & Cost-Effective Pricing Plans" },
+    title: { fa: "طرح‌ها و تعرفه‌های شفاف پلتفرم تنخور", en: "Transparent & Cost-Effective Pricing Plans" },
     subtitle: {
-      fa: "بدون هزینه‌های پنهان؛ پلن پایه همیشه رایگان و آفلاین است",
-      en: "No hidden fees. Basic plan is free forever with full offline capabilities.",
+      fa: "بدون هزینه‌های پنهان؛ نسخه دسکتاپ پایه همیشه رایگان و ۱۰۰٪ آفلاین است",
+      en: "No hidden fees. Starter desktop plan is free forever with full offline capabilities.",
     },
     billingToggle: {
       monthly: { fa: "پرداخت ماهانه", en: "Monthly Billing" },
@@ -493,47 +601,48 @@ export const siteContent = {
     plans: [
       {
         id: "starter",
-        name: { fa: "پایه (آفلاین / رایگان)", en: "Starter (Offline Free)" },
+        name: { fa: "پایه (دسکتاپ / رایگان)", en: "Starter (Offline Free)" },
         badge: { fa: "رایگان همیشگی", en: "Forever Free" },
         description: {
-          fa: "مناسب برای بوتیک‌ها، تولیدی‌ها و کسب‌وکارهای نوپا تک‌شعبه",
+          fa: "مناسب برای بوتیک‌ها، تولیدی‌ها و فروشگاه‌های نوپا تک‌شعبه",
           en: "Ideal for single-store boutiques and emerging fashion brands",
         },
         monthlyPrice: { fa: 0, en: 0 },
         yearlyPriceMonthlyEquivalent: { fa: 0, en: 0 },
         currency: { fa: "تومان", en: "IRR" },
         features: [
-          { fa: "کارکرد ۱۰۰٪ آفلاین روی دسکتاپ و تبلت", en: "100% Offline operation on Desktop/Tablet" },
-          { fa: "ماتریس نامحدود رنگ و سایز", en: "Unlimited Color & Size Matrix" },
-          { fa: "ثبت تا ۵۰۰ محصول و واریانت", en: "Up to 500 products & variants" },
-          { fa: "چاپ بارکد و لیبل قیمت", en: "Thermal Barcode & Tag Printing" },
-          { fa: "راهنمای سایز پایه", en: "Basic Size Guide Builder" },
-          { fa: "۱ کاربر و ۱ انبار", en: "1 User & 1 Warehouse" },
-          { fa: "پشتیبانی آنلاین تیکتی", en: "Online Ticket Support" },
+          { fa: "کارکرد ۱۰۰٪ آفلاین با دیتابیس محلی SQLite", en: "100% Offline with local SQLite DB" },
+          { fa: "ماتریس نامحدود رنگ و سایز", en: "Unlimited Color & Size Variant Matrix" },
+          { fa: "دفتر معین و حسابداری اشخاص پایه", en: "Subsidiary Ledgers & Accounts" },
+          { fa: "چاپ بارکد و لیبل قیمت پوشاک", en: "Thermal Barcode & Hangtag Printing" },
+          { fa: "ثبت فاکتور فروش، مرجوعی و تعویض سایز", en: "Sales Invoices, Returns & Size Exchanges" },
+          { fa: "۱ کاربر و ۱ انبار روی رایانه دسکتاپ", en: "1 User & 1 Store Location" },
+          { fa: "پشتیبانی تیکتی آنلاین", en: "Online Ticket Support" },
         ],
-        ctaText: { fa: "دانلود و شروع رایگان", en: "Download & Start Free" },
+        ctaText: { fa: "دانلود رایگان نسخه دسکتاپ", en: "Download Free Desktop" },
       },
       {
         id: "pro",
-        name: { fa: "حرفه‌ای (ابری + آفلاین)", en: "Professional (Cloud + Offline)" },
+        name: { fa: "حرفه‌ای (ERP ابری + حسابداری)", en: "Professional (Cloud ERP)" },
         badge: { fa: "پرطرفدارترین", en: "Most Popular" },
         popular: true,
         description: {
-          fa: "برای فروشگاه‌های فعال، مزون‌ها و آنلاین‌شاپ‌ها با رشد بالا",
-          en: "For active boutiques, maisons, and growing fashion e-commerce",
+          fa: "برای فروشگاه‌های فعال، برندها، مزون‌ها و آنلاین‌شاپ‌ها",
+          en: "For active boutiques, maisons, and growing fashion brands",
         },
         monthlyPrice: { fa: 890000, en: 18 },
         yearlyPriceMonthlyEquivalent: { fa: 712000, en: 14.5 },
         currency: { fa: "تومان / ماه", en: "USD / mo" },
         highlightColor: "emerald",
         features: [
-          { fa: "تمامی امکانات پلن پایه", en: "All Starter Plan features included" },
-          { fa: "همگام‌سازی ابری خودکار و پشتیبان روزانه", en: "Automated Cloud Sync & Daily Backups" },
-          { fa: "محصولات و واریانت‌های نامحدود", en: "Unlimited Products & Variants" },
-          { fa: "تا ۵ کاربر همزمان با سطح دسترسی (RBAC)", en: "Up to 5 Concurrent Users with RBAC" },
-          { fa: "انبارداری چندگانه (تا ۳ انبار و شعبه)", en: "Multi-Warehouse Management (3 Branches)" },
-          { fa: "موتور راهنمای سایز هوشمند با Embed ووکامرس", en: "Dynamic Size Guide Engine with WooCommerce Plugin" },
-          { fa: "گزارش‌های پیشرفته فروش و سودآوری", en: "Advanced Sales & Profit Margin Analytics" },
+          { fa: "تمامی امکانات نسخه Starter دسکتاپ", en: "All Starter Plan features included" },
+          { fa: "همگام‌سازی ابری خودکار متصل به سرور اختصاصی", en: "Automated Cloud Sync via Dedicated Server" },
+          { fa: "ماژول کامل خزانه، چک صیادی و سامانه مؤدیان", en: "Full Treasury, Sayad Check & Taxpayer System" },
+          { fa: "موتور محاسبه بهای تمام‌شده واقعی (Landed Cost)", en: "True Landed Cost Calculation Engine" },
+          { fa: "صورت سود و زیان لحظه‌ای با کسر هزینه‌های جاری", en: "Real-time P&L Statement with Operating Expenses" },
+          { fa: "انبارداری چندگانه (تا ۳ انبار و شعبه بوتیک)", en: "Multi-Warehouse Management (3 Branches)" },
+          { fa: "دسترسی همزمان از وب PWA، دسکتاپ و موبایل", en: "Multi-Platform Access (Web PWA, Desktop, Mobile)" },
+          { fa: "گزارش‌های فصلی مالیاتی و خروجی سپیدار/هلو", en: "Article 169 Tax Statements & Sepidar/Holo Export" },
           { fa: "پشتیبانی تلفنی و واتس‌اپ اختصاصی", en: "Dedicated Phone & WhatsApp Support" },
         ],
         ctaText: { fa: "تست رایگان ۱۴ روزه", en: "Start 14-Day Free Trial" },
@@ -541,9 +650,9 @@ export const siteContent = {
       {
         id: "enterprise",
         name: { fa: "سازمانی (Enterprise)", en: "Enterprise Custom" },
-        badge: { fa: "ویژه برندهای بزرگ", en: "For Big Brands" },
+        badge: { fa: "ویژه زنجیره فروشگاه‌ها", en: "For Big Brands" },
         description: {
-          fa: "ویژه زنجیره فروشگاه‌ها، تولیدی‌های بزرگ و برندهای ملی پوشاک",
+          fa: "ویژه فروشگاه‌های زنجیره‌ای، تولیدی‌های بزرگ و برندهای پوشاک",
           en: "For retail chains, large factories, and national fashion brands",
         },
         monthlyPrice: { fa: 0, en: 0 },
@@ -553,12 +662,12 @@ export const siteContent = {
         customPriceText: { fa: "تماس بگیرید", en: "Contact Sales" },
         contactPhone: "02155416274",
         features: [
-          { fa: "تمامی امکانات پلن حرفه‌ای", en: "All Professional Plan features" },
-          { fa: "کاربران و شعب نامحدود", en: "Unlimited Users, Branches & Warehouses" },
-          { fa: "اتصال اختصاصی API به سیستم‌های ERP و حسابداری", en: "Custom API Integrations (Sepidar, Rahkaran, etc.)" },
+          { fa: "تمامی امکانات پلن حرفه‌ای ابری", en: "All Professional Plan features" },
+          { fa: "کاربران، انبارها و شعب نامحدود", en: "Unlimited Users, Branches & Warehouses" },
+          { fa: "اتصال اختصاصی API به نرم‌افزارهای مالی جانبی", en: "Custom API Integrations (Sepidar, Rahkaran, etc.)" },
           { fa: "نصب روی سرور اختصاصی مشتری (On-Premise)", en: "On-Premise Private Server deployment option" },
           { fa: "پشتیبانی ۲۴/۷ و آموزش حضوری پرسنل", en: "24/7 Priority SLA & On-site Staff Training" },
-          { fa: "مدیر حساب اختصاصی و اختصاصی‌سازی الگوریتم سایز", en: "Dedicated Account Manager & Size Algo Customization" },
+          { fa: "مدیر حساب اختصاصی و اختصاصی‌سازی ماژول‌ها", en: "Dedicated Account Manager & Module Customization" },
         ],
         ctaText: { fa: "تماس با کارشناسان (۰۲۱-۵۵۴۱۶۲۷۴)", en: "Call Sales (021-55416274)" },
       },
@@ -573,12 +682,12 @@ export const siteContent = {
       brand: { fa: "برند پوشاک هپکو فشن", en: "Hakupian Style" },
       avatar: "https://picsum.photos/seed/man1/150/150",
       comment: {
-        fa: "با داشتن ۶ شعبه و ۱۰۰۰ واریانت کت و شلوار، قبلاً انبارگردانی ما ۳ روز طول می‌کشید. با تنخور و اسکنر بارکد ماتریسی، کل انبارگردانی شعب در ۴ ساعت با صفر درصد خطا انجام می‌شود!",
-        en: "With 6 retail branches and over 1,000 suit variants, inventory audit used to take 3 full days. With Tankhor's matrix barcodes, audit completes in 4 hours with zero error!",
+        fa: "با داشتن ۶ شعبه و ۱۰۰۰ واریانت کت و شلوار، قبلاً انبارگردانی و حسابداری ما کابوس بود. یکپارچگی تنخور با Landed Cost و چک صیادی باعث شد حسابداری و انبارگردانی شعب در ۴ ساعت با صفر درصد خطا انجام بشه!",
+        en: "With 6 retail branches and 1,000 suit variants, inventory audit and accounting used to be a nightmare. Tankhor's Landed Cost and Sayad check integration slashed audit time to 4 hours with zero errors!",
       },
       rating: 5,
       businessType: { fa: "تولیدی و فروشگاه زنجیره‌ای", en: "Retail Chain & Factory" },
-      impactMetric: { fa: "کاهش ۹۰٪ زمان انبارگردانی", en: "90% Faster Audit" },
+      impactMetric: { fa: "کاهش ۹۰٪ زمان انبارگردانی و مالی", en: "90% Faster Audit & Finance" },
     },
     {
       id: "2",
@@ -587,8 +696,8 @@ export const siteContent = {
       brand: { fa: "مزون آنلاین لورا", en: "Lorra Online Maison" },
       avatar: "https://picsum.photos/seed/woman1/150/150",
       comment: {
-        fa: "بزرگترین معضل ما مرجوعی ۳۰ درصدی مانتو و لباس‌های مجلسی به خاطر اندازه نبودن بود. راهنمای سایز تعاملی تنخور رو روی سایتمون گذاشتیم و مرجوعی‌ها به زیر ۷ درصد رسید!",
-        en: "Our biggest headache was a 30% return rate on online dress orders due to sizing. Since embedding Tankhor's interactive size guide engine, returns plummeted to under 7%!",
+        fa: "بزرگترین معضل ما محاسبه سود واقعی با هزینه‌های خیاطی و گمرک و مرجوعی سایز بود. ماژول Landed Cost و راهنمای سایز تنخور باعث شد سود خالص دقیق رو ببینیم و مرجوعی‌ها به زیر ۷ درصد برسه!",
+        en: "Our biggest issue was estimating real profits considering stitching/freight fees alongside size returns. Tankhor's Landed Cost engine revealed true net margins while returns dropped below 7%!",
       },
       rating: 5,
       businessType: { fa: "مزون و فروشگاه آنلاین", en: "Maison & Online Boutique" },
@@ -601,8 +710,8 @@ export const siteContent = {
       brand: { fa: "فروشگاه کفش روکسا", en: "Roxa Shoes Chain" },
       avatar: "https://picsum.photos/seed/man2/150/150",
       comment: {
-        fa: "قابلیت آفلاین بودن تنخور نجات‌دهنده ماست. قطع شدن اینترنت در جمعه‌های شلوغ پاساژ همیشه فروش ما رو فلج می‌کرد، اما حالا صندوق ما بدون نیاز به اینترنت سریع کار می‌کنه.",
-        en: "Tankhor's offline architecture is a lifesaver. Internet drops during peak Friday shopping hours used to freeze our checkout. Now our cashiers sell seamlessly without internet!",
+        fa: "کارکرد آفلاین SQLite تنخور نجات‌دهنده ماست. قطعی اینترنت در شلوغ‌ترین ساعات جمعه‌های پاساژ همیشه فروش ما رو فلج می‌کرد، اما حالا صندوق و حسابداری ما بدون نیاز به اینترنت سریع کار می‌کنه.",
+        en: "Tankhor's offline SQLite architecture is a lifesaver. Internet drops during peak Friday mall traffic used to freeze our cashiers. Now POS and accounts work smoothly offline!",
       },
       rating: 5,
       businessType: { fa: "کفش و کیف و اکسسوری", en: "Footwear & Accessories" },
@@ -614,144 +723,120 @@ export const siteContent = {
     {
       id: "faq-1",
       question: {
-        fa: "آیا نرم افزار مدیریت فروشگاه پوشاک تنخور واقعاً رایگان است؟",
-        en: "Is Tankhor apparel management software truly free?",
+        fa: "چگونه اطلاعات و موجودی‌های خود را از نرم‌افزارهای قدیمی (سپیدار، هلو، اکسل) به تنخور منتقل کنیم؟",
+        en: "How do we migrate data from legacy software (Sepidar, Holo, Excel) to Tankhor?",
       },
       answer: {
-        fa: "بله، نسخه دسکتاپ تنخور (Tankhor Free) کاملاً رایگان است و هیچ محدودیت زمانی (تست یا Trial) ندارد. شما می‌توانید آن را بدون نیاز به کارت بانکی یا پرداخت وجه دانلود کرده و برای مدیریت محصولات، موجودی، رنگ و سایز و سفارش‌های فروشگاه خود استفاده کنید.",
-        en: "Yes, the desktop version (Tankhor Free) is 100% free with no time limit or trial expiration. You can download and run it without any credit card or payment.",
+        fa: "انتقال اطلاعات بسیار ساده و سریع است. تنخور دارای ابزار ورودی فایل اکسل (Excel Import) اختصاصی برای محصولات، رنگ و سایز، طرف‌حساب‌ها و موجودی اول‌دوره است. تیم پشتیبانی تنخور نیز تمام فرایند انتقال داده‌های نرم‌افزار قدیمی شما (سپیدار، هلو، شایگان و...) به تنخور را به صورت رایگان انجام می‌دهد.",
+        en: "Data migration is seamless. Tankhor includes a specialized Excel Importer for styles, variant matrices, customer ledgers, and opening stock. Our support team assists with full automated migration from Sepidar, Holo, or Excel files free of charge.",
       },
-      category: { fa: "نسخه رایگان", en: "Free Version" },
+      category: { fa: "انتقال داده‌ها", en: "Data Migration" },
     },
     {
       id: "faq-2",
       question: {
-        fa: "آیا تنخور بدون اتصال به اینترنت هم کار می‌کند؟",
-        en: "Does Tankhor work completely offline without internet?",
+        fa: "کارکرد ۱۰۰٪ آفلاین تنخور با دیتابیس SQLite چگونه امنیت و سرعت را تضمین می‌کند؟",
+        en: "How does 100% offline operation with SQLite guarantee speed & data security?",
       },
       answer: {
-        fa: "بله، ۱۰۰٪! نسخه رایگان تنخور به صورت کاملاً آفلاین روی رایانه و دسکتاپ شما نصب شده و تمام اطلاعات را روی دیتابیس محلی دستگاه شما ذخیره می‌کند. قطعی اینترنت هیچ خللی در فروشگاه یا انبار شما ایجاد نخواهد کرد.",
-        en: "Yes, 100%! Tankhor Free runs locally on your desktop computer, storing all data in a local database with zero internet dependency.",
+        fa: "تنخور روی رایانه شما از پایگاه داده قدرتمند و فوق‌العاده سریع SQLite استفاده می‌کند. تمام داده‌های شما به صورت محلی و رمزنگاری‌شده روی سیستم خودتان ذخیره می‌شوند، بنابراین هیچ‌گونه کندی یا وابستگی به اینترنت وجود ندارد و در صورت قطعی شبکه، صندوق فروشگاه بدون ۱ ثانیه توقف به کار ادامه می‌دهد.",
+        en: "Tankhor utilizes an embedded, high-performance SQLite database on your desktop. All data is stored locally and encrypted on your device. Zero internet reliance guarantees zero latency and 100% operational uptime during network outages.",
       },
-      category: { fa: "کارکرد آفلاین", en: "Offline Capabilities" },
+      category: { fa: "آفلاین و امنیت", en: "Offline & SQLite" },
     },
     {
       id: "faq-3",
+      question: {
+        fa: "ماژول حسابداری و چک صیادی تنخور چه امکاناتی ارائه می‌دهد؟",
+        en: "What capabilities does Tankhor's accounting & Sayad check module provide?",
+      },
+      answer: {
+        fa: "ماژول حسابداری تنخور شامل دفتر معین و حسابداری اشخاص (خریداران، بنکداران، تامین‌کنندگان)، مدیریت صندوق‌ها و حساب‌های بانکی، مدیریت کامل چرخه چک‌های صیادی (وصول، پاس‌نشده، برگشتی، خرج‌شده) و هشدار سررسید اسناد مالی است.",
+        en: "The accounting module delivers subsidiary ledgers, accounts receivable/payable, multi-cashbox treasury, complete Sayad check status tracking (deposited, cashed, bounced, endorsed), and automated due-date reminders.",
+      },
+      category: { fa: "حسابداری و چک", en: "Accounting & Checks" },
+    },
+    {
+      id: "faq-4",
+      question: {
+        fa: "محاسبه بهای تمام‌شده واقعی (Landed Cost) در تنخور چگونه کار می‌کند؟",
+        en: "How does true Landed Cost calculation work in Tankhor?",
+      },
+      answer: {
+        fa: "هنگام خرید یا تولید پوشاک، علاوه بر فاکتور اصلی، هزینه‌های جانبی مانند حمل‌ونقل، گمرک، خیاطی و بسته‌بندی وجود دارد. تنخور این هزینه‌ها را ثبت کرده و به صورت هوشمند روی تک‌تک محصولات و واریانت‌ها تسهیم می‌کند تا قیمت تمام‌شده واقعی و سود خالص دقیق هر کالا مشخص شود.",
+        en: "When purchasing or manufacturing garments, freight, customs, stitching, and packaging fees occur. Tankhor attributes and distributes these overhead expenses directly onto each variant SKU, giving you true landed unit cost and exact net profit metrics.",
+      },
+      category: { fa: "بهای تمام‌شده", en: "Landed Cost" },
+    },
+    {
+      id: "faq-5",
+      question: {
+        fa: "آیا تنخور قابلیت گزارش‌های مالیاتی و اتصال به سامانه مؤدیان را دارد؟",
+        en: "Does Tankhor generate tax reports and connect to the Taxpayer portal?",
+      },
+      answer: {
+        fa: "بله، تنخور امکان صدور الکترونیکی فاکتورها برای سامانه مؤدیان، تولید گزارش ارزش افزوده خرید و فروش، گزارش‌های فصلی ماده ۱۶۹ و خروجی استاندارد اکسل جهت سیستم‌های مالی مثل سپیدار و هلو را داراست.",
+        en: "Yes, Tankhor generates electronic invoices for the Taxpayer System, computes VAT purchase/sales statements, outputs Article 169 tax reports, and exports clean data compatible with Sepidar and Holo.",
+      },
+      category: { fa: "مالیات و مؤدیان", en: "Tax Compliance" },
+    },
+    {
+      id: "faq-6",
+      question: {
+        fa: "تفاوت تنخور با نرم‌افزارهای عمومی حسابداری (مثل سپیدار یا هلو) چیست؟",
+        en: "How does Tankhor differ from generic accounting tools like Sepidar or Holo?",
+      },
+      answer: {
+        fa: "نرم‌افزارهای عمومی حسابداری ساختار ماتریسی رنگ و سایز، راهنمای اندازه‌گیری و چاپ اتیکت پوشاک را ندارند و انبارداری لباس را به‌شدت پیچیده می‌کنند. تنخور یک ERP یکپارچه و تخصصی پوشاک است که مدیریت فروشگاه، انبارداری ماتریسی و حسابداری ۳۶۰ درجه را در یک ابزار یکپارچه فراهم کرده است.",
+        en: "Generic accounting tools lack garment-native variant matrix grids, sizing specs, and clothing tag printing. Tankhor is a specialized fashion ERP uniting store operations, matrix inventory, and 360° financial accounting into a single system.",
+      },
+      category: { fa: "مقایسه ERP", en: "Comparison" },
+    },
+    {
+      id: "faq-7",
+      question: {
+        fa: "آیا نسخه دسکتاپ تنخور (Tankhor Free) واقعاً رایگان است؟",
+        en: "Is the Tankhor Free desktop app truly 100% free?",
+      },
+      answer: {
+        fa: "بله! نسخه دسکتاپ تنخور (Tankhor Free) کاملاً رایگان است و هیچ محدودیت زمانی (تست یا Trial) ندارد. شما می‌توانید آن را روی سیستم خود نصب کرده و مدیریت محصولات، انبارداری ماتریسی، دفتر معین و فاکتورهای فروشگاه خود را انجام دهید.",
+        en: "Yes! Tankhor Free Desktop is 100% free with no time limits or trial expirations. You can install and run it locally for products, variant matrix inventory, ledgers, and sales invoices.",
+      },
+      category: { fa: "نسخه رایگان", en: "Free Version" },
+    },
+    {
+      id: "faq-8",
       question: {
         fa: "ماتریس رنگ و سایز تنخور چگونه کار می‌کند؟",
         en: "How does Tankhor's color & size matrix work?",
       },
       answer: {
-        fa: "در تنخور نیاز نیست برای ۱ مدل لباس با ۵ رنگ و ۴ سایز، ۲۰ کالای مجزا ثبت کنید. شما محصول را ۱ بار تعریف می‌کنید و سیستم به صورت خودکار ماتریس ۲۰ تایی از ترکیب رنگ‌ها و سایزها همراه با بارکد و SKU اختصاصی برای هر واریانت تولید می‌کند.",
-        en: "Instead of creating 20 separate items for a shirt with 5 colors and 4 sizes, you define the style once. Tankhor auto-generates a 20-cell matrix grid with individual SKUs and barcodes for every single combination.",
+        fa: "شما مدل لباس را یک‌بار تعریف می‌کنید و سیستم به صورت خودکار ماتریس تنوع رنگ‌ها و سایزها (حروفی S تا 5XL، عددی، کفش) را همراه با SKU و بارکد اختصاصی برای هر واریانت ایجاد می‌کند، بدون اینکه ده‌ها کد کالای تکراری و سردرگم‌کننده بسازد.",
+        en: "Instead of creating separate items for every combination, you define the style once. Tankhor auto-generates a multi-dimensional matrix grid with distinct SKUs and barcodes for every single size and color.",
       },
       category: { fa: "رنگ و سایز", en: "Variant Matrix" },
     },
     {
-      id: "faq-4",
-      question: {
-        fa: "تفاوت تنخور با نرم‌افزارهای عمومی حسابداری چیست؟",
-        en: "How does Tankhor differ from general accounting software?",
-      },
-      answer: {
-        fa: "نرم‌افزارهای عمومی حسابداری ساختار تخصصی پوشاک (ماتریس رنگ و سایز، جدول اندازه‌گیری، چاپ اتیکت قیمت پوشاک) را ندارند و انبارداری لباس را پیچیده می‌کنند. تنخور از پایه برای مدیریت محصولات، موجودی و سفارش‌های پوشاک ساخته شده است.",
-        en: "General accounting software lacks fashion-native structures like color/size matrix grids, garment sizing specs, and clothing tag printing. Tankhor is tailor-made specifically for apparel workflow.",
-      },
-      category: { fa: "مقایسه", en: "Comparison" },
-    },
-    {
-      id: "faq-5",
-      question: {
-        fa: "آیا تنخور نرم افزار حسابداری پوشاک است؟",
-        en: "Is Tankhor an accounting software?",
-      },
-      answer: {
-        fa: "خیر. تنخور یک نرم افزار تخصصی مدیریت محصولات، موجودی، انبار و سفارش‌های پوشاک است. تنخور صورت‌های مالی پیچیده یا اظهارنامه مالیاتی ارائه نمی‌دهد، اما می‌تواند در کنار نرم افزار حسابداری شما به عنوان موتور اصلی مدیریت محصول و انبار استفاده شود.",
-        en: "No. Tankhor specializes in product, variant, inventory, and order operations for apparel. It handles day-to-day store operations and runs seamlessly alongside your financial accounting software.",
-      },
-      category: { fa: "حسابداری", en: "Accounting" },
-    },
-    {
-      id: "faq-6",
-      question: {
-        fa: "آیا برای استفاده از تنخور نیاز به اینترنت داریم؟",
-        en: "Do we need an internet connection to use Tankhor?",
-      },
-      answer: {
-        fa: "خیر، برای استفاده از نسخه دسکتاپ Tankhor Free نیازی به اینترنت ندارید. تنها در صورتی که بخواهید از نسخه ابری Tankhor Pro برای همگام‌سازی بین چند شعب استفاده کنید به اینترنت نیاز خواهید داشت.",
-        en: "No, Tankhor Free runs 100% offline. Internet is only required if you upgrade to Tankhor Pro Cloud to sync data across multiple physical branches.",
-      },
-      category: { fa: "اینترنت", en: "Internet & Cloud" },
-    },
-    {
-      id: "faq-7",
-      question: {
-        fa: "تفاوت نسخه Tankhor Free با Tankhor Pro چیست؟",
-        en: "What is the difference between Tankhor Free and Tankhor Pro?",
-      },
-      answer: {
-        fa: "نسخه Free کاملاً رایگان و آفلاین روی دسکتاپ اجرا می‌شود و برای ۱ فروشگاه عالی است. نسخه Pro امکان همگام‌سازی ابری، دسترسی آنلاین از چند دستگاه (موبایل و وب) و مدیریت چند شعبه و چند انبار را اضافه می‌کند.",
-        en: "Tankhor Free is desktop-offline and 100% free. Tankhor Pro adds real-time cloud sync, multi-device web/mobile access, and multi-store multi-warehouse management.",
-      },
-      category: { fa: "نسخه‌ها", en: "Versions" },
-    },
-    {
-      id: "faq-8",
-      question: {
-        fa: "آیا امکان ثبت محصولات با سایزهای غیراستاندارد یا بزرگ وجود دارد؟",
-        en: "Can we configure non-standard or plus-size variations?",
-      },
-      answer: {
-        fa: "بله! در تنخور می‌توانید هر نوع سایزبندی (حروفی S تا 5XL، عددی، بچه‌گانه، کفش و سایزهای اختصاصی مزون) را تعریف کنید و حتی برای سایزهای بزرگ قیمت متفاوت تعیین نمایید.",
-        en: "Yes! Tankhor supports all size formats (letter sizes S-5XL, numeric trousers/shoes, kids, and custom atelier sizing) with differential price tags for larger sizes.",
-      },
-      category: { fa: "سایزبندی", en: "Sizing Options" },
-    },
-    {
       id: "faq-9",
       question: {
-        fa: "آیا امکان چاپ بارکد و اتیکت قیمت برای لباس‌ها وجود دارد؟",
-        en: "Can we print clothing barcodes and price hangtags?",
-      },
-      answer: {
-        fa: "بله، تنخور سیستم چاپ اتوماتیک بارکد و لیبل قیمت پوشاک را دارد که با انواع لیبل‌پرینترها و پرینترهای حرارتی سازگار است.",
-        en: "Yes, Tankhor includes automated barcode and price hangtag design & printing compatible with all standard thermal label printers.",
-      },
-      category: { fa: "بارکد و لیبل", en: "Barcodes & Labels" },
-    },
-    {
-      id: "faq-10",
-      question: {
-        fa: "آیا اطلاعات و موجودی‌های ما در نسخه رایگان امن هستند؟",
-        en: "Is our inventory data secure in the Free version?",
-      },
-      answer: {
-        fa: "کاملاً. در نسخه رایگان، داده‌ها روی دیتابیس محلی رایانه شما قرار دارند و هیچ دسترسی خارجی به آن‌ها وجود ندارد. همچنین می‌توانید در هر زمان خروجی اکسل و پشتیبان محلی بگیرید.",
-        en: "Absolutely. In Tankhor Free, your database is stored strictly locally on your machine with zero external access. You can export complete Excel backups anytime.",
-      },
-      category: { fa: "امنیت", en: "Security" },
-    },
-    {
-      id: "faq-11",
-      question: {
-        fa: "چگونه می‌توانیم اطلاعات خود را از نسخه رایگان به Tankhor Pro منتقل کنیم؟",
+        fa: "چگونه داده‌های خود را از نسخه رایگان به Tankhor Pro ابری منتقل کنیم؟",
         en: "How do we upgrade local data from Free to Tankhor Pro Cloud?",
       },
       answer: {
-        fa: "انتقال داده‌ها تنها با یک کلیک انجام می‌شود. نرم‌افزار دسکتاپ تنخور خروجی استاندارد ابری تولید کرده و تمام محصولات، موجودی‌ها و واریانت‌های شما را بدون تغییر به ابری منتقل می‌کند.",
-        en: "Migration takes a single click. Tankhor Desktop generates an encrypted export file that populates your new cloud account seamlessly.",
+        fa: "انتقال داده‌ها تنها با یک کلیک انجام می‌شود. نرم‌افزار دسکتاپ تنخور خروجی رمزنگاری‌شده ابری تولید کرده و تمامی محصولات، واریانت‌ها، حساب‌ها و تراکنش‌های شما را بدون تغییر به حساب ابری منتقل و همگام می‌سازد.",
+        en: "Migration takes a single click. Tankhor Desktop generates an encrypted export file that populates your new cloud account seamlessly without data loss.",
       },
-      category: { fa: "ارتقا", en: "Upgrade Path" },
+      category: { fa: "ارتقا به ابری", en: "Upgrade Path" },
     },
     {
-      id: "faq-12",
+      id: "faq-10",
       question: {
         fa: "تنخور برای چه کسب‌وکارهایی مناسب است؟",
         en: "Which fashion businesses benefit most from Tankhor?",
       },
       answer: {
-        fa: "تنخور تخصصی برای تمامی فعالان صنعت مد و پوشاک طراحی شده است: فروشگاه‌های لباس زنانه و مردانه، بوتیک‌ها، مزون‌ها، فروشگاه‌های کیف و کفش، تولیدی‌های پوشاک و آنلاین‌شاپ‌های اینستاگرامی و وب‌سایت‌ها.",
-        en: "Tankhor is purpose-built for all fashion apparel stakeholders: boutiques, ateliers, menswear/womenswear stores, shoe shops, clothing manufacturers, and online fashion brands.",
+        fa: "تنخور برای تمامی فعالان صنعت پوشاک، کیف، کفش و اکسسوری طراحی شده است: بوتیک‌های لباس زنانه و مردانه، فروشگاه‌های زنجیره‌ای، مزون‌ها، تولیدی‌های پوشاک، فروشگاه‌های کیف و کفش، و آنلاین‌شاپ‌ها.",
+        en: "Tankhor is purpose-built for all fashion apparel stakeholders: boutiques, retail chains, ateliers, menswear/womenswear stores, shoe and bag shops, clothing factories, and online fashion brands.",
       },
       category: { fa: "مخاطبان", en: "Target Audience" },
     },

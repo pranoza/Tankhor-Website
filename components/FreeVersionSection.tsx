@@ -7,7 +7,7 @@ import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 import { Download, Check, Monitor, Apple, Smartphone, ShieldCheck, Terminal } from 'lucide-react';
 
 export default function FreeVersionSection() {
-  const { language } = useLanguageAndTheme();
+  const { language, openMacModal } = useLanguageAndTheme();
   const { freeVersion } = siteContent;
   const downloadLinks = useDownloadLinks();
 
@@ -55,15 +55,14 @@ export default function FreeVersionSection() {
                     <span>{language === 'fa' ? 'دانلود نسخه ویندوز' : 'Download for Windows'}</span>
                   </a>
 
-                  <a
-                    href={downloadLinks.macos_setup}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-md bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700 font-semibold text-xs transition-all flex items-center justify-center gap-2"
+                  <button
+                    type="button"
+                    onClick={openMacModal}
+                    className="px-6 py-3 rounded-md bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700 font-semibold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Apple className="w-4 h-4 text-neutral-200" />
                     <span>{language === 'fa' ? 'دانلود نسخه مک (macOS)' : 'Download for macOS'}</span>
-                  </a>
+                  </button>
 
                   <a
                     href={downloadLinks.android_setup}

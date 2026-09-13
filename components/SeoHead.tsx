@@ -32,8 +32,8 @@ export default function SeoHead() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'تنخور | Tankhor Fashion ERP',
-    url: 'https://tankhor.ir',
-    logo: 'https://tankhor.ir/logo.png',
+    url: 'https://tankhor.com',
+    logo: 'https://tankhor.com/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+98-21-91008822',
@@ -71,19 +71,19 @@ export default function SeoHead() {
         '@type': 'ListItem',
         position: 1,
         name: language === 'fa' ? 'صفحه اصلی' : 'Home',
-        item: 'https://tankhor.ir',
+        item: 'https://tankhor.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: language === 'fa' ? 'قابلیت‌ها' : 'Features',
-        item: 'https://tankhor.ir/#features',
+        item: 'https://tankhor.com/#features',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: language === 'fa' ? 'تعرفه‌ها' : 'Pricing',
-        item: 'https://tankhor.ir/#pricing',
+        item: 'https://tankhor.com/#pricing',
       },
     ],
   };

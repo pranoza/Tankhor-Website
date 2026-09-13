@@ -8,7 +8,7 @@ import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 import { Phone, Mail, MapPin, Instagram, Linkedin, Send, ShieldCheck, Download, Sparkles, Monitor, Apple, Smartphone } from 'lucide-react';
 
 export default function Footer() {
-  const { language } = useLanguageAndTheme();
+  const { language, openMacModal } = useLanguageAndTheme();
   const downloadLinks = useDownloadLinks();
 
   return (
@@ -122,6 +122,35 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Targeted Industry Landing Pages */}
+          <div className="space-y-3 font-caption-mono">
+            <h4 className="text-[11px] font-bold text-white uppercase tracking-wider">
+              {language === 'fa' ? 'راهکارهای اصناف' : 'Industry Solutions'}
+            </h4>
+            <ul className="space-y-2 text-xs text-neutral-400">
+              <li>
+                <a href="/boutique-accounting" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'حسابداری بوتیک لباس' : 'Boutique Accounting'}
+                </a>
+              </li>
+              <li>
+                <a href="/maison-accounting" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'حسابداری و مدیریت مزون' : 'Maison Software'}
+                </a>
+              </li>
+              <li>
+                <a href="/apparel-manufacturing" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'حسابداری تولیدی پوشاک' : 'Garment Manufacturing'}
+                </a>
+              </li>
+              <li>
+                <a href="/free-boutique-software" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'دانلود حسابداری بوتیک رایگان' : 'Free Boutique App'}
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Direct Downloads (Directus API) */}
           <div className="space-y-3 font-caption-mono">
             <h4 className="text-[11px] font-bold text-white uppercase tracking-wider">
@@ -140,15 +169,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={downloadLinks.macos_setup}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors flex items-center gap-1.5"
+                <button
+                  type="button"
+                  onClick={openMacModal}
+                  className="hover:text-white transition-colors flex items-center gap-1.5 text-left rtl:text-right cursor-pointer"
                 >
                   <Apple className="w-3.5 h-3.5 text-neutral-400" />
                   <span>{language === 'fa' ? 'نسخه مک (macOS)' : 'macOS App'}</span>
-                </a>
+                </button>
               </li>
               <li>
                 <a
@@ -176,7 +204,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                <span className="font-en">support@tankhor.ir</span>
+                <span className="font-en">support@tankhor.com</span>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />

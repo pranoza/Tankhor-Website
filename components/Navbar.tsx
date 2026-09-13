@@ -8,7 +8,7 @@ import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 import { Sun, Moon, Globe, Menu, X, Download, LogIn, ChevronRight, Monitor, Apple, Smartphone } from 'lucide-react';
 
 export default function Navbar() {
-  const { language, theme, toggleTheme, toggleLanguage } = useLanguageAndTheme();
+  const { language, theme, toggleTheme, toggleLanguage, openMacModal } = useLanguageAndTheme();
   const downloadLinks = useDownloadLinks();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -182,16 +182,17 @@ export default function Navbar() {
                   <Monitor className="w-4 h-4 text-teal-400 dark:text-teal-600" />
                   <span>{language === 'fa' ? 'دانلود نسخه ویندوز' : 'Download Windows App'}</span>
                 </a>
-                <a
-                  href={downloadLinks.macos_setup}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full py-2.5 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-semibold text-xs flex items-center justify-center gap-2 border border-neutral-200 dark:border-neutral-700"
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    openMacModal();
+                  }}
+                  className="w-full py-2.5 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-semibold text-xs flex items-center justify-center gap-2 border border-neutral-200 dark:border-neutral-700 cursor-pointer"
                 >
                   <Apple className="w-4 h-4" />
                   <span>{language === 'fa' ? 'دانلود نسخه مک (macOS)' : 'Download macOS App'}</span>
-                </a>
+                </button>
                 <a
                   href={downloadLinks.android_setup}
                   target="_blank"

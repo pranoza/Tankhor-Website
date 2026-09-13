@@ -17,6 +17,9 @@ interface LanguageAndThemeContextType {
   isDemoModalOpen: boolean;
   openDemoModal: () => void;
   closeDemoModal: () => void;
+  isMacModalOpen: boolean;
+  openMacModal: () => void;
+  closeMacModal: () => void;
 }
 
 const LanguageAndThemeContext = createContext<LanguageAndThemeContextType | undefined>(undefined);
@@ -25,6 +28,7 @@ export function LanguageAndThemeProvider({ children }: { children: React.ReactNo
   const [language, setLanguageState] = useState<Language>('fa');
   const [theme, setThemeState] = useState<Theme>('light');
   const [isDemoModalOpen, setIsDemoModalOpen] = useState<boolean>(false);
+  const [isMacModalOpen, setIsMacModalOpen] = useState<boolean>(false);
 
   const direction: Direction = language === 'fa' ? 'rtl' : 'ltr';
 
@@ -83,6 +87,9 @@ export function LanguageAndThemeProvider({ children }: { children: React.ReactNo
   const openDemoModal = () => setIsDemoModalOpen(true);
   const closeDemoModal = () => setIsDemoModalOpen(false);
 
+  const openMacModal = () => setIsMacModalOpen(true);
+  const closeMacModal = () => setIsMacModalOpen(false);
+
   return (
     <LanguageAndThemeContext.Provider
       value={{
@@ -96,6 +103,9 @@ export function LanguageAndThemeProvider({ children }: { children: React.ReactNo
         isDemoModalOpen,
         openDemoModal,
         closeDemoModal,
+        isMacModalOpen,
+        openMacModal,
+        closeMacModal,
       }}
     >
       {children}
