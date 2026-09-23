@@ -11,7 +11,11 @@ COPY package.json package-lock.json* ./
 
 # Use Docker BuildKit cache mount for npm downloads
 RUN --mount=type=cache,id=npm,target=/root/.npm \
-    npm ci --prefer-offline --no-audit --no-fund || npm install --prefer-offline --no-audit --no-fund
+    if [ -f package-lock.json ]; then \
+      npm ci --prefer-offline --no-audit --no-fund; \
+    else \
+      npm install --prefer-offline --no-audit --no-fund; \
+    fi
 
 # Rebuild the source code only when needed
 FROM base AS builder
