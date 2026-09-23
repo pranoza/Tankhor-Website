@@ -4,6 +4,7 @@ import React from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { HelpCircle, BookOpen } from 'lucide-react';
+import { FadeIn } from '@/components/ScrollAnimation';
 
 export default function SeoArticleSection() {
   const { language } = useLanguageAndTheme();
@@ -14,7 +15,7 @@ export default function SeoArticleSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* SEO Main Content Block */}
-        <article className="space-y-6 bg-white dark:bg-neutral-900/40 p-6 sm:p-10 rounded-xl border border-neutral-200/80 dark:border-neutral-800">
+        <FadeIn className="space-y-6 bg-white dark:bg-neutral-900/40 p-6 sm:p-10 rounded-xl border border-neutral-200/80 dark:border-neutral-800">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono">
             <BookOpen className="w-3.5 h-3.5" />
             <span>{language === 'fa' ? 'راهنمای تخصصی' : 'Technical Docs'}</span>
@@ -29,10 +30,10 @@ export default function SeoArticleSection() {
               <p key={idx}>{para[language]}</p>
             ))}
           </div>
-        </article>
+        </FadeIn>
 
         {/* Accounting Intent Q&A Box */}
-        <div className="bg-white dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 p-6 sm:p-8 rounded-xl space-y-4">
+        <FadeIn delay={0.1} className="bg-white dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 p-6 sm:p-8 rounded-xl space-y-4">
           <div className="flex items-start gap-3">
             <div className="w-8 h-8 rounded-md bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
               <HelpCircle className="w-4 h-4" />
@@ -46,7 +47,7 @@ export default function SeoArticleSection() {
               </p>
             </div>
           </div>
-        </div>
+        </FadeIn>
 
       </div>
     </section>

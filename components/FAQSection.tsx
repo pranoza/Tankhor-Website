@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent, FAQItem } from '@/data/content';
 import { ChevronDown, HelpCircle, Search } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function FAQSection() {
   const { language } = useLanguageAndTheme();
@@ -28,7 +29,7 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Vercel Header */}
-        <div className="max-w-3xl mb-12 space-y-3 text-right rtl:text-right ltr:text-left">
+        <FadeIn className="max-w-3xl mb-12 space-y-3 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono">
             <HelpCircle className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
             <span>{language === 'fa' ? 'سوالات متداول (FAQ)' : 'FAQ'}</span>
@@ -61,15 +62,15 @@ export default function FAQSection() {
               />
             </div>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Accordions List */}
-        <div className="space-y-3">
+        <FadeInStagger className="space-y-3">
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((faq: FAQItem) => {
               const isOpen = openId === faq.id;
               return (
-                <div
+                <FadeInStaggerItem
                   key={faq.id}
                   className="bg-neutral-50/60 dark:bg-neutral-900/40 rounded-lg border border-neutral-200/80 dark:border-neutral-800/80 overflow-hidden transition-all duration-200"
                 >
@@ -90,7 +91,7 @@ export default function FAQSection() {
                       {faq.answer[language]}
                     </div>
                   )}
-                </div>
+                </FadeInStaggerItem>
               );
             })
           ) : (
@@ -98,7 +99,7 @@ export default function FAQSection() {
               {language === 'fa' ? 'سوالی پیدا نشد.' : 'No matching questions found.'}
             </div>
           )}
-        </div>
+        </FadeInStagger>
 
       </div>
     </section>

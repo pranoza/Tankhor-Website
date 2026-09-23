@@ -4,6 +4,7 @@ import React from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { XCircle, CheckCircle2, Layers } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function PainPointsComparison() {
   const { language } = useLanguageAndTheme();
@@ -14,7 +15,7 @@ export default function PainPointsComparison() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Vercel Title */}
-        <div className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
+        <FadeIn className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono">
             <Layers className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
             <span>{language === 'fa' ? 'مقایسه راهکارها' : 'Solution Comparison'}</span>
@@ -25,13 +26,13 @@ export default function PainPointsComparison() {
           <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed">
             {content.subtitle[language]}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Side-by-Side Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
           
           {/* Traditional Methods */}
-          <div className="bg-neutral-50/80 dark:bg-neutral-900/40 p-6 sm:p-8 rounded-xl border border-neutral-200 dark:border-neutral-800 space-y-6">
+          <FadeInStaggerItem className="bg-neutral-50/80 dark:bg-neutral-900/40 p-6 sm:p-8 rounded-xl border border-neutral-200 dark:border-neutral-800 space-y-6">
             <div className="flex items-center gap-3 pb-4 border-b border-neutral-200 dark:border-neutral-800">
               <div className="w-8 h-8 rounded-md bg-rose-100 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900/50 flex items-center justify-center text-rose-600 dark:text-rose-400 shrink-0">
                 <XCircle className="w-4 h-4" />
@@ -61,10 +62,10 @@ export default function PainPointsComparison() {
                 </div>
               ))}
             </div>
-          </div>
+          </FadeInStaggerItem>
 
           {/* Tankhor Solution */}
-          <div className="bg-neutral-50/80 dark:bg-neutral-900/40 p-6 sm:p-8 rounded-xl border border-teal-500/40 space-y-6">
+          <FadeInStaggerItem className="bg-neutral-50/80 dark:bg-neutral-900/40 p-6 sm:p-8 rounded-xl border border-teal-500/40 space-y-6">
             <div className="flex items-center gap-3 pb-4 border-b border-neutral-200 dark:border-neutral-800">
               <div className="w-8 h-8 rounded-md bg-teal-100 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 flex items-center justify-center text-teal-600 dark:text-teal-400 shrink-0">
                 <CheckCircle2 className="w-4 h-4" />
@@ -94,9 +95,9 @@ export default function PainPointsComparison() {
                 </div>
               ))}
             </div>
-          </div>
+          </FadeInStaggerItem>
 
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );

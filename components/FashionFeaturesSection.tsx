@@ -4,6 +4,7 @@ import React from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { Package, Grid, Layers, Boxes, ShoppingCart, Ruler } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function FashionFeaturesSection() {
   const { language } = useLanguageAndTheme();
@@ -32,7 +33,7 @@ export default function FashionFeaturesSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Vercel "Recently shipped" Header Style */}
-        <div className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
+        <FadeIn className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono">
             <span>{language === 'fa' ? 'ماژول‌های تخصصی' : 'Specialized Modules'}</span>
           </div>
@@ -44,16 +45,16 @@ export default function FashionFeaturesSection() {
               ? '۶ ماژول اصلی طراحی شده بر اساس نیازهای واقعی صنعت مد و پوشاک'
               : '6 Core modules engineered for clothing, footwear & fashion stores'}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Vercel Style Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {fashionFeatures.map((item, index) => {
             const IconComponent = iconMap[item.iconName] || Package;
             const tag = moduleTags[index % moduleTags.length];
 
             return (
-              <div
+              <FadeInStaggerItem
                 key={item.id}
                 className="p-6 rounded-xl bg-white dark:bg-neutral-900/60 border border-neutral-200/80 dark:border-neutral-800/80 hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-200 space-y-4 flex flex-col justify-between group"
               >
@@ -80,10 +81,10 @@ export default function FashionFeaturesSection() {
                     {item.description[language]}
                   </p>
                 </div>
-              </div>
+              </FadeInStaggerItem>
             );
           })}
-        </div>
+        </FadeInStagger>
 
       </div>
     </section>

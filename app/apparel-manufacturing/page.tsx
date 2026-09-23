@@ -27,10 +27,10 @@ export default function ApparelManufacturingPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden pt-32 sm:pt-40">
+      <main className="overflow-x-hidden">
         
         {/* Dedicated Hero Section */}
-        <section className="bg-gradient-to-b from-emerald-950/20 via-white to-white dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-950 py-16 sm:py-24 border-b border-neutral-200 dark:border-neutral-800">
+        <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-gradient-to-b from-emerald-950/15 via-white to-white dark:from-emerald-950/25 dark:via-[#0a0a0a] dark:to-[#0a0a0a] border-b border-neutral-200 dark:border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-caption-mono font-medium">
               <Factory className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />

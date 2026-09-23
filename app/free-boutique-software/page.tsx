@@ -25,10 +25,10 @@ export default function FreeBoutiqueSoftwarePage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden pt-32 sm:pt-40">
+      <main className="overflow-x-hidden">
         
         {/* Dedicated Hero Section */}
-        <section className="bg-gradient-to-b from-neutral-900 via-neutral-950 to-neutral-950 text-white py-16 sm:py-24 border-b border-neutral-800">
+        <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-gradient-to-b from-teal-950/30 via-neutral-950 to-neutral-950 text-white border-b border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/20 border border-teal-500/40 text-teal-300 text-xs font-caption-mono font-medium">
               <Zap className="w-4 h-4 text-teal-400" />

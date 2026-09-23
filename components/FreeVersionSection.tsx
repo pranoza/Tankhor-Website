@@ -5,6 +5,7 @@ import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 import { Download, Check, Monitor, Apple, Smartphone, ShieldCheck, Terminal } from 'lucide-react';
+import { FadeIn } from '@/components/ScrollAnimation';
 
 export default function FreeVersionSection() {
   const { language, openMacModal } = useLanguageAndTheme();
@@ -14,7 +15,7 @@ export default function FreeVersionSection() {
   return (
     <section id="free-version" className="py-20 sm:py-28 bg-neutral-900 dark:bg-black text-white border-t border-neutral-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-neutral-950 rounded-2xl border border-neutral-800 p-8 sm:p-12 lg:p-16 space-y-12">
+        <FadeIn className="bg-neutral-950 rounded-2xl border border-neutral-800 p-8 sm:p-12 lg:p-16 space-y-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
@@ -128,7 +129,7 @@ export default function FreeVersionSection() {
             </div>
 
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

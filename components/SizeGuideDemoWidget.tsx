@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { Ruler, Sparkles, CheckCircle2, ShieldCheck, ArrowLeft, ArrowRight, Shirt, Footprints } from 'lucide-react';
+import { FadeIn } from '@/components/ScrollAnimation';
 
 type GarmentType = 'jacket' | 'shirt' | 'pants' | 'shoes';
 
@@ -42,7 +43,7 @@ export default function SizeGuideDemoWidget() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Description Column */}
-          <div className="lg:col-span-5 space-y-6">
+          <FadeIn className="lg:col-span-5 space-y-6">
             <div className="font-caption-mono inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 text-xs font-medium border border-neutral-200/80 dark:border-neutral-800 shadow-vercel-sm">
               <Ruler className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
               <span>{language === 'fa' ? 'ماژول ضد مرجوعی' : 'Anti-Return Engine'}</span>
@@ -108,10 +109,10 @@ export default function SizeGuideDemoWidget() {
                 {direction === 'rtl' ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
               </button>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Interactive Widget Demo Container */}
-          <div className="lg:col-span-7 bg-white dark:bg-[#0a0a0a] p-6 sm:p-8 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-vercel-md space-y-6">
+          <FadeIn delay={0.15} className="lg:col-span-7 bg-white dark:bg-[#0a0a0a] p-6 sm:p-8 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-vercel-md space-y-6">
             {/* Category Selector Buttons */}
             <div className="flex flex-wrap items-center gap-2 pb-4 border-b border-neutral-200/80 dark:border-neutral-800/80">
               <button
@@ -249,7 +250,7 @@ export default function SizeGuideDemoWidget() {
                 </span>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import React from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { CheckCircle2, Shirt, Layers, Database, Box, ShoppingBag, WifiOff, Download, Cloud } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function WhyTankhorSection() {
   const { language } = useLanguageAndTheme();
@@ -16,7 +17,7 @@ export default function WhyTankhorSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Vercel Title Section */}
-        <div className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
+        <FadeIn className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono">
             <span>{language === 'fa' ? 'مزیت‌های رقابتی' : 'Competitive Advantages'}</span>
           </div>
@@ -26,14 +27,14 @@ export default function WhyTankhorSection() {
           <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed">
             {whyTankhor.subtitle[language]}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Minimal Vercel Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {whyTankhor.advantages.map((adv, idx) => {
             const Icon = icons[idx % icons.length];
             return (
-              <div
+              <FadeInStaggerItem
                 key={idx}
                 className="p-6 rounded-xl bg-neutral-50/80 dark:bg-neutral-900/40 border border-neutral-200/80 dark:border-neutral-800/80 hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-200 space-y-3 group"
               >
@@ -53,10 +54,10 @@ export default function WhyTankhorSection() {
                 <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal">
                   {adv.desc[language]}
                 </p>
-              </div>
+              </FadeInStaggerItem>
             );
           })}
-        </div>
+        </FadeInStagger>
 
       </div>
     </section>

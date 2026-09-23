@@ -11,7 +11,6 @@ import FashionFeaturesSection from '@/components/FashionFeaturesSection';
 import AccountingModuleSection from '@/components/AccountingModuleSection';
 import PainPointsComparison from '@/components/PainPointsComparison';
 import SizeGuideDemoWidget from '@/components/SizeGuideDemoWidget';
-import FreeVsProSection from '@/components/FreeVsProSection';
 import PricingSection from '@/components/PricingSection';
 import TestimonialsAndStats from '@/components/TestimonialsAndStats';
 import SeoArticleSection from '@/components/SeoArticleSection';
@@ -39,7 +38,6 @@ export default function HomePage() {
         <FashionFeaturesSection />
         <PainPointsComparison />
         <SizeGuideDemoWidget />
-        <FreeVsProSection />
         <PricingSection />
         <TestimonialsAndStats />
         <SeoArticleSection />

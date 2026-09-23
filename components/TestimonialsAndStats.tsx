@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent, Testimonial } from '@/data/content';
 import { Star, Award } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function TestimonialsAndStats() {
   const { language } = useLanguageAndTheme();
@@ -15,7 +16,7 @@ export default function TestimonialsAndStats() {
     <section id="testimonials" className="py-28 sm:py-36 bg-neutral-100/50 dark:bg-[#0a0a0a] text-neutral-900 dark:text-neutral-100 relative border-y border-neutral-200/60 dark:border-neutral-800/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-4 mb-20">
+        <FadeIn className="text-center max-w-2xl mx-auto space-y-4 mb-20">
           <div className="font-caption-mono inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-xs font-medium border border-neutral-200/80 dark:border-neutral-800">
             <Award className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
             <span>{language === 'fa' ? 'نظرات مشتریان' : 'Testimonials'}</span>
@@ -32,12 +33,12 @@ export default function TestimonialsAndStats() {
               ? 'تجربه واقعی مدیران فروشگاه‌ها از سرعت بالا و حذف خطای سایزبندی با تنخور.'
               : 'How Tankhor eliminated stock mismatches and accelerated operations.'}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Testimonials Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t: Testimonial) => (
-            <div
+            <FadeInStaggerItem
               key={t.id}
               className="bg-white dark:bg-[#121212] p-8 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 flex flex-col justify-between space-y-6 shadow-vercel-sm"
             >
@@ -76,9 +77,9 @@ export default function TestimonialsAndStats() {
                   </p>
                 </div>
               </div>
-            </div>
+            </FadeInStaggerItem>
           ))}
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );

@@ -15,6 +15,7 @@ import {
   Receipt,
   PieChart,
 } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function AccountingModuleSection() {
   const { language } = useLanguageAndTheme();
@@ -37,7 +38,7 @@ export default function AccountingModuleSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="max-w-3xl mb-16 space-y-4 text-right rtl:text-right ltr:text-left">
+        <FadeIn className="max-w-3xl mb-16 space-y-4 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-950/50 border border-teal-200 dark:border-teal-800/80 text-teal-700 dark:text-teal-300 text-xs font-caption-mono font-medium">
             <Receipt className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
             <span>{language === 'fa' ? 'ماژول جدید و تخصصی' : 'New Dedicated Module'}</span>
@@ -48,16 +49,16 @@ export default function AccountingModuleSection() {
           <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed">
             {accounting.subtitle[language]}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Feature Grid - Vercel Minimalist Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {accounting.features.map((feature: AccountingFeature, index: number) => {
             const IconComponent = iconMap[feature.iconName] || Calculator;
             const isFeatured = feature.id === 'landed-cost' || feature.id === 'treasury';
 
             return (
-              <div
+              <FadeInStaggerItem
                 key={feature.id}
                 className={`p-6 sm:p-7 rounded-2xl transition-all duration-200 flex flex-col justify-between group border relative ${
                   isFeatured
@@ -133,13 +134,13 @@ export default function AccountingModuleSection() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </FadeInStaggerItem>
             );
           })}
-        </div>
+        </FadeInStagger>
 
         {/* Bottom Banner - Integration Callout */}
-        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <FadeIn delay={0.1} className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center shrink-0">
               <PieChart className="w-6 h-6 text-teal-400" />
@@ -165,7 +166,7 @@ export default function AccountingModuleSection() {
             <span>{language === 'fa' ? 'تست رایگان ماژول حسابداری' : 'Test Accounting Module Free'}</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
-        </div>
+        </FadeIn>
 
       </div>
     </section>

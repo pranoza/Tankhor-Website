@@ -28,10 +28,10 @@ export default function BoutiqueAccountingPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden pt-32 sm:pt-40">
+      <main className="overflow-x-hidden">
         
         {/* Dedicated Hero Section */}
-        <section className="bg-gradient-to-b from-teal-950/20 via-white to-white dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-950 py-16 sm:py-24 border-b border-neutral-200 dark:border-neutral-800">
+        <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-gradient-to-b from-teal-950/15 via-white to-white dark:from-teal-950/25 dark:via-[#0a0a0a] dark:to-[#0a0a0a] border-b border-neutral-200 dark:border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 text-xs font-caption-mono font-medium">
               <Store className="w-4 h-4 text-teal-600 dark:text-teal-400" />

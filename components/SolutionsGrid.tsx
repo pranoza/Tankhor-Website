@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { Store, Scissors, Factory, Sparkles, ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function SolutionsGrid() {
   const { language } = useLanguageAndTheme();
@@ -66,7 +67,7 @@ export default function SolutionsGrid() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-14 space-y-3 text-right rtl:text-right ltr:text-left">
+        <FadeIn className="max-w-3xl mb-14 space-y-3 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono font-medium">
             <Sparkles className="w-3.5 h-3.5 text-teal-500" />
             <span>{language === 'fa' ? 'راهکارهای تخصصی صنف پوشاک' : 'Tailored Fashion Solutions'}</span>
@@ -79,14 +80,14 @@ export default function SolutionsGrid() {
               ? 'انتخاب کنید تا امکانات دقیق مربوط به بوتیک، مزون یا کارگاه تولیدی پوشاک خود را مشاهده کنید'
               : 'Select your business type to explore tailored features for boutiques, ateliers, or garment factories'}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Solutions Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {solutions.map((item) => {
             const Icon = item.icon;
             return (
-              <div
+              <FadeInStaggerItem
                 key={item.id}
                 className="p-7 rounded-2xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800/80 hover:border-teal-500/60 dark:hover:border-teal-500/50 transition-all duration-200 flex flex-col justify-between group shadow-sm hover:shadow-md"
               >
@@ -131,10 +132,10 @@ export default function SolutionsGrid() {
                     <ArrowIcon className="w-4 h-4" />
                   </Link>
                 </div>
-              </div>
+              </FadeInStaggerItem>
             );
           })}
-        </div>
+        </FadeInStagger>
 
       </div>
     </section>

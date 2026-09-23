@@ -5,6 +5,7 @@ import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 import { Check, Download, ArrowUpRight, Cloud } from 'lucide-react';
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from '@/components/ScrollAnimation';
 
 export default function FreeVsProSection() {
   const { language } = useLanguageAndTheme();
@@ -16,7 +17,7 @@ export default function FreeVsProSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Vercel Title */}
-        <div className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
+        <FadeIn className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono">
             <span>{language === 'fa' ? 'مقایسه نسخه‌ها' : 'Version Matrix'}</span>
           </div>
@@ -26,12 +27,12 @@ export default function FreeVsProSection() {
           <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed">
             {freeVsPro.subtitle[language]}
           </p>
-        </div>
+        </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           
           {/* Tankhor Free Card */}
-          <div className="p-8 rounded-xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 space-y-6 flex flex-col justify-between">
+          <FadeInStaggerItem className="p-8 rounded-xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 space-y-6 flex flex-col justify-between">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
@@ -67,10 +68,10 @@ export default function FreeVsProSection() {
                 <span>{freeVsPro.freeCard.ctaText[language]}</span>
               </a>
             </div>
-          </div>
+          </FadeInStaggerItem>
 
           {/* Tankhor Pro Card */}
-          <div className="p-8 rounded-xl bg-neutral-900 text-white border border-teal-500/40 shadow-sm space-y-6 flex flex-col justify-between relative">
+          <FadeInStaggerItem className="p-8 rounded-xl bg-neutral-900 text-white border border-teal-500/40 shadow-sm space-y-6 flex flex-col justify-between relative">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold text-white flex items-center gap-2">
@@ -107,9 +108,9 @@ export default function FreeVsProSection() {
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
-          </div>
+          </FadeInStaggerItem>
 
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );
