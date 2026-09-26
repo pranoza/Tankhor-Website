@@ -311,18 +311,24 @@ export const siteContent = {
   },
 
   freeVersion: {
-    title: { fa: "نرم‌افزار رایگان مدیریت و حسابداری پوشاک", en: "Free Apparel Management Software" },
+    title: { fa: "نرم افزار مدیریت و حسابداری پوشاک رایگان (Tankhor Free)", en: "Tankhor Free Apparel Management Software" },
     subtitle: {
-      fa: "نصب سریع روی سیستم و مدیریت کامل رنگ، سایز، انبار و فاکتورها به صورت ۱۰۰٪ آفلاین و دائمی.",
-      en: "Quick local installation and complete management of variants, stock, and invoices 100% offline forever.",
+      fa: "روی سیستم شخصی خود نصب کنید و بدون پرداخت هزینه اشتراک، مدیریت کامل محصولات، سایزبندی، فاکتورها و انبارداری را با حداکثر سرعت آغاز نمایید.",
+      en: "Install locally on your computer and start managing apparel products, size matrices, invoices, and stock at maximum speed with zero subscription fees.",
     },
     benefits: [
-      { fa: "ماتریس نامحدود رنگ و سایز با بارکد اختصاصی", en: "Unlimited color & size matrix with barcodes" },
-      { fa: "صدور سریع فاکتور فروش و کنترل دخل صندوق", en: "Rapid POS invoicing and cashier drawer" },
-      { fa: "۱۰۰٪ آفلاین و پرسرعت (پایگاه داده محلی SQLite)", en: "100% offline & fast local SQLite database" },
-      { fa: "کاملاً رایگان، بدون انقضا و بدون نیاز به اشتراک", en: "Completely free forever with no subscription" },
+      { fa: "ثبت نامحدود کالا، دسته‌بندی و برند (بدون سقف تعدادی)", en: "Unlimited products, categories, and brands with no quantity cap" },
+      { fa: "ماتریس نامحدود متغیرها (رنگ، سایز، آرتیکل و بارکد اختصاصی)", en: "Unlimited variants (color, size, article, and custom barcodes)" },
+      { fa: "سیستم هوشمند راهنمای سایز اختصاصی پوشاک و کفش (Size Guide)", en: "Smart specialized size guide engine for apparel & footwear" },
+      { fa: "صدور سریع فاکتور فروش، پیش‌فاکتور و خرید", en: "Rapid sales invoicing, proformas, and purchase orders" },
+      { fa: "مدیریت انبار، کاردکس موجودی و انبارگردانی", en: "Warehouse management, stock ledger cards, and auditing" },
+      { fa: "حسابداری مشتریان و تأمین‌کنندگان (دفتر معین و بدهکار/بستانکار)", en: "Customer & supplier accounts (subsidiary ledger and receivables/payables)" },
+      { fa: "۱۰۰٪ آفلاین و پرسرعت (پایگاه داده محلی SQLite بدون نیاز به اینترنت و قطعی)", en: "100% Offline & fast (Local SQLite DB without internet dependence or downtime)" },
+      { fa: "امنیت کامل اطلاعات (ذخیره اطلاعات فروش و سود روی سخت‌افزار خودتان)", en: "Complete data privacy (sales and profit data strictly stored on your own hardware)" },
+      { fa: "پشتیبان‌گیری و بازیابی دستی با ۱ کلیک (فایل JSON)", en: "1-Click manual backup & restore (JSON file)" },
+      { fa: "امکان فعال‌سازی دائمی افزونه‌ها (چاپ بارکد، حسابداری دوبل و ووکامرس)", en: "Permanent add-on activation support (barcode printing, double-entry accounting, WooCommerce)" },
     ],
-    ctaText: { fa: "دانلود رایگان نسخه دسکتاپ", en: "Download Free Desktop App" },
+    ctaText: { fa: "دانلود رایگان نرم‌افزار (ویندوز / مک / اندروید)", en: "Download Free App (Windows / Mac / Android)" },
   },
 
   fashionFeatures: [
@@ -395,8 +401,8 @@ export const siteContent = {
       en: "Tankhor Free covers all core store operations on desktop. Tankhor Pro adds real-time cloud sync for multi-branch brands.",
     },
     freeCard: {
-      title: { fa: "نسخه رایگان دسکتاپ", en: "Free Desktop Edition" },
-      badge: { fa: "رایگان و آفلاین", en: "Free & Offline" },
+      title: { fa: "Tankhor Free", en: "Tankhor Free Desktop" },
+      badge: { fa: "۱۰۰٪ رایگان و آفلاین", en: "100% Free & Offline" },
       features: [
         { fa: "اپلیکیشن نیتیو دسکتاپ (Windows و macOS)", en: "Native Desktop App (Windows & macOS)" },
         { fa: "دیتابیس سریع محلی SQLite (۱۰۰٪ آفلاین)", en: "Fast local SQLite DB (100% Offline)" },
@@ -408,13 +414,13 @@ export const siteContent = {
         { fa: "ثبت فاکتور فروش، مرجوعی و تعویض سایز", en: "Sales Invoices, Returns & Size Exchanges" },
         { fa: "چاپ بارکد و اتیکت قیمت حرارتی پوشاک", en: "Thermal Barcode & Price Hangtag Printing" },
       ],
-      ctaText: { fa: "دانلود رایگان نسخه دسکتاپ", en: "Download Free Desktop" },
+      ctaText: { fa: "دانلود رایگان نسخه دسکتاپ", en: "Download Tankhor Free Desktop" },
     },
     proCard: {
-      title: { fa: "تن‌خور پرو", en: "Tankhor Pro" },
+      title: { fa: "Tankhor Pro", en: "Tankhor Pro Cloud ERP" },
       badge: { fa: "همگام‌سازی ابری + حسابداری پیشرفته", en: "Cloud Sync + Full Accounting" },
       features: [
-        { fa: "تمامی امکانات نسخه رایگان دسکتاپ", en: "Includes all Free Desktop features" },
+        { fa: "تمامی امکانات نسخه Tankhor Free", en: "Includes all Tankhor Free features" },
         { fa: "همگام‌سازی ابری خودکار متصل به سرور اختصاصی", en: "Automated Cloud Sync via Dedicated Server" },
         { fa: "دسترسی همزمان از وب PWA، دسکتاپ و موبایل", en: "Multi-Platform Access (Web PWA, Desktop, Mobile)" },
         { fa: "ماژول کامل خزانه، چک صیادی و سامانه مؤدیان", en: "Full Treasury, Sayad Check & Taxpayer System" },
