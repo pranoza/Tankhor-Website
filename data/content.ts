@@ -114,13 +114,22 @@ export const siteContent = {
   },
 
   navLinks: [
-    { id: "why-tankhor", label: { fa: "چرا تنخور؟", en: "Why Tankhor?" }, href: "#why-tankhor" },
+    { id: "home", label: { fa: "خانه", en: "Home" }, href: "/" },
+    { id: "features", label: { fa: "امکانات", en: "Features" }, href: "/features" },
     { id: "solutions", label: { fa: "راهکارها", en: "Solutions" }, href: "#solutions" },
-    { id: "accounting", label: { fa: "حسابداری تخصصی", en: "Specialized Accounting" }, href: "#accounting" },
-    { id: "features", label: { fa: "امکانات تخصصی", en: "Fashion Features" }, href: "#features" },
-    { id: "pricing", label: { fa: "تعرفه‌ها و پلن‌ها", en: "Plans & Pricing" }, href: "#pricing" },
+    { id: "size-guide", label: { fa: "سایزفیندر هوشمند", en: "Size Finder" }, href: "/features/size-guide-engine" },
+    { id: "pricing", label: { fa: "تن‌خور پرو", en: "Tankhor Pro" }, href: "#pricing" },
+  ] as NavigationLink[],
+
+  footerQuickLinks: [
+    { id: "home", label: { fa: "خانه", en: "Home" }, href: "/" },
+    { id: "features", label: { fa: "امکانات تخصصی", en: "Specialized Features" }, href: "/features" },
+    { id: "solutions", label: { fa: "راهکارها", en: "Solutions" }, href: "#solutions" },
+    { id: "why-tankhor", label: { fa: "چرا تنخور؟", en: "Why Tankhor?" }, href: "#why-tankhor" },
+    { id: "pricing", label: { fa: "تن‌خور پرو (تعرفه‌ها)", en: "Tankhor Pro (Plans)" }, href: "#pricing" },
     { id: "free-version", label: { fa: "نسخه رایگان", en: "Free Version" }, href: "#free-version" },
     { id: "faq", label: { fa: "سوالات متداول", en: "FAQ" }, href: "#faq" },
+    { id: "sitemap", label: { fa: "نقشه سایت (Sitemap)", en: "Sitemap" }, href: "/sitemap" },
   ] as NavigationLink[],
 
   hero: {

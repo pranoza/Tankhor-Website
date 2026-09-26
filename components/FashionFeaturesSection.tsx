@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { Package, Grid, Layers, Boxes, ShoppingCart, Ruler } from 'lucide-react';
@@ -85,6 +86,17 @@ export default function FashionFeaturesSection() {
             );
           })}
         </FadeInStagger>
+
+        {/* Link to 10 Detailed Feature Landing Pages */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/features"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm group"
+          >
+            <span>{language === 'fa' ? 'مشاهده ۱۰ قابلیت تخصصی تنخور با جزئیات و دموی زنده' : 'Explore All 10 Specialized Features & Live Demos'}</span>
+            <span className="rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">→</span>
+          </Link>
+        </div>
 
       </div>
     </section>

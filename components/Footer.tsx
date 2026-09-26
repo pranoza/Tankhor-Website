@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
@@ -109,7 +110,7 @@ export default function Footer() {
               {language === 'fa' ? 'بخش‌های سایت' : 'Navigation'}
             </h4>
             <ul className="space-y-2 text-xs">
-              {siteContent.navLinks.map((link) => (
+              {(siteContent.footerQuickLinks || siteContent.navLinks).map((link) => (
                 <li key={link.id}>
                   <a
                     href={link.href}
@@ -129,24 +130,88 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
               <li>
-                <a href="/boutique-accounting" className="hover:text-white transition-colors">
+                <Link href="/boutique-accounting" className="hover:text-white transition-colors">
                   {language === 'fa' ? 'حسابداری بوتیک لباس' : 'Boutique Accounting'}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/maison-accounting" className="hover:text-white transition-colors">
+                <Link href="/maison-accounting" className="hover:text-white transition-colors">
                   {language === 'fa' ? 'حسابداری و مدیریت مزون' : 'Maison Software'}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/apparel-manufacturing" className="hover:text-white transition-colors">
+                <Link href="/apparel-manufacturing" className="hover:text-white transition-colors">
                   {language === 'fa' ? 'حسابداری تولیدی پوشاک' : 'Garment Manufacturing'}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/free-boutique-software" className="hover:text-white transition-colors">
+                <Link href="/free-boutique-software" className="hover:text-white transition-colors">
                   {language === 'fa' ? 'دانلود حسابداری بوتیک رایگان' : 'Free Boutique App'}
-                </a>
+                </Link>
+              </li>
+              <li className="pt-1 border-t border-neutral-800/80">
+                <Link href="/features" className="text-teal-400 hover:underline font-semibold flex items-center gap-1">
+                  <span>{language === 'fa' ? 'مشاهده همه قابلیت‌ها' : 'All Features'}</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 10 Feature Landing Pages Links */}
+          <div className="space-y-3 font-caption-mono">
+            <h4 className="text-[11px] font-bold text-white uppercase tracking-wider">
+              {language === 'fa' ? 'قابلیت‌های تخصصی پوشاک' : 'Specialized Features'}
+            </h4>
+            <ul className="space-y-1.5 text-xs text-neutral-400">
+              <li>
+                <Link href="/features/apparel-inventory" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'انبارداری پوشاک و کفش' : 'Apparel Inventory'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/clothing-accounting" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'حسابداری و صندوق بوتیک' : 'Retail POS & Accounting'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/size-guide-engine" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'راهنمای سایز هوشمند' : 'Smart Size-Finder'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/digital-catalog" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'کاتالوگ دیجیتال اینستاگرام' : 'Digital Catalog'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/barcode-printing" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'چاپ بارکد و لیبل زن' : 'Barcode & Label Printing'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/woocommerce-sync" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'اتصال انبار به ووکامرس' : 'WooCommerce Sync'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/landed-cost" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'محاسبه Landed Cost' : 'Landed Cost Calculator'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/apparel-analytics" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'تحلیل فروش و سود پوشاک' : 'Apparel Sales Analytics'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/treasury-and-cheques" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'مدیریت چک صیادی و دخل' : 'Treasury & Cheques'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/financial-integrations" className="hover:text-white transition-colors">
+                  {language === 'fa' ? 'اتصال سپیدار، هلو و مودیان' : 'Accounting Bridges'}
+                </Link>
               </li>
             </ul>
           </div>
@@ -228,9 +293,18 @@ export default function Footer() {
 
         {/* Bottom Vercel Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 font-caption-mono gap-4">
-          <p>
-            © {new Date().getFullYear()} {language === 'fa' ? 'پلتفرم «تنخور | TANKHOR» - تمامی حقوق محفوظ است.' : 'Tankhor Apparel Platform.'}
-          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p>
+              © {new Date().getFullYear()} {language === 'fa' ? 'پلتفرم «تنخور | TANKHOR» - تمامی حقوق محفوظ است.' : 'Tankhor Apparel Platform.'}
+            </p>
+            <span className="text-neutral-700 hidden sm:inline">•</span>
+            <Link
+              href="/sitemap"
+              className="text-neutral-400 hover:text-teal-400 underline-offset-4 hover:underline transition-colors"
+            >
+              {language === 'fa' ? 'نقشه سایت (Sitemap)' : 'Sitemap'}
+            </Link>
+          </div>
 
           <div className="flex items-center gap-2 text-neutral-400">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

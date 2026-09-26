@@ -1,13 +1,98 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
-import { siteContent } from '@/data/content';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
-import { Sun, Moon, Globe, Menu, X, Download, LogIn, ChevronRight, Monitor, Apple, Smartphone } from 'lucide-react';
+import {
+  Sun,
+  Moon,
+  Menu,
+  X,
+  Download,
+  LogIn,
+  ChevronRight,
+  ChevronDown,
+  Monitor,
+  Apple,
+  Smartphone,
+  Sparkles,
+  Boxes,
+  Receipt,
+  Ruler,
+  QrCode,
+  Barcode,
+  RefreshCw,
+  Calculator,
+  PieChart,
+  CreditCard,
+  ArrowLeftRight,
+} from 'lucide-react';
+
+const featuresDropdownItems = [
+  {
+    slug: 'apparel-inventory',
+    title: { fa: 'انبارداری پوشاک و کفش', en: 'Apparel & Shoe Inventory' },
+    desc: { fa: 'ماتریس رنگ و سایز و حواله انتقال بین شعب', en: 'Color/size matrix & inter-branch transfers' },
+    icon: Boxes,
+  },
+  {
+    slug: 'clothing-accounting',
+    title: { fa: 'حسابداری و صندوق پوشاک', en: 'Apparel POS & Accounting' },
+    desc: { fa: 'فروش سریع بارکدی، دخل صندوقدار و سود ناخالص', en: 'Fast barcode checkout & cashier drawer' },
+    icon: Receipt,
+  },
+  {
+    slug: 'size-guide-engine',
+    title: { fa: 'موتور پیشنهاد سایز پوشاک', en: 'Smart Apparel Size Finder' },
+    desc: { fa: 'جدول هوشمند سانتیمتری و کاهش مرجوعی آنلاین‌شاپ', en: 'Anti-return sizing widget & calculator' },
+    icon: Ruler,
+  },
+  {
+    slug: 'digital-catalog',
+    title: { fa: 'کاتالوگ دیجیتال و ویترین پوشاک', en: 'Digital Apparel Showcase' },
+    desc: { fa: 'لینک اختصاصی و QR کد شیک برای اینستاگرام و واتساپ', en: 'Online showcase & WhatsApp order link' },
+    icon: QrCode,
+  },
+  {
+    slug: 'barcode-printing',
+    title: { fa: 'چاپ بارکد و اتیکت پوشاک', en: 'Garment Barcode & Label' },
+    desc: { fa: 'چاپ اتیکت با مشخصات مدل، رنگ، سایز و قیمت', en: 'Thermal label printing for clothes' },
+    icon: Barcode,
+  },
+  {
+    slug: 'woocommerce-sync',
+    title: { fa: 'اتصال انبار پوشاک به ووکامرس', en: 'Apparel WooCommerce Sync' },
+    desc: { fa: 'سینک لحظه‌ای موجودی سایت و مغازه فیزیکی', en: 'Real-time stock sync for WordPress' },
+    icon: RefreshCw,
+  },
+  {
+    slug: 'landed-cost',
+    title: { fa: 'بهای تمام‌شده پوشاک (Landed Cost)', en: 'Garment Landed Cost' },
+    desc: { fa: 'سرشکن هزینه حمل، گمرک و کارگو روی هر تکه لباس', en: 'Shipping & customs allocation per garment' },
+    icon: Calculator,
+  },
+  {
+    slug: 'apparel-analytics',
+    title: { fa: 'آمار و تحلیل فروش پوشاک', en: 'Fashion Sales Analytics' },
+    desc: { fa: 'تحلیل پرفروش‌ترین رنگ‌ها و رسوب انبار', en: 'Best-selling colors, models & dead stock' },
+    icon: PieChart,
+  },
+  {
+    slug: 'treasury-and-cheques',
+    title: { fa: 'خزانه‌داری و چک صیادی بوتیک', en: 'Apparel Treasury & Cheques' },
+    desc: { fa: 'هشدار سررسید چک بنکداران و تفکیک پوز دخل', en: 'Automated due date alerts & cash flow' },
+    icon: CreditCard,
+  },
+  {
+    slug: 'financial-integrations',
+    title: { fa: 'اتصال انبار پوشاک به سپیدار و هلو', en: 'Accounting Software Bridges' },
+    desc: { fa: 'خروجی اسناد دوبل تراز شده و گزارش سامانه مؤدیان', en: 'Standard export to Sepidar & Holo' },
+    icon: ArrowLeftRight,
+  },
+];
 
 export default function Navbar() {
   const { language, theme, toggleTheme, toggleLanguage, openMacModal } = useLanguageAndTheme();
@@ -16,6 +101,9 @@ export default function Navbar() {
   const isHome = pathname === '/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isFeaturesDropdownOpen, setIsFeaturesDropdownOpen] = useState(false);
+  const [isMobileFeaturesExpanded, setIsMobileFeaturesExpanded] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const getNavHref = (href: string) => {
     if (href.startsWith('#')) {
@@ -24,12 +112,30 @@ export default function Navbar() {
     return href;
   };
 
+  const handleMouseEnterFeatures = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setIsFeaturesDropdownOpen(true);
+  };
+
+  const handleMouseLeaveFeatures = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsFeaturesDropdownOpen(false);
+    }, 150);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -98,24 +204,156 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Nav Links */}
-            <nav className="hidden lg:flex items-center gap-6 text-xs font-medium text-neutral-600 dark:text-neutral-400 shrink-0">
-              {!isHome && (
-                <Link
-                  href="/"
-                  className="text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 transition-colors whitespace-nowrap"
+            <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-xs font-medium text-neutral-600 dark:text-neutral-400 shrink-0">
+              {/* 1. Home Link */}
+              <Link
+                href="/"
+                className={`transition-colors whitespace-nowrap hover:text-neutral-900 dark:hover:text-white ${
+                  isHome
+                    ? 'text-teal-600 dark:text-teal-400 font-semibold'
+                    : 'text-neutral-600 dark:text-neutral-400'
+                }`}
+              >
+                {language === 'fa' ? 'خانه' : 'Home'}
+              </Link>
+
+              {/* 2. Features Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={handleMouseEnterFeatures}
+                onMouseLeave={handleMouseLeaveFeatures}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsFeaturesDropdownOpen((prev) => !prev)}
+                  className={`inline-flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer hover:text-neutral-900 dark:hover:text-white ${
+                    pathname.startsWith('/features')
+                      ? 'text-teal-600 dark:text-teal-400 font-semibold'
+                      : 'text-neutral-600 dark:text-neutral-400'
+                  }`}
+                  aria-expanded={isFeaturesDropdownOpen}
                 >
-                  {language === 'fa' ? 'صفحه اصلی' : 'Home'}
-                </Link>
-              )}
-              {siteContent.navLinks.map((link) => (
-                <Link
-                  key={link.id}
-                  href={getNavHref(link.href)}
-                  className="hover:text-neutral-900 dark:hover:text-white transition-colors whitespace-nowrap"
-                >
-                  {link.label[language]}
-                </Link>
-              ))}
+                  <span>{language === 'fa' ? 'امکانات' : 'Features'}</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      isFeaturesDropdownOpen
+                        ? 'rotate-180 text-teal-600 dark:text-teal-400'
+                        : 'text-neutral-400'
+                    }`}
+                  />
+                </button>
+
+                {/* Desktop Dropdown Mega-Panel */}
+                {isFeaturesDropdownOpen && (
+                  <div
+                    className="absolute top-full -right-28 lg:right-0 mt-2.5 w-[560px] lg:w-[620px] bg-white/95 dark:bg-[#111111]/95 backdrop-blur-xl rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-150"
+                    onMouseEnter={handleMouseEnterFeatures}
+                    onMouseLeave={handleMouseLeaveFeatures}
+                  >
+                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-neutral-100 dark:border-neutral-800">
+                      <div className="flex items-center gap-2">
+                        <span className="p-1 rounded bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400">
+                          <Sparkles className="w-3.5 h-3.5" />
+                        </span>
+                        <span className="font-bold text-xs text-neutral-900 dark:text-white">
+                          {language === 'fa' ? '۱۰ قابلیت تخصصی تنخور برای صنف پوشاک' : '10 Specialized Apparel Capabilities'}
+                        </span>
+                      </div>
+                      <Link
+                        href="/features"
+                        onClick={() => setIsFeaturesDropdownOpen(false)}
+                        className="text-[11px] font-semibold text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 inline-flex items-center gap-1"
+                      >
+                        <span>{language === 'fa' ? 'هاب همه امکانات' : 'All Features Hub'}</span>
+                        <ChevronRight className="w-3 h-3 rtl:rotate-180" />
+                      </Link>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2">
+                      {featuresDropdownItems.map((item) => {
+                        const Icon = item.icon;
+                        const isItemActive = pathname === `/features/${item.slug}`;
+                        return (
+                          <Link
+                            key={item.slug}
+                            href={`/features/${item.slug}`}
+                            onClick={() => setIsFeaturesDropdownOpen(false)}
+                            className={`group flex items-start gap-2.5 p-2 rounded-lg transition-all ${
+                              isItemActive
+                                ? 'bg-teal-50 dark:bg-teal-950/40 border border-teal-200/60 dark:border-teal-800/60'
+                                : 'hover:bg-neutral-100/80 dark:hover:bg-neutral-800/60'
+                            }`}
+                          >
+                            <div className="p-1.5 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 group-hover:bg-teal-600 group-hover:text-white transition-colors shrink-0 mt-0.5">
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <div className="space-y-0.5 overflow-hidden">
+                              <p className="text-xs font-semibold text-neutral-900 dark:text-neutral-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors truncate">
+                                {item.title[language]}
+                              </p>
+                              <p className="text-[10px] text-neutral-500 dark:text-neutral-400 line-clamp-1 leading-snug">
+                                {item.desc[language]}
+                              </p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+
+                    <div className="mt-3 pt-2.5 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-[11px] text-neutral-500 dark:text-neutral-400 bg-neutral-50/70 dark:bg-neutral-900/50 -mx-4 -mb-4 p-3 rounded-b-xl">
+                      <span>
+                        {language === 'fa'
+                          ? 'تمام امکانات در نسخه پایه رایگان و آفلاین فعال هستند'
+                          : 'All tools fully functional offline in Free edition'}
+                      </span>
+                      <Link
+                        href="/features"
+                        onClick={() => setIsFeaturesDropdownOpen(false)}
+                        className="font-semibold text-teal-600 dark:text-teal-400 hover:underline"
+                      >
+                        {language === 'fa' ? 'مشاهده مقایسه و جزئیات فنی ←' : 'Compare & Tech Specs →'}
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* 3. Solutions */}
+              <Link
+                href={getNavHref('#solutions')}
+                className="hover:text-neutral-900 dark:hover:text-white transition-colors whitespace-nowrap"
+              >
+                {language === 'fa' ? 'راهکارها' : 'Solutions'}
+              </Link>
+
+              {/* 4. Smart SizeFinder */}
+              <Link
+                href="/features/size-guide-engine"
+                className={`transition-colors whitespace-nowrap inline-flex items-center gap-1 hover:text-neutral-900 dark:hover:text-white ${
+                  pathname === '/features/size-guide-engine'
+                    ? 'text-teal-600 dark:text-teal-400 font-semibold'
+                    : 'text-neutral-600 dark:text-neutral-400'
+                }`}
+              >
+                <Ruler className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                <span>{language === 'fa' ? 'سایزفیندر هوشمند' : 'Size Finder'}</span>
+                <span className="text-[9px] font-semibold px-1 py-0.5 rounded bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 leading-none">
+                  {language === 'fa' ? 'ویژه' : 'Pro'}
+                </span>
+              </Link>
+
+              {/* 5. Tankhor Pro */}
+              <Link
+                href={getNavHref('#pricing')}
+                className="hover:text-neutral-900 dark:hover:text-white transition-colors whitespace-nowrap inline-flex items-center gap-1.5 group"
+              >
+                <span className="group-hover:text-amber-500 transition-colors">
+                  {language === 'fa' ? 'تن‌خور پرو' : 'Tankhor Pro'}
+                </span>
+                <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-gradient-to-r from-amber-500 to-teal-500 text-white leading-none shadow-xs">
+                  PRO
+                </span>
+              </Link>
             </nav>
 
             {/* Right Action Buttons */}
@@ -194,27 +432,107 @@ export default function Navbar() {
 
         {/* Mobile Drawer */}
         {isMobileMenuOpen && (
-          <div className="sm:hidden fixed top-24 left-0 right-0 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-2xl border-b border-neutral-200 dark:border-neutral-800 px-5 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
-            <div className="flex flex-col gap-3">
-              {!isHome && (
-                <Link
-                  href="/"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md text-sm font-semibold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 hover:bg-teal-100 dark:hover:bg-teal-900/60"
+          <div className="sm:hidden fixed top-24 left-0 right-0 max-h-[calc(100vh-6rem)] overflow-y-auto bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-2xl border-b border-neutral-200 dark:border-neutral-800 px-5 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
+            <div className="flex flex-col gap-2.5">
+              {/* Home */}
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
+                  isHome
+                    ? 'text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40'
+                    : 'text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                }`}
+              >
+                {language === 'fa' ? 'خانه' : 'Home'}
+              </Link>
+
+              {/* Features Accordion in Mobile */}
+              <div className="rounded-md border border-neutral-200/80 dark:border-neutral-800 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setIsMobileFeaturesExpanded((prev) => !prev)}
+                  className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-neutral-800 dark:text-neutral-200 bg-neutral-50 dark:bg-neutral-900/60 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
                 >
-                  {language === 'fa' ? 'صفحه اصلی' : 'Home'}
-                </Link>
-              )}
-              {siteContent.navLinks.map((link) => (
-                <Link
-                  key={link.id}
-                  href={getNavHref(link.href)}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-                >
-                  {link.label[language]}
-                </Link>
-              ))}
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                    <span>{language === 'fa' ? 'امکانات تخصصی (۱۰ قابلیت)' : 'Specialized Features (10)'}</span>
+                  </div>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      isMobileFeaturesExpanded ? 'rotate-180 text-teal-600 dark:text-teal-400' : 'text-neutral-400'
+                    }`}
+                  />
+                </button>
+
+                {isMobileFeaturesExpanded && (
+                  <div className="p-2 space-y-1 bg-white dark:bg-neutral-950">
+                    <Link
+                      href="/features"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/50"
+                    >
+                      <span>{language === 'fa' ? 'هاب همه ۱۰ قابلیت تخصصی' : 'All 10 Features Hub'}</span>
+                      <ChevronRight className="w-3.5 h-3.5 rtl:rotate-180" />
+                    </Link>
+                    {featuresDropdownItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.slug}
+                          href={`/features/${item.slug}`}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                        >
+                          <Icon className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
+                          <span className="truncate">{item.title[language]}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Solutions */}
+              <Link
+                href={getNavHref('#solutions')}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-3 py-2 rounded-md text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              >
+                {language === 'fa' ? 'راهکارها' : 'Solutions'}
+              </Link>
+
+              {/* Smart SizeFinder */}
+              <Link
+                href="/features/size-guide-engine"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  pathname === '/features/size-guide-engine'
+                    ? 'text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 font-semibold'
+                    : 'text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <Ruler className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                  <span>{language === 'fa' ? 'سایزفیندر هوشمند پوشاک' : 'Smart Size Finder'}</span>
+                </div>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300">
+                  {language === 'fa' ? 'ویژه' : 'Pro'}
+                </span>
+              </Link>
+
+              {/* Tankhor Pro */}
+              <Link
+                href={getNavHref('#pricing')}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              >
+                <span>{language === 'fa' ? 'تن‌خور پرو' : 'Tankhor Pro'}</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-gradient-to-r from-amber-500 to-teal-500 text-white">
+                  PRO
+                </span>
+              </Link>
+
               <hr className="border-neutral-200 dark:border-neutral-800 my-2" />
               <div className="flex flex-col gap-2">
                 <a
@@ -266,3 +584,4 @@ export default function Navbar() {
     </>
   );
 }
+
