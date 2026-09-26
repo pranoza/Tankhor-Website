@@ -326,33 +326,12 @@ export default function Navbar() {
                 {language === 'fa' ? 'راهکارها' : 'Solutions'}
               </Link>
 
-              {/* 4. Smart SizeFinder */}
-              <Link
-                href="/features/size-guide-engine"
-                className={`transition-colors whitespace-nowrap inline-flex items-center gap-1 hover:text-neutral-900 dark:hover:text-white ${
-                  pathname === '/features/size-guide-engine'
-                    ? 'text-teal-600 dark:text-teal-400 font-semibold'
-                    : 'text-neutral-600 dark:text-neutral-400'
-                }`}
-              >
-                <Ruler className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                <span>{language === 'fa' ? 'سایزفیندر هوشمند' : 'Size Finder'}</span>
-                <span className="text-[9px] font-semibold px-1 py-0.5 rounded bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 leading-none">
-                  {language === 'fa' ? 'ویژه' : 'Pro'}
-                </span>
-              </Link>
-
-              {/* 5. Tankhor Pro */}
+              {/* 4. Tankhor Pro */}
               <Link
                 href={getNavHref('#pricing')}
-                className="hover:text-neutral-900 dark:hover:text-white transition-colors whitespace-nowrap inline-flex items-center gap-1.5 group"
+                className="hover:text-neutral-900 dark:hover:text-white transition-colors whitespace-nowrap"
               >
-                <span className="group-hover:text-amber-500 transition-colors">
-                  {language === 'fa' ? 'تن‌خور پرو' : 'Tankhor Pro'}
-                </span>
-                <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-gradient-to-r from-amber-500 to-teal-500 text-white leading-none shadow-xs">
-                  PRO
-                </span>
+                {language === 'fa' ? 'تن‌خور پرو' : 'Tankhor Pro'}
               </Link>
             </nav>
 
@@ -502,35 +481,13 @@ export default function Navbar() {
                 {language === 'fa' ? 'راهکارها' : 'Solutions'}
               </Link>
 
-              {/* Smart SizeFinder */}
-              <Link
-                href="/features/size-guide-engine"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  pathname === '/features/size-guide-engine'
-                    ? 'text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 font-semibold'
-                    : 'text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800'
-                }`}
-              >
-                <div className="flex items-center gap-2">
-                  <Ruler className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                  <span>{language === 'fa' ? 'سایزفیندر هوشمند پوشاک' : 'Smart Size Finder'}</span>
-                </div>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300">
-                  {language === 'fa' ? 'ویژه' : 'Pro'}
-                </span>
-              </Link>
-
               {/* Tankhor Pro */}
               <Link
                 href={getNavHref('#pricing')}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                className="px-3 py-2 rounded-md text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800"
               >
-                <span>{language === 'fa' ? 'تن‌خور پرو' : 'Tankhor Pro'}</span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-gradient-to-r from-amber-500 to-teal-500 text-white">
-                  PRO
-                </span>
+                {language === 'fa' ? 'تن‌خور پرو' : 'Tankhor Pro'}
               </Link>
 
               <hr className="border-neutral-200 dark:border-neutral-800 my-2" />

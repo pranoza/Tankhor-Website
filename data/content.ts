@@ -117,7 +117,6 @@ export const siteContent = {
     { id: "home", label: { fa: "خانه", en: "Home" }, href: "/" },
     { id: "features", label: { fa: "امکانات", en: "Features" }, href: "/features" },
     { id: "solutions", label: { fa: "راهکارها", en: "Solutions" }, href: "#solutions" },
-    { id: "size-guide", label: { fa: "سایزفیندر هوشمند", en: "Size Finder" }, href: "/features/size-guide-engine" },
     { id: "pricing", label: { fa: "تن‌خور پرو", en: "Tankhor Pro" }, href: "#pricing" },
   ] as NavigationLink[],
 
