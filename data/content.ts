@@ -107,7 +107,7 @@ export const siteContent = {
       "نرم افزار انبارداری لباس و کفش",
       "نرم افزار حسابداری پوشاک رایگان",
       "نرم افزار انبارداری ماتریسی رنگ و سایز",
-      "محاسبه بهای تمام شده پوشاک Landed Cost",
+      "محاسبه بهای تمام شده پوشاک ",
       "نرم افزار مدیریت بوتیک و مزون",
       "دانلود نرم افزار مدیریت پوشاک رایگان",
     ],
@@ -191,7 +191,7 @@ export const siteContent = {
         desc: { fa: "دفتر معین، حساب اشخاص، صندوق‌ها، چرخه چک‌های صیادی و گزارش‌های سامانه مؤدیان.", en: "Subsidiary ledgers, multi-cashbox treasury, full Sayad check workflows, and Taxpayer compliance." },
       },
       {
-        title: { fa: "محاسبه بهای تمام‌شده واقعی (Landed Cost)", en: "True Landed Cost Engine" },
+        title: { fa: "محاسبه بهای تمام‌شده واقعی", en: "True Landed Cost Engine" },
         desc: { fa: "تسهیم هزینه‌های حمل، گمرک، خیاطی و بسته‌بندی روی تک‌تک کالاها جهت محاسبه سود خالص دقیق.", en: "Allocate freight, customs, and stitching overhead directly onto SKU unit cost for accurate net margins." },
       },
       {
@@ -311,7 +311,7 @@ export const siteContent = {
   },
 
   freeVersion: {
-    title: { fa: "نرم افزار مدیریت و حسابداری پوشاک رایگان (Tankhor Free)", en: "Tankhor Free Apparel Management Software" },
+    title: { fa: "نرم افزار مدیریت و حسابداری پوشاک رایگان", en: "Tankhor Free Apparel Management Software" },
     subtitle: {
       fa: "روی سیستم شخصی خود نصب کنید و بدون پرداخت هزینه اشتراک، مدیریت کامل محصولات، سایزبندی، فاکتورها و انبارداری را با حداکثر سرعت آغاز نمایید.",
       en: "Install locally on your computer and start managing apparel products, size matrices, invoices, and stock at maximum speed with zero subscription fees.",
@@ -635,7 +635,7 @@ export const siteContent = {
       {
         id: '3m',
         months: 3,
-        name: { fa: '۳ ماهه (فصلی)', en: '3 Months (Quarterly)' },
+        name: { fa: '۳ ماهه', en: '3 Months' },
         price: 1290000,
         monthlyEquivalent: 430000,
         discountBadge: { fa: '۱۲٪ تخفیف اقتصادی', en: '12% OFF' },

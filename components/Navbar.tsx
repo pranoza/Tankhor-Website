@@ -70,7 +70,7 @@ const featuresDropdownItems = [
   },
   {
     slug: 'landed-cost',
-    title: { fa: 'بهای تمام‌شده پوشاک (Landed Cost)', en: 'Garment Landed Cost' },
+    title: { fa: 'بهای تمام‌شده پوشاک', en: 'Garment Landed Cost' },
     desc: { fa: 'سرشکن هزینه حمل، گمرک و کارگو روی هر تکه لباس', en: 'Shipping & customs allocation per garment' },
     icon: Calculator,
   },
