@@ -1,9 +1,7 @@
 # Ultra-fast production Dockerfile for Next.js App Router on Coolify / Docker
 FROM node:20-alpine AS base
 
-# Install libc6-compat for native alpine compatibility
 FROM base AS deps
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy package manifests
