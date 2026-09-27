@@ -133,8 +133,8 @@ export const siteContent = {
 
   hero: {
     badge: {
-      fa: "نسخه رایگان محلی • نسخه Pro ابری و شعب",
-      en: "Local Offline Free • Cloud & Multi-Branch Pro",
+      fa: "اولین نرم‌افزار حسابداری و انبارداری تخصصی پوشاک",
+      en: "First Specialized Apparel Accounting & Inventory Software",
     },
     h1: {
       fa: "نرم افزار مدیریت و حسابداری فروشگاه پوشاک",
@@ -170,49 +170,49 @@ export const siteContent = {
 
   whyTankhor: {
     title: {
-      fa: "چرا تنخور؟ تفاوت ساختاری در سرعت و استقلال",
-      en: "Why Tankhor? Structural Distinction in Speed & Independence",
+      fa: "چرا تنخور؟",
+      en: "Why Tankhor?",
     },
     subtitle: {
-      fa: "یکپارچگی کامل فروش، انبارداری ماتریسی و مالی بدون نیاز به خرید نرم‌افزارهای مجزا یا فایل‌های پیچیده اکسل.",
-      en: "Complete integration of retail POS, matrix inventory, and finance without generic software or messy spreadsheets.",
+      fa: "سیستم یکپارچه فروش، انبارداری و حسابداری ویژه صنف پوشاک؛ ساده، سریع و بدون نیاز به اکسل.",
+      en: "Integrated sales, inventory, and accounting built specifically for clothing businesses.",
     },
     advantages: [
       {
-        title: { fa: "تفکیک هوشمند محلی و ابری", en: "Smart Local vs. Cloud Architecture" },
-        desc: { fa: "نسخه رایگان ۱۰۰٪ آفلاین روی سخت‌افزار خودتان بدون قطعی کار می‌کند؛ نسخه پرو دسترسی وب و سینک شعب را فراهم می‌سازد.", en: "Free runs 100% offline locally on your hardware; Pro unlocks live cloud sync and browser access." },
+        title: { fa: "انتخاب با شما: آفلاین یا ابری", en: "Offline Local or Cloud Sync" },
+        desc: { fa: "می‌توانید به رایگان و بدون اینترنت روی سیستم خودتان کار کنید، یا با نسخه ابری چند شعبه را به هم متصل نمایید.", en: "Run 100% offline locally on your own computer with zero fees, or use cloud sync for multi-store visibility." },
       },
       {
-        title: { fa: "انبارداری ماتریسی رنگ و سایز", en: "Color & Size Variant Matrix" },
-        desc: { fa: "تعریف یکباره مدل لباس و ساخت خودکار ده‌ها ترکیب رنگ و سایز (حروفی، عددی، کفش) با بارکد اختصاصی.", en: "Define a style once; auto-generate infinite color and size combinations with unique barcodes." },
+        title: { fa: "مدیریت آسان رنگ و سایز", en: "Simple Color & Size Management" },
+        desc: { fa: "با یک کلیک مدل لباس را تعریف کنید تا همه ترکیب‌های رنگی، سایزها و بارکدها خودکار ساخته شوند.", en: "Define a product style once and auto-generate all color-size combinations with dedicated barcodes." },
       },
       {
-        title: { fa: "حسابداری مالی و چک صیادی", en: "Financial Ledgers & Sayad Checks" },
-        desc: { fa: "دفتر معین، حساب اشخاص، صندوق‌ها، چرخه چک‌های صیادی و گزارش‌های سامانه مؤدیان.", en: "Subsidiary ledgers, multi-cashbox treasury, full Sayad check workflows, and Taxpayer compliance." },
+        title: { fa: "کارکرد ۱۰۰٪ آفلاین و پرسرعت", en: "100% Fast Offline Performance" },
+        desc: { fa: "بدون نیاز به اینترنت و بدون کندی؛ صندوق و صدور فاکتور در شلوغ‌ترین ساعات بدون قطعی کار می‌کند.", en: "Lightning fast with zero internet dependency. Continuous billing and sales without downtime." },
       },
       {
-        title: { fa: "محاسبه بهای تمام‌شده واقعی", en: "True Landed Cost Engine" },
-        desc: { fa: "تسهیم هزینه‌های حمل، گمرک، خیاطی و بسته‌بندی روی تک‌تک کالاها جهت محاسبه سود خالص دقیق.", en: "Allocate freight, customs, and stitching overhead directly onto SKU unit cost for accurate net margins." },
+        title: { fa: "محاسبه سود واقعی هر لباس", en: "True Net Margin per Garment" },
+        desc: { fa: "هزینه‌های حمل، خیاطی و خرج‌کار روی هر تکه لباس محاسبه می‌شود تا سود خالص دقیق فروش را ببینید.", en: "Distribute freight, tailoring, and trim expenses across each item to track exact real profit." },
       },
       {
-        title: { fa: "۱۰۰٪ آفلاین با دیتابیس داخلی SQLite", en: "100% Offline SQLite Engine" },
-        desc: { fa: "سرعت فوق‌العاده و عدم وابستگی به اینترنت؛ صندوق فروشگاه در شلوغ‌ترین ساعات هرگز متوقف نمی‌شود.", en: "High-speed embedded SQLite DB. Zero latency and zero downtime during internet outages." },
+        title: { fa: "حسابداری و ثبت چک صیادی", en: "Accounting & Sayad Checks" },
+        desc: { fa: "حساب مشتریان و همکاران، دخل صندوق، هشدار موعد چک‌های صیادی و ارسال به سامانه مودیان.", en: "Track receivables, payables, cashboxes, upcoming check maturities, and Taxpayer compliance." },
       },
       {
-        title: { fa: "راهنمای سایز هوشمند (ضد مرجوعی)", en: "Smart Size Guide Engine" },
-        desc: { fa: "جدول اندازه‌گیری دقیق سانتیمتری جهت کاهش مرجوعی‌های فروشگاه آنلاین و اینستاگرامی.", en: "Interactive centimeter sizing specifications that slash size-exchange logistics for online buyers." },
+        title: { fa: "راهنمای سایز و کاهش مرجوعی", en: "Size Guide & Fewer Returns" },
+        desc: { fa: "جدول اندازه‌های سانتیمتری به مشتریان کمک می‌کند سایز دقیق را انتخاب کنند تا هزینه مرجوعی کاهش یابد.", en: "Interactive measurement tables help customers order the exact fit, slashing exchange logistics." },
       },
       {
-        title: { fa: "امنیت سخت‌افزاری داده‌ها", en: "Hardware-Level Data Privacy" },
-        desc: { fa: "اطلاعات مالی و موجودی در نسخه رایگان منحصراً روی سیستم خودتان ذخیره و با ۱ کلیک پشتیبان‌گیری می‌شود.", en: "Your financial and stock records stay private on your local storage, backed up with 1 click." },
+        title: { fa: "امنیت کامل اطلاعات فروشگاه", en: "Complete Data Privacy" },
+        desc: { fa: "فاکتورها و اطلاعات مالی منحصراً روی سیستم خودتان ذخیره می‌شود و با یک کلیک پشتیبان‌گیری می‌شود.", en: "Financial and sales records remain strictly on your own hardware with 1-click manual backup." },
       },
       {
-        title: { fa: "مهاجرت خودکار ۱-کلیکه به ابری", en: "1-Click Cloud Migration Wizard" },
-        desc: { fa: "ارتقای بی‌دردسر از نسخه رایگان به Pro ابری بدون تغییر یا از دست رفتن اطلاعات قبلی.", en: "Seamless upgrade path from local Free to Cloud Pro with an automated 1-click migration wizard." },
+        title: { fa: "ارتقای آسان به نسخه ابری", en: "Effortless Cloud Upgrade" },
+        desc: { fa: "هر زمان خواستید شعبه اضافه کنید، بدون پاک شدن حتی یک فاکتور به نسخه ابری متصل می‌شوید.", en: "Upgrade seamlessly to the cloud edition whenever you expand, with zero data loss." },
       },
       {
-        title: { fa: "پلتفرم‌های ویندوز، مک و اندروید", en: "Cross-Platform Ecosystem" },
-        desc: { fa: "اجرا روی انواع سیستم‌های صندوق، لپ‌تاپ و تبلت با پشتیبانی کامل از افزونه‌های کاربردی.", en: "Native Windows, macOS, Android apps, and web browser access with rich add-on support." },
+        title: { fa: "نصب روی ویندوز، مک و گوشی", en: "Works on Windows, Mac & Mobile" },
+        desc: { fa: "قابل استفاده روی کامپیوتر صندوق، لپ‌تاپ، مک‌بوک و گوشی یا تبلت اندروید با رابط کاربری روان.", en: "Install effortlessly on PC checkout counters, laptops, macOS, and Android phones or POS." },
       },
     ],
   },

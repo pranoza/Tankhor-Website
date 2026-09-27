@@ -4,9 +4,10 @@ import React from 'react';
 import SeoHead from '@/components/SeoHead';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import FreeVersionSection from '@/components/FreeVersionSection';
-import SolutionsGrid from '@/components/SolutionsGrid';
 import WhyTankhorSection from '@/components/WhyTankhorSection';
+import SolutionsGrid from '@/components/SolutionsGrid';
+import FreeVersionSection from '@/components/FreeVersionSection';
+import InteractiveDashboardSection from '@/components/InteractiveDashboardSection';
 import FashionFeaturesSection from '@/components/FashionFeaturesSection';
 import AccountingModuleSection from '@/components/AccountingModuleSection';
 import PainPointsComparison from '@/components/PainPointsComparison';
@@ -31,9 +32,10 @@ export default function HomePage() {
       <Navbar />
       <main className="overflow-x-hidden">
         <Hero />
+        <WhyTankhorSection />
         <SolutionsGrid />
         <FreeVersionSection />
-        <WhyTankhorSection />
+        <InteractiveDashboardSection />
         <AccountingModuleSection />
         <FashionFeaturesSection />
         <PainPointsComparison />

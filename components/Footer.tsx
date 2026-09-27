@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
-import { Phone, Mail, MapPin, Instagram, Linkedin, Send, ShieldCheck, Download, Sparkles, Monitor, Apple, Smartphone } from 'lucide-react';
+import { Phone, Mail, Instagram, Linkedin, Send, ShieldCheck, Download, Sparkles, Monitor, Apple, Smartphone } from 'lucide-react';
 
 export default function Footer() {
   const { language, openMacModal } = useLanguageAndTheme();
@@ -270,14 +270,6 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span className="font-en">support@tankhor.com</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />
-                <span className="font-sans">
-                  {language === 'fa'
-                    ? 'تهران، بلوار آفریقا (جردن)، برج طلیعه، واحد ۴۰۲'
-                    : 'Tehran, Jordan Blvd, Talieh Tower, Unit 402'}
-                </span>
               </div>
             </div>
 

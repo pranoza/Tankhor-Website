@@ -19,7 +19,7 @@ export default function WhyTankhorSection() {
         {/* Vercel Title Section */}
         <FadeIn className="max-w-3xl mb-16 space-y-3 text-right rtl:text-right ltr:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs font-caption-mono">
-            <span>{language === 'fa' ? 'مزیت‌های رقابتی' : 'Competitive Advantages'}</span>
+            <span>{language === 'fa' ? 'چرا تنخور؟' : 'Why Tankhor'}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
             {whyTankhor.title[language]}

@@ -26,13 +26,13 @@ const LanguageAndThemeContext = createContext<LanguageAndThemeContextType | unde
 
 export function LanguageAndThemeProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('fa');
-  const [theme, setThemeState] = useState<Theme>('light');
+  const [theme, setThemeState] = useState<Theme>('dark');
   const [isDemoModalOpen, setIsDemoModalOpen] = useState<boolean>(false);
   const [isMacModalOpen, setIsMacModalOpen] = useState<boolean>(false);
 
   const direction: Direction = language === 'fa' ? 'rtl' : 'ltr';
 
-  // Load saved preferences on client mount
+  // Load saved preferences on client mount (default to dark if not explicitly light)
   useEffect(() => {
     const savedLang = localStorage.getItem('tankhor_lang') as Language;
     const savedTheme = localStorage.getItem('tankhor_theme') as Theme;
@@ -43,7 +43,7 @@ export function LanguageAndThemeProvider({ children }: { children: React.ReactNo
       }
       if (savedTheme === 'light' || savedTheme === 'dark') {
         setThemeState(savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      } else {
         setThemeState('dark');
       }
     });

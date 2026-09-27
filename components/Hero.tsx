@@ -4,7 +4,6 @@ import React from 'react';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 import { siteContent } from '@/data/content';
-import InteractiveDashboardPreview from './InteractiveDashboardPreview';
 import AnimatedDotPyramid from './AnimatedDotPyramid';
 import { Download, Monitor, Apple, Smartphone, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
@@ -159,11 +158,6 @@ export default function Hero() {
               </span>
             ))}
           </div>
-        </div>
-
-        {/* Interactive Dashboard Demo Component */}
-        <div id="showcase" className="mt-16 sm:mt-24">
-          <InteractiveDashboardPreview />
         </div>
 
       </div>

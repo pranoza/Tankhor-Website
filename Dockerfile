@@ -7,9 +7,8 @@ WORKDIR /app
 # Copy package manifests
 COPY package.json package-lock.json* ./
 
-# Use Docker BuildKit cache mount for npm downloads
-RUN --mount=type=cache,id=npm,target=/root/.npm \
-    if [ -f package-lock.json ]; then \
+# Install dependencies directly with npm - NO apk add required
+RUN if [ -f package-lock.json ]; then \
       npm ci --prefer-offline --no-audit --no-fund; \
     else \
       npm install --prefer-offline --no-audit --no-fund; \
@@ -21,13 +20,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Environment variables for build speed and optimization
+# Environment variables for build optimization
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
-# Use Docker BuildKit cache mount for Next.js build cache (.next/cache)
-RUN --mount=type=cache,id=nextcache,target=/app/.next/cache \
-    npm run build
+RUN npm run build
 
 # Production runner image - minimalist footprint
 FROM base AS runner

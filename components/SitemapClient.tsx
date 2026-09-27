@@ -3,13 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  FileCode,
-  Copy,
-  Check,
-  ExternalLink,
-  ChevronDown,
   ChevronLeft,
-  Compass,
   Sparkles,
   Boxes,
   Receipt,
@@ -24,15 +18,12 @@ import {
   Monitor,
   Apple,
   Smartphone,
-  CheckCircle2,
-  HelpCircle,
   FolderTree,
   Building2,
   Scissors,
   Store,
   Layers,
   Search,
-  Globe,
   Download,
 } from 'lucide-react';
 import { featuresList } from '@/data/featuresData';
@@ -40,25 +31,9 @@ import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 
 export default function SitemapClient() {
-  const [copied, setCopied] = useState(false);
-  const [guideOpen, setGuideOpen] = useState(true);
   const [filterQuery, setFilterQuery] = useState('');
   const downloadLinks = useDownloadLinks();
   const { openMacModal } = useLanguageAndTheme();
-
-  const sitemapXmlUrl = 'https://tankhor.com/sitemap.xml';
-
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(sitemapXmlUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    } catch {
-      // Fallback
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    }
-  };
 
   const getFeatureIcon = (slug: string) => {
     switch (slug) {
@@ -183,111 +158,16 @@ export default function SitemapClient() {
   });
 
   return (
-    <div className="space-y-12">
-      {/* Top Banner / Submission Box */}
-      <section className="relative overflow-hidden rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-950/20 via-neutral-900 to-neutral-950 p-6 sm:p-8 shadow-xl">
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold">
-              <FileCode className="w-3.5 h-3.5" />
-              <span>فایل رسمی نقشه سایت جهت ثبت در گوگل (XML Sitemap)</span>
-            </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              آدرس اینترنتی نقشه سایت (sitemap.xml)
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-              این نشانی با فرمت استاندارد پروتکل Sitemaps به صورت خودکار توسط موتورهای جستجوی Google، Bing و یاندکس پایش می‌شود.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-black/60 border border-neutral-700/80 font-mono text-xs sm:text-sm text-teal-300">
-              <Globe className="w-4 h-4 text-neutral-400 shrink-0" />
-              <span className="select-all">{sitemapXmlUrl}</span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={copyToClipboard}
-                className="px-4 py-2.5 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-teal-900/30 shrink-0"
-              >
-                {copied ? <Check className="w-4 h-4 text-teal-200" /> : <Copy className="w-4 h-4" />}
-                <span>{copied ? 'کپی شد!' : 'کپی آدرس XML'}</span>
-              </button>
-
-              <a
-                href="/sitemap.xml"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-neutral-200 font-medium text-xs flex items-center justify-center gap-1.5 transition-all shrink-0"
-              >
-                <span>مشاهده XML</span>
-                <ExternalLink className="w-3.5 h-3.5 text-neutral-400" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Collapsible Google Search Console Guide */}
-        <div className="mt-6 pt-6 border-t border-neutral-800">
-          <button
-            type="button"
-            onClick={() => setGuideOpen(!guideOpen)}
-            className="w-full flex items-center justify-between text-right text-xs sm:text-sm font-semibold text-teal-300 hover:text-teal-200 transition-colors"
-          >
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-teal-400" />
-              <span>راهنمای ۳ مرحله‌ای ثبت نقشه سایت در Google Search Console</span>
-            </span>
-            <ChevronDown className={`w-4 h-4 transform transition-transform duration-200 ${guideOpen ? 'rotate-180' : ''}`} />
-          </button>
-
-          {guideOpen && (
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-neutral-300 font-sans">
-              <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800/80 space-y-2">
-                <div className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-300 flex items-center justify-center font-bold text-xs">
-                  ۱
-                </div>
-                <h4 className="font-bold text-white">ورود به سرچ کنسول</h4>
-                <p className="text-neutral-400 leading-relaxed text-[11px]">
-                  وارد پنل <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="text-teal-400 underline">Google Search Console</a> شوید و دامنه <strong>tankhor.com</strong> را انتخاب کنید.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800/80 space-y-2">
-                <div className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-300 flex items-center justify-center font-bold text-xs">
-                  ۲
-                </div>
-                <h4 className="font-bold text-white">انتخاب بخش Sitemaps</h4>
-                <p className="text-neutral-400 leading-relaxed text-[11px]">
-                  از منوی سمت چپ (سایدبار)، بر روی تب <strong>Sitemaps</strong> در زیربخش Indexing کلیک نمایید.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800/80 space-y-2">
-                <div className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-300 flex items-center justify-center font-bold text-xs">
-                  ۳
-                </div>
-                <h4 className="font-bold text-white">ثبت sitemap.xml و Submit</h4>
-                <p className="text-neutral-400 leading-relaxed text-[11px]">
-                  در کادر <span className="font-mono text-teal-300">Add a new sitemap</span>، کلمه <code className="bg-black/50 px-1 py-0.5 rounded text-teal-300">sitemap.xml</code> را وارد کرده و دکمه <strong>Submit</strong> را بزنید.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
+    <div className="space-y-10">
       {/* Quick Search & Summary Stats */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-2">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-2 border-b border-neutral-800">
         <div className="flex items-center gap-3">
           <div className="p-2.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-400">
             <FolderTree className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-white">فهرست موضوعی صفحات وبسایت تنخور</h2>
-            <p className="text-xs text-neutral-400">مجموعاً ۱۶ آدرس و لندینگ پیج سئو شده با تمرکز بر صنف پوشاک</p>
+            <h2 className="text-base sm:text-lg font-bold text-white">فهرست ساختار و دسته‌بندی صفحات وبسایت تنخور</h2>
+            <p className="text-xs text-neutral-400">دسترسی مستقیم به تمامی بخش‌ها و لندینگ‌های تخصصی صنف پوشاک</p>
           </div>
         </div>
 
@@ -310,7 +190,7 @@ export default function SitemapClient() {
             <Layers className="w-4 h-4 text-teal-400" />
             <h3 className="text-sm sm:text-base font-bold text-white">۱. صفحات عمومی و پلتفرم تنخور</h3>
           </div>
-          <span className="text-[11px] font-caption-mono text-neutral-500">{mainPages.length} آدرس</span>
+          <span className="text-[11px] font-caption-mono text-neutral-500">{mainPages.length} صفحه</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
