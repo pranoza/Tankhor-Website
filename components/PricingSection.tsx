@@ -228,7 +228,7 @@ export default function PricingSection() {
                       <Cloud className="w-5 h-5" />
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white">
-                      {isFa ? 'آبری (پرو)' : 'Cloud (Pro)'}
+                      {isFa ? 'ابری (پرو)' : 'Cloud (Pro)'}
                     </h3>
                   </div>
                   <p className="text-xs text-teal-300 font-medium">
@@ -388,7 +388,7 @@ export default function PricingSection() {
               <span>{isFa ? 'جدول مقایسه جامع امکانات' : 'Full Feature Matrix'}</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
-              {isFa ? 'مقایسه رو در روی نسخه آفلاین(رایگان) و نسخه آبری (پرو)' : 'Side-by-Side Comparison: Offline (Free) vs. Cloud (Pro)'}
+              {isFa ? 'مقایسه رو در روی نسخه آفلاین(رایگان) و نسخه ابری (پرو)' : 'Side-by-Side Comparison: Offline (Free) vs. Cloud (Pro)'}
             </h3>
             <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
               {isFa
@@ -413,7 +413,7 @@ export default function PricingSection() {
                   <th className="p-4 sm:p-5 font-bold text-teal-600 dark:text-teal-400 w-3/10 bg-teal-50/40 dark:bg-teal-950/20">
                     <div className="flex items-center gap-2">
                       <Cloud className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                      <span>{isFa ? 'آبری (پرو)' : 'Cloud (Pro)'}</span>
+                      <span>{isFa ? 'ابری (پرو)' : 'Cloud (Pro)'}</span>
                     </div>
                   </th>
                 </tr>

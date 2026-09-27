@@ -654,7 +654,7 @@ export const siteContent = {
       {
         id: '12m',
         months: 12,
-        name: { fa: '۱۲ ماهه (سالانه)', en: '12 Months (Annual)' },
+        name: { fa: '۱۲ ماهه', en: '12 Months' },
         price: 4490000,
         monthlyEquivalent: 374000,
         discountBadge: { fa: '۲۴٪ تخفیف', en: '24% OFF' },
