@@ -55,7 +55,9 @@ export default function Hero() {
               </a>
 
               <a
-                href="#accounting"
+                href="https://my.tankhor.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 rounded-md bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-900 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 font-medium text-xs transition-all flex items-center gap-1.5"
               >
                 <span>{siteContent.hero.ctaSecondary[language]}</span>

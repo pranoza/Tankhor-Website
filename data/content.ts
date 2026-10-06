@@ -149,8 +149,8 @@ export const siteContent = {
       en: "Free Download",
     },
     ctaSecondary: {
-      fa: "بررسی پلن‌ها و امکانات",
-      en: "Explore Plans & Features",
+      fa: "نسخه ابری",
+      en: "Cloud Version",
     },
     quickStats: [
       { value: "یکپارچه", label: { fa: "فروشگاه + انبار + حسابداری", en: "POS + Inventory + Ledger" } },
