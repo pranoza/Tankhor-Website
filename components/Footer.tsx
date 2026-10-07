@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
-import { Phone, Mail, Instagram, Linkedin, Send, ShieldCheck, Download, Sparkles, Monitor, Apple, Smartphone } from 'lucide-react';
+import { Phone, Mail, Instagram, Linkedin, Send, Sparkles, Monitor, Apple, Smartphone } from 'lucide-react';
 
 export default function Footer() {
   const { language, openMacModal } = useLanguageAndTheme();
@@ -49,7 +49,7 @@ export default function Footer() {
               className="px-6 py-3 rounded-md bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs transition-all flex items-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-teal-200" />
-              <span>{language === 'fa' ? 'ورود به پنل ابری (my.tankhor.com)' : 'Web Panel (my.tankhor.com)'}</span>
+              <span>{language === 'fa' ? 'ورود به پنل ابری' : 'Web Panel'}</span>
             </a>
           </div>
         </div>
@@ -258,7 +258,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-3 text-xs font-caption-mono">
+          <div className="lg:col-span-2 space-y-3 text-xs font-caption-mono">
             <h4 className="text-[11px] font-bold text-white uppercase tracking-wider">
               {language === 'fa' ? 'تماس و پشتیبانی' : 'Contact'}
             </h4>
@@ -271,12 +271,33 @@ export default function Footer() {
                 <Mail className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span className="font-en">support@tankhor.com</span>
               </div>
+              <p className="text-[11px] text-neutral-500 pt-1 leading-relaxed">
+                {language === 'fa'
+                  ? 'پشتیبانی فنی و فروش نرم‌افزار، شنبه تا چهارشنبه ۹ الی ۱۸'
+                  : 'Technical & Sales support: Sat-Wed 9am to 6pm'}
+              </p>
             </div>
+          </div>
 
-            <div className="pt-2 flex items-center gap-2">
-              <div className="px-2 py-0.5 bg-neutral-900 border border-neutral-800 rounded text-[10px] text-neutral-400 font-bold flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-teal-400" />
-                <span>{language === 'fa' ? 'دانش‌بنیان' : 'Tech Certified'}</span>
+          {/* eNamad */}
+          <div className="lg:col-span-2 font-caption-mono flex items-start">
+            <div className="p-3 rounded-xl bg-neutral-900/90 border border-neutral-800 flex items-center gap-3.5 hover:border-neutral-700 transition-colors">
+              {/* eNamad Emblem Container */}
+              <div className="bg-white rounded-lg p-1.5 w-20 h-20 shrink-0 flex items-center justify-center border border-neutral-200 shadow-sm transition-transform hover:scale-105">
+                <div
+                  className="w-full h-full flex items-center justify-center [&_a]:flex [&_a]:items-center [&_a]:justify-center [&_img]:max-h-16 [&_img]:max-w-full [&_img]:object-contain cursor-pointer"
+                  dangerouslySetInnerHTML={{ __html: downloadLinks.enamad }}
+                />
+              </div>
+
+              {/* Concise Label */}
+              <div className="text-right rtl:text-right ltr:text-left min-w-0">
+                <p className="text-xs font-bold text-white">
+                  {language === 'fa' ? 'نماد اعتماد الکترونیکی' : 'eNamad Certified'}
+                </p>
+                <p className="text-[11px] text-neutral-400 mt-0.5">
+                  {language === 'fa' ? 'مرکز توسعه تجارت الکترونیکی' : 'e-Commerce Development Center'}
+                </p>
               </div>
             </div>
           </div>

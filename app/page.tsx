@@ -19,6 +19,7 @@ import FAQSection from '@/components/FAQSection';
 import DemoRequestModal from '@/components/DemoRequestModal';
 import MacDownloadModal from '@/components/MacDownloadModal';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 
@@ -46,6 +47,7 @@ export default function HomePage() {
         <FAQSection />
       </main>
       <Footer />
+      <ScrollToTop />
       <DemoRequestModal />
       <MacDownloadModal
         isOpen={isMacModalOpen}

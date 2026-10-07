@@ -531,7 +531,7 @@ export default function Navbar() {
                   className="w-full py-2.5 rounded-md bg-teal-600 text-white font-semibold text-xs flex items-center justify-center gap-2"
                 >
                   <LogIn className="w-4 h-4" />
-                  <span>{language === 'fa' ? 'ورود به پنل (my.tankhor.com)' : 'Web Login'}</span>
+                  <span>{language === 'fa' ? 'ورود به پنل ابری' : 'Web Login'}</span>
                 </a>
               </div>
             </div>

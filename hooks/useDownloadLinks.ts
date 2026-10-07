@@ -6,11 +6,13 @@ export interface DownloadLinks {
   windows_setup: string;
   macos_setup: string;
   android_setup: string;
+  enamad: string;
   isLoading: boolean;
   error: string | null;
 }
 
 const DEFAULT_FALLBACK_URL = 'https://github.com/brandyar/Tankhor/releases/latest';
+const DEFAULT_FALLBACK_ENAMAD = `<a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=7618361&Code=Du0u9t2RRgPhMlNlfwwq6iAyMre0NRpU'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=7618361&Code=Du0u9t2RRgPhMlNlfwwq6iAyMre0NRpU' alt='نماد اعتماد الکترونیکی تنخور' style='cursor:pointer' code='Du0u9t2RRgPhMlNlfwwq6iAyMre0NRpU'></a>`;
 
 function formatDirectusUrl(value: any): string {
   if (!value) return DEFAULT_FALLBACK_URL;
@@ -34,6 +36,7 @@ export function useDownloadLinks(): DownloadLinks {
     windows_setup: DEFAULT_FALLBACK_URL,
     macos_setup: DEFAULT_FALLBACK_URL,
     android_setup: DEFAULT_FALLBACK_URL,
+    enamad: DEFAULT_FALLBACK_ENAMAD,
     isLoading: true,
     error: null,
   });
@@ -64,6 +67,7 @@ export function useDownloadLinks(): DownloadLinks {
             windows_setup: formatDirectusUrl(settings.windows_setup),
             macos_setup: formatDirectusUrl(settings.macos_setup),
             android_setup: formatDirectusUrl(settings.android_setup),
+            enamad: settings.enamad || DEFAULT_FALLBACK_ENAMAD,
             isLoading: false,
             error: null,
           });
