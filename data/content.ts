@@ -74,7 +74,7 @@ export interface Testimonial {
   name: { fa: string; en: string };
   role: { fa: string; en: string };
   brand: { fa: string; en: string };
-  avatar: string;
+  avatar?: string;
   comment: { fa: string; en: string };
   rating: number;
   businessType: { fa: string; en: string };
@@ -808,7 +808,6 @@ export const siteContent = {
       name: { fa: "مهندس رضا اکبری", en: "Reza Akbari" },
       role: { fa: "مدیرعامل", en: "CEO" },
       brand: { fa: "برند پوشاک هپکو فشن", en: "Hakupian Style" },
-      avatar: "https://picsum.photos/seed/man1/150/150",
       comment: {
         fa: "با داشتن ۶ شعبه و ۱۰۰۰ واریانت کت و شلوار، قبلاً انبارگردانی و حسابداری ما کابوس بود. یکپارچگی تنخور با Landed Cost و چک صیادی باعث شد حسابداری و انبارگردانی شعب در ۴ ساعت با صفر درصد خطا انجام بشه!",
         en: "With 6 retail branches and 1,000 suit variants, inventory audit and accounting used to be a nightmare. Tankhor's Landed Cost and Sayad check integration slashed audit time to 4 hours with zero errors!",
@@ -822,7 +821,6 @@ export const siteContent = {
       name: { fa: "سارا خسروی", en: "Sara Khosravi" },
       role: { fa: "بنیان‌گذار و طراح", en: "Founder & Lead Designer" },
       brand: { fa: "مزون آنلاین لورا", en: "Lorra Online Maison" },
-      avatar: "https://picsum.photos/seed/woman1/150/150",
       comment: {
         fa: "بزرگترین معضل ما محاسبه سود واقعی با هزینه‌های خیاطی و گمرک و مرجوعی سایز بود. ماژول Landed Cost و راهنمای سایز تنخور باعث شد سود خالص دقیق رو ببینیم و مرجوعی‌ها به زیر ۷ درصد برسه!",
         en: "Our biggest issue was estimating real profits considering stitching/freight fees alongside size returns. Tankhor's Landed Cost engine revealed true net margins while returns dropped below 7%!",
@@ -836,7 +834,6 @@ export const siteContent = {
       name: { fa: "امیرحسین عباسی", en: "Amirhossein Abbasi" },
       role: { fa: "مدیر انبار و زنجیره تأمین", en: "Supply Chain Manager" },
       brand: { fa: "فروشگاه کفش روکسا", en: "Roxa Shoes Chain" },
-      avatar: "https://picsum.photos/seed/man2/150/150",
       comment: {
         fa: "کارکرد آفلاین SQLite تنخور نجات‌دهنده ماست. قطعی اینترنت در شلوغ‌ترین ساعات جمعه‌های پاساژ همیشه فروش ما رو فلج می‌کرد، اما حالا صندوق و حسابداری ما بدون نیاز به اینترنت سریع کار می‌کنه.",
         en: "Tankhor's offline SQLite architecture is a lifesaver. Internet drops during peak Friday mall traffic used to freeze our cashiers. Now POS and accounts work smoothly offline!",
