@@ -149,12 +149,12 @@ export default function AccountingModuleSection() {
               <h4 className="text-base font-bold text-white">
                 {language === 'fa'
                   ? 'اتصال به سامانه مؤدیان و خروجی استانداردهای مالی'
-                  : 'Taxpayer System Invoicing & Standard Financial Exports'}
+                  : 'Automated Sales Tax, VAT & Standard Financial Exports'}
               </h4>
               <p className="text-xs text-neutral-400 font-normal">
                 {language === 'fa'
                   ? 'گزارش ارزش افزوده، ماده ۱۶۹ مالیاتی و خروجی اکسل استاندارد همگام با نرم‌افزارهای سپیدار و هلو'
-                  : 'Automated VAT reports, Article 169 tax statements, and standardized exports for Sepidar & Holo'}
+                  : 'Automated sales tax & VAT calculation, periodic tax audits, and standardized journal exports for QuickBooks, Xero & Excel'}
               </p>
             </div>
           </div>

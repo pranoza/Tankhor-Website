@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 type Language = 'fa' | 'en';
 type Direction = 'rtl' | 'ltr';
@@ -25,55 +26,76 @@ interface LanguageAndThemeContextType {
 const LanguageAndThemeContext = createContext<LanguageAndThemeContextType | undefined>(undefined);
 
 export function LanguageAndThemeProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('fa');
-  const [theme, setThemeState] = useState<Theme>('dark');
+  const pathname = usePathname() || '/';
+  const router = useRouter();
+
+  // Pathname-based locale detection for SSR & Googlebot crawling
+  const isEnRoute = pathname.startsWith('/en');
+  const language: Language = isEnRoute ? 'en' : 'fa';
+  const direction: Direction = isEnRoute ? 'ltr' : 'rtl';
+
+  // Initialize theme with lazy initializer
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('tankhor_theme') as Theme;
+        if (saved === 'light' || saved === 'dark') {
+          return saved;
+        }
+      } catch (e) {}
+    }
+    return 'dark';
+  });
+
   const [isDemoModalOpen, setIsDemoModalOpen] = useState<boolean>(false);
   const [isMacModalOpen, setIsMacModalOpen] = useState<boolean>(false);
 
-  const direction: Direction = language === 'fa' ? 'rtl' : 'ltr';
-
-  // Load saved preferences on client mount (default to dark if not explicitly light)
+  // Sync language & direction DOM attributes to documentElement & localStorage
   useEffect(() => {
-    const savedLang = localStorage.getItem('tankhor_lang') as Language;
-    const savedTheme = localStorage.getItem('tankhor_theme') as Theme;
-
-    requestAnimationFrame(() => {
-      if (savedLang === 'fa' || savedLang === 'en') {
-        setLanguageState(savedLang);
-      }
-      if (savedTheme === 'light' || savedTheme === 'dark') {
-        setThemeState(savedTheme);
-      } else {
-        setThemeState('dark');
-      }
-    });
-  }, []);
-
-  // Sync language DOM attributes & localStorage
-  useEffect(() => {
-    const root = document.documentElement;
-    root.setAttribute('dir', direction);
-    root.setAttribute('lang', language);
-    localStorage.setItem('tankhor_lang', language);
+    if (typeof document !== 'undefined') {
+      const root = document.documentElement;
+      root.setAttribute('dir', direction);
+      root.setAttribute('lang', language);
+      try {
+        localStorage.setItem('tankhor_lang', language);
+      } catch (e) {}
+    }
   }, [language, direction]);
 
   // Sync theme DOM class & localStorage
   useEffect(() => {
-    const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
+    if (typeof document !== 'undefined') {
+      const root = document.documentElement;
+      if (theme === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+      try {
+        localStorage.setItem('tankhor_theme', theme);
+      } catch (e) {}
     }
-    localStorage.setItem('tankhor_theme', theme);
   }, [theme]);
 
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
+  // Navigate to corresponding language route
+  const setLanguage = (targetLang: Language) => {
+    if (targetLang === 'en' && !isEnRoute) {
+      const target = pathname === '/' ? '/en' : `/en${pathname}`;
+      router.push(target);
+    } else if (targetLang === 'fa' && isEnRoute) {
+      const target = pathname.replace(/^\/en/, '') || '/';
+      router.push(target);
+    }
   };
 
   const toggleLanguage = () => {
-    setLanguageState((prev) => (prev === 'fa' ? 'en' : 'fa'));
+    if (isEnRoute) {
+      const target = pathname.replace(/^\/en/, '') || '/';
+      router.push(target);
+    } else {
+      const target = pathname === '/' ? '/en' : `/en${pathname}`;
+      router.push(target);
+    }
   };
 
   const setTheme = (t: Theme) => {

@@ -90,7 +90,7 @@ export default function FashionFeaturesSection() {
         {/* Link to 10 Detailed Feature Landing Pages */}
         <div className="mt-12 text-center">
           <Link
-            href="/features"
+            href={language === 'en' ? '/en/features' : '/features'}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm group"
           >
             <span>{language === 'fa' ? 'مشاهده ۱۰ قابلیت تخصصی تنخور با جزئیات و دموی زنده' : 'Explore All 10 Specialized Features & Live Demos'}</span>

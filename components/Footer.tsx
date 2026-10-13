@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { siteContent } from '@/data/content';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
-import { Phone, Mail, Instagram, Linkedin, Send, Sparkles, Monitor, Apple, Smartphone } from 'lucide-react';
+import { Phone, Mail, Instagram, Linkedin, Send, Sparkles, Monitor, Apple, Smartphone, ShieldCheck, Database, Lock, Globe } from 'lucide-react';
 
 export default function Footer() {
   const { language, openMacModal } = useLanguageAndTheme();
   const downloadLinks = useDownloadLinks();
+  const isEn = language === 'en';
 
   return (
     <footer className="bg-black text-neutral-300 border-t border-neutral-800 pt-16 pb-12 font-sans">
@@ -59,7 +60,7 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#" className="inline-block focus:outline-none">
+            <Link href={isEn ? '/en' : '/'} className="inline-block focus:outline-none">
               <Image
                 src="/logo-light.png"
                 alt="تنخور | TANKHOR"
@@ -67,7 +68,7 @@ export default function Footer() {
                 height={36}
                 className="h-8 w-auto object-contain"
               />
-            </a>
+            </Link>
 
             <p className="text-xs text-neutral-400 leading-relaxed max-w-sm font-normal">
               {siteContent.meta.description[language]}
@@ -110,16 +111,21 @@ export default function Footer() {
               {language === 'fa' ? 'بخش‌های سایت' : 'Navigation'}
             </h4>
             <ul className="space-y-2 text-xs">
-              {(siteContent.footerQuickLinks || siteContent.navLinks).map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.href}
-                    className="text-neutral-400 hover:text-white transition-colors"
-                  >
-                    {link.label[language]}
-                  </a>
-                </li>
-              ))}
+              {(siteContent.footerQuickLinks || siteContent.navLinks).map((link) => {
+                const targetHref = link.href.startsWith('#')
+                  ? (isEn ? `/en${link.href}` : link.href)
+                  : (isEn ? `/en${link.href}` : link.href);
+                return (
+                  <li key={link.id}>
+                    <a
+                      href={targetHref}
+                      className="text-neutral-400 hover:text-white transition-colors"
+                    >
+                      {link.label[language]}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -130,27 +136,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
               <li>
-                <Link href="/boutique-accounting" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/boutique-accounting' : '/boutique-accounting'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'حسابداری بوتیک لباس' : 'Boutique Accounting'}
                 </Link>
               </li>
               <li>
-                <Link href="/maison-accounting" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/maison-accounting' : '/maison-accounting'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'حسابداری و مدیریت مزون' : 'Maison Software'}
                 </Link>
               </li>
               <li>
-                <Link href="/apparel-manufacturing" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/apparel-manufacturing' : '/apparel-manufacturing'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'حسابداری تولیدی پوشاک' : 'Garment Manufacturing'}
                 </Link>
               </li>
               <li>
-                <Link href="/free-boutique-software" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/free-boutique-software' : '/free-boutique-software'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'دانلود حسابداری بوتیک رایگان' : 'Free Boutique App'}
                 </Link>
               </li>
               <li className="pt-1 border-t border-neutral-800/80">
-                <Link href="/features" className="text-teal-400 hover:underline font-semibold flex items-center gap-1">
+                <Link href={isEn ? '/en/features' : '/features'} className="text-teal-400 hover:underline font-semibold flex items-center gap-1">
                   <span>{language === 'fa' ? 'مشاهده همه قابلیت‌ها' : 'All Features'}</span>
                 </Link>
               </li>
@@ -164,52 +170,52 @@ export default function Footer() {
             </h4>
             <ul className="space-y-1.5 text-xs text-neutral-400">
               <li>
-                <Link href="/features/apparel-inventory" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/apparel-inventory' : '/features/apparel-inventory'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'انبارداری پوشاک و کفش' : 'Apparel Inventory'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/clothing-accounting" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/clothing-accounting' : '/features/clothing-accounting'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'حسابداری و صندوق بوتیک' : 'Retail POS & Accounting'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/size-guide-engine" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/size-guide-engine' : '/features/size-guide-engine'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'راهنمای سایز هوشمند' : 'Smart Size-Finder'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/digital-catalog" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/digital-catalog' : '/features/digital-catalog'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'کاتالوگ دیجیتال اینستاگرام' : 'Digital Catalog'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/barcode-printing" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/barcode-printing' : '/features/barcode-printing'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'چاپ بارکد و لیبل زن' : 'Barcode & Label Printing'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/woocommerce-sync" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/woocommerce-sync' : '/features/woocommerce-sync'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'اتصال انبار به ووکامرس' : 'WooCommerce Sync'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/landed-cost" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/landed-cost' : '/features/landed-cost'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'محاسبه Landed Cost' : 'Landed Cost Calculator'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/apparel-analytics" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/apparel-analytics' : '/features/apparel-analytics'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'تحلیل فروش و سود پوشاک' : 'Apparel Sales Analytics'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/treasury-and-cheques" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/treasury-and-cheques' : '/features/treasury-and-cheques'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'مدیریت چک صیادی و دخل' : 'Treasury & Cheques'}
                 </Link>
               </li>
               <li>
-                <Link href="/features/financial-integrations" className="hover:text-white transition-colors">
+                <Link href={isEn ? '/en/features/financial-integrations' : '/features/financial-integrations'} className="hover:text-white transition-colors">
                   {language === 'fa' ? 'اتصال سپیدار، هلو و مودیان' : 'Accounting Bridges'}
                 </Link>
               </li>
@@ -279,25 +285,42 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* eNamad */}
+          {/* Technical Architecture & Security Badges */}
           <div className="lg:col-span-2 font-caption-mono flex items-start">
-            <div className="p-3 rounded-xl bg-neutral-900/90 border border-neutral-800 flex items-center gap-3.5 hover:border-neutral-700 transition-colors">
-              {/* eNamad Emblem Container */}
-              <div className="bg-white rounded-lg p-1.5 w-20 h-20 shrink-0 flex items-center justify-center border border-neutral-200 shadow-sm transition-transform hover:scale-105">
-                <div
-                  className="w-full h-full flex items-center justify-center [&_a]:flex [&_a]:items-center [&_a]:justify-center [&_img]:max-h-16 [&_img]:max-w-full [&_img]:object-contain cursor-pointer"
-                  dangerouslySetInnerHTML={{ __html: downloadLinks.enamad }}
-                />
+            <div className="p-3.5 rounded-xl bg-neutral-900/90 border border-neutral-800 space-y-2.5 w-full">
+              <div className="flex items-center gap-2 pb-1.5 border-b border-neutral-800 text-teal-400 font-bold text-xs">
+                <ShieldCheck className="w-4 h-4 shrink-0" />
+                <span>
+                  {language === 'fa'
+                    ? 'امنیت، پایداری و معماری نرم‌افزار'
+                    : 'Enterprise Security & Architecture'}
+                </span>
               </div>
-
-              {/* Concise Label */}
-              <div className="text-right rtl:text-right ltr:text-left min-w-0">
-                <p className="text-xs font-bold text-white">
-                  {language === 'fa' ? 'نماد اعتماد الکترونیکی' : 'eNamad Certified'}
-                </p>
-                <p className="text-[11px] text-neutral-400 mt-0.5">
-                  {language === 'fa' ? 'مرکز توسعه تجارت الکترونیکی' : 'e-Commerce Development Center'}
-                </p>
+              <div className="space-y-2 text-[11px] text-neutral-300">
+                <div className="flex items-center gap-2">
+                  <Database className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>
+                    {language === 'fa'
+                      ? 'کارکرد ۱۰۰٪ آفلاین و محلی (پایگاه داده امن SQLite)'
+                      : '100% Offline Resilience (Local SQLite DB)'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Lock className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <span>
+                    {language === 'fa'
+                      ? 'امنیت ابری و همگام‌سازی رمزنگاری‌شده'
+                      : 'Cloud Security & Encrypted Sync'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Globe className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                  <span>
+                    {language === 'fa'
+                      ? 'سازگاری چندپلتفرمی (ویندوز، مک، اندروید، وب)'
+                      : 'Global Multi-Platform (Windows, Mac, Android, Web)'}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -312,7 +335,7 @@ export default function Footer() {
             </p>
             <span className="text-neutral-700 hidden sm:inline">•</span>
             <Link
-              href="/sitemap"
+              href={isEn ? '/en/sitemap' : '/sitemap'}
               className="text-neutral-400 hover:text-teal-400 underline-offset-4 hover:underline transition-colors"
             >
               {language === 'fa' ? 'نقشه سایت (Sitemap)' : 'Sitemap'}

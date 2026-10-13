@@ -127,3 +127,25 @@ html[dir="rtl"] body,
   font-family: var(--font-vazirmatn), 'Vazirmatn', sans-serif !important;
 }
 
+/* Strict English & LTR Font Rules: Plus Jakarta Sans for all LTR typography */
+[dir="ltr"],
+html[lang="en"],
+[dir="ltr"] body,
+[dir="ltr"] h1,
+[dir="ltr"] h2,
+[dir="ltr"] h3,
+[dir="ltr"] h4,
+[dir="ltr"] h5,
+[dir="ltr"] h6,
+[dir="ltr"] p,
+[dir="ltr"] span,
+[dir="ltr"] div,
+[dir="ltr"] a,
+[dir="ltr"] button,
+[dir="ltr"] input,
+[dir="ltr"] select,
+[dir="ltr"] textarea {
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif !important;
+}
+
+

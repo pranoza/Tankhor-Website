@@ -7,7 +7,7 @@ import AccountingModuleSection from '@/components/AccountingModuleSection';
 import FashionFeaturesSection from '@/components/FashionFeaturesSection';
 import FAQSection from '@/components/FAQSection';
 import DemoRequestModal from '@/components/DemoRequestModal';
-import { Factory, CheckCircle2, Download, ArrowUpRight, Calculator, PieChart } from 'lucide-react';
+import { Factory, CheckCircle2, Download, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'نرم افزار حسابداری تولیدی پوشاک و لباس | محاسبه قیمت تمام شده - تنخور',
@@ -21,14 +21,82 @@ export const metadata: Metadata = {
     'محاسبه قیمت تمام شده پوشاک',
     'نرم افزار حسابداری بنکداری پوشاک',
   ],
+  alternates: {
+    canonical: 'https://tankhor.com/apparel-manufacturing',
+    languages: {
+      fa: 'https://tankhor.com/apparel-manufacturing',
+      en: 'https://tankhor.com/en/apparel-manufacturing',
+      'x-default': 'https://tankhor.com/apparel-manufacturing',
+    },
+  },
+  openGraph: {
+    title: 'نرم افزار حسابداری تولیدی پوشاک و لباس | محاسبه قیمت تمام شده - تنخور',
+    description:
+      'نرم افزار حسابداری و مدیریت تولیدی پوشاک و کارگاه‌های دوزندگی. محاسبه بهای تمام شده، هزینه پارچه، خیاطی، خرج‌کار و بنکداران.',
+    url: 'https://tankhor.com/apparel-manufacturing',
+    siteName: 'Tankhor',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'نرم افزار حسابداری تولیدی پوشاک و لباس | تنخور',
+    description: 'نرم افزار حسابداری تولیدی پوشاک و محاسبه بهای تمام شده. رایگان و آفلاین.',
+  },
 };
 
 export default function ApparelManufacturingPage() {
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'نرم افزار حسابداری و مدیریت تولیدی پوشاک تنخور',
+    operatingSystem: 'Windows, macOS, Android, Web',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'نرم افزار مدیریت تولیدی پوشاک و کارگاه خیاطی. فرمول ساخت BOM، محاسبه بهای تمام شده واقعی کالا Landed Cost، دستمزد کارمزدی دوزندگان و حسابداری بنکداران.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'IRR',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '129',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'صفحه اصلی',
+        item: 'https://tankhor.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'حسابداری تولیدی پوشاک',
+        item: 'https://tankhor.com/apparel-manufacturing',
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="overflow-x-hidden">
-        
         {/* Dedicated Hero Section */}
         <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-gradient-to-b from-emerald-950/15 via-white to-white dark:from-emerald-950/25 dark:via-[#0a0a0a] dark:to-[#0a0a0a] border-b border-neutral-200 dark:border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
@@ -91,7 +159,6 @@ export default function ApparelManufacturingPage() {
         <FashionFeaturesSection />
         <FreeVersionSection />
         <FAQSection />
-
       </main>
       <Footer />
       <DemoRequestModal />

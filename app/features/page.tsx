@@ -44,6 +44,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://tankhor.com/features',
+    languages: {
+      fa: 'https://tankhor.com/features',
+      en: 'https://tankhor.com/en/features',
+      'x-default': 'https://tankhor.com/features',
+    },
   },
 };
 

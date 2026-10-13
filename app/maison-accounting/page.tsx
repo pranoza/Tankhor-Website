@@ -8,7 +8,7 @@ import FashionFeaturesSection from '@/components/FashionFeaturesSection';
 import SizeGuideDemoWidget from '@/components/SizeGuideDemoWidget';
 import FAQSection from '@/components/FAQSection';
 import DemoRequestModal from '@/components/DemoRequestModal';
-import { Scissors, CheckCircle2, Download, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Scissors, CheckCircle2, Download, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'نرم افزار حسابداری مزون و مدیریت سفارشات دوخت | تنخور',
@@ -22,14 +22,82 @@ export const metadata: Metadata = {
     'نرم افزار ثبت اندازه گیری مزون',
     'نرم افزار حسابداری طراحان لباس',
   ],
+  alternates: {
+    canonical: 'https://tankhor.com/maison-accounting',
+    languages: {
+      fa: 'https://tankhor.com/maison-accounting',
+      en: 'https://tankhor.com/en/maison-accounting',
+      'x-default': 'https://tankhor.com/maison-accounting',
+    },
+  },
+  openGraph: {
+    title: 'نرم افزار حسابداری مزون و مدیریت سفارشات دوخت | تنخور',
+    description:
+      'نرم افزار اختصاصی مدیریت مزون لباس عروس، شب، مانتو و طراحی پارچه. ثبت پرو، بیعانه، آرشیو اندازه‌گیری‌های شخصی؛ رایگان و آفلاین.',
+    url: 'https://tankhor.com/maison-accounting',
+    siteName: 'Tankhor',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'نرم افزار حسابداری مزون و مدیریت سفارشات دوخت | تنخور',
+    description: 'نرم افزار اختصاصی مدیریت مزون لباس و دوخت سفارشی. رایگان و آفلاین.',
+  },
 };
 
 export default function MaisonAccountingPage() {
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'نرم افزار حسابداری و مدیریت مزون تنخور',
+    operatingSystem: 'Windows, macOS, Android, Web',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'نرم افزار مدیریت مزون و دوخت سفارشی لباس. ثبت اندازه‌گیری شخصی مشتریان، جلسات پرو، بیعانه و تسویه سفارشات.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'IRR',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '138',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'صفحه اصلی',
+        item: 'https://tankhor.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'حسابداری مزون لباس',
+        item: 'https://tankhor.com/maison-accounting',
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="overflow-x-hidden">
-        
         {/* Dedicated Hero Section */}
         <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-gradient-to-b from-amber-950/15 via-white to-white dark:from-amber-950/25 dark:via-[#0a0a0a] dark:to-[#0a0a0a] border-b border-neutral-200 dark:border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
@@ -93,7 +161,6 @@ export default function MaisonAccountingPage() {
         <FashionFeaturesSection />
         <FreeVersionSection />
         <FAQSection />
-
       </main>
       <Footer />
       <DemoRequestModal />

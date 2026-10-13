@@ -16,7 +16,10 @@ export interface ProPackage {
   months: number;
   name: { fa: string; en: string };
   price: number;
+  priceUsd: number;
   monthlyEquivalent: number;
+  monthlyEquivalentUsd: number;
+  billingPeriodText?: { fa: string; en: string };
   discountBadge?: { fa: string; en: string };
   tag?: { fa: string; en: string };
   popular?: boolean;
@@ -246,18 +249,18 @@ export const siteContent = {
       {
         id: "treasury",
         iconName: "Landmark",
-        title: { fa: "خزانه و مدیریت چک صیادی", en: "Treasury & Sayad Check Management" },
-        subtitle: { fa: "کنترل صندوق‌ها و چرخه چک‌های دریافتی/پرداختی", en: "Multi-Cashbox & Check Lifecycle" },
+        title: { fa: "خزانه و مدیریت چک صیادی", en: "Treasury & Retail Cash Flow Ledger" },
+        subtitle: { fa: "کنترل صندوق‌ها و چرخه چک‌های دریافتی/پرداختی", en: "Multi-Cashbox & Payment Instruments Lifecycle" },
         description: {
           fa: "مدیریت صندوق‌های فروشگاه، حساب‌های بانکی و پیگیری کامل وضعیت چک‌های صیادی (وصول، سررسید، برگشتی و خرج‌شده).",
-          en: "Manage multiple store cashboxes, bank accounts, and track Sayad checks from deposit to clearance or bounce.",
+          en: "Manage multiple retail store cash drawers, bank deposits, card terminals, and track multi-tender payment instruments from receipt to reconciliation.",
         },
         benefits: [
-          { fa: "هشدار خودکار موعد سررسید چک‌های صیادی", en: "Automated check due-date reminders" },
-          { fa: "مدیریت کارتخوان‌های فروشگاه و مغایرت‌گیری", en: "Bank reconciliation & POS terminal tracking" },
-          { fa: "ثبت چرخه انتقال، واگذاری و خرج چک", en: "Endorsement, transfer & clearance logging" },
+          { fa: "هشدار خودکار موعد سررسید چک‌های صیادی", en: "Automated payment schedules and due-date alerts" },
+          { fa: "مدیریت کارتخوان‌های فروشگاه و مغایرت‌گیری", en: "Bank reconciliation & POS payment terminal tracking" },
+          { fa: "ثبت چرخه انتقال، واگذاری و خرج چک", en: "Multi-tender receipts, cash drawer, and transfer logging" },
         ],
-        tag: "TREASURY_SAYAD",
+        tag: "TREASURY_CASHFLOW",
       },
       {
         id: "landed-cost",
@@ -278,18 +281,18 @@ export const siteContent = {
       {
         id: "tax-reports",
         iconName: "FileSpreadsheet",
-        title: { fa: "سامانه مؤدیان و گزارش‌های مالیاتی", en: "Taxpayer Portal & Statements" },
-        subtitle: { fa: "ارزش افزوده، ماده ۱۶۹ و خروجی سپیدار/هلو", en: "VAT, Article 169 & ERP Export" },
+        title: { fa: "سامانه مؤدیان و گزارش‌های مالیاتی", en: "Automated Sales Tax / VAT & Accounting Bridges" },
+        subtitle: { fa: "ارزش افزوده، ماده ۱۶۹ و خروجی سپیدار/هلو", en: "Automated Tax, Multi-Currency & ERP Bridges" },
         description: {
           fa: "ارسال فاکتورهای الکترونیکی به سامانه مؤدیان، گزارش ارزش افزوده و گزارش فصلی با قابلیت خروجی استاندارد به سایر سیستم‌ها.",
-          en: "Electronic invoicing for Taxpayer System, automated VAT reports, seasonal tax statements, and standardized exports.",
+          en: "Generate automated VAT and sales tax reports, multi-currency invoices, and export clean accounting journals to QuickBooks, Xero, SAP, and Excel.",
         },
         benefits: [
-          { fa: "اتصال الکترونیکی فاکتورها به سامانه مؤدیان", en: "Taxpayer portal electronic invoicing" },
-          { fa: "گزارش ارزش افزوده خرید و فروش با ۱ کلیک", en: "One-click VAT purchase & sales reports" },
-          { fa: "خروجی استاندارد جهت سپیدار، هلو و اکسل", en: "Standardized export for Sepidar & Holo" },
+          { fa: "اتصال الکترونیکی فاکتورها به سامانه مؤدیان", en: "Automated VAT & regional sales tax calculation" },
+          { fa: "گزارش ارزش افزوده خرید و فروش با ۱ کلیک", en: "One-click periodic tax audit and sales reports" },
+          { fa: "خروجی استاندارد جهت سپیدار، هلو و اکسل", en: "Seamless accounting journal export for QuickBooks, Xero & Excel" },
         ],
-        tag: "TAX_COMPLIANCE",
+        tag: "TAX_AUTOMATION",
       },
       {
         id: "pnl",
@@ -423,11 +426,11 @@ export const siteContent = {
         { fa: "تمامی امکانات نسخه Tankhor Free", en: "Includes all Tankhor Free features" },
         { fa: "همگام‌سازی ابری خودکار متصل به سرور اختصاصی", en: "Automated Cloud Sync via Dedicated Server" },
         { fa: "دسترسی همزمان از وب PWA، دسکتاپ و موبایل", en: "Multi-Platform Access (Web PWA, Desktop, Mobile)" },
-        { fa: "ماژول کامل خزانه، چک صیادی و سامانه مؤدیان", en: "Full Treasury, Sayad Check & Taxpayer System" },
+        { fa: "ماژول کامل خزانه، چک صیادی و سامانه مؤدیان", en: "VAT / Automated Sales Tax & Multi-Currency Ledger" },
         { fa: "موتور محاسبه بهای تمام‌شده واقعی (Landed Cost)", en: "True Landed Cost Calculation Engine" },
         { fa: "همگام‌سازی اطلاعات بین چند شعبه و چند انبار", en: "Multi-Store & Multi-Warehouse Live Sync" },
         { fa: "مدیریت کاربران با سطح دسترسی پیشرفته (RBAC)", en: "Role-Based Access Control & Staff Audit Logs" },
-        { fa: "گزارش‌های فصلی مالیاتی و خروجی سپیدار/هلو", en: "Article 169 Tax Statements & Sepidar/Holo Export" },
+        { fa: "گزارش‌های فصلی مالیاتی و خروجی سپیدار/هلو", en: "Tax Reports & Standard Financial Export (QuickBooks, Xero, Excel)" },
       ],
       ctaText: { fa: "مشاهده امکانات و تست Pro", en: "Explore Tankhor Pro Cloud" },
     },
@@ -507,8 +510,8 @@ export const siteContent = {
           desc: { fa: "تسهیم هوشمند باربری و خیاطی روی قیمت تمام‌شده برای محاسبه سود واقعی.", en: "Allocate overhead freight and tailor costs to reveal exact net margins." },
         },
         {
-          title: { fa: "مدیریت خزانه، چک صیادی و مؤدیان", en: "Treasury, Sayad Checks & Taxes" },
-          desc: { fa: "هشدار سررسید چک‌ها، کنترل صندوق‌ها و اتصال الکترونیکی به سامانه مؤدیان.", en: "Due-date alerts, cashbox controls, and electronic Taxpayer compliance." },
+          title: { fa: "مدیریت خزانه، چک صیادی و مؤدیان", en: "Automated Tax, Cash Flow & Ledgers" },
+          desc: { fa: "هشدار سررسید چک‌ها، کنترل صندوق‌ها و اتصال الکترونیکی به سامانه مؤدیان.", en: "Due-date alerts, cashbox controls, multi-currency ledger, and automated sales tax compliance." },
         },
         {
           title: { fa: "سرعت محلی ۱۰۰٪ آفلاین + ارتقای ابری", en: "100% Offline Local + Cloud Sync" },
@@ -554,16 +557,16 @@ export const siteContent = {
     {
       id: "sayad-checks",
       iconName: "Landmark",
-      title: { fa: "خزانه و مدیریت چک صیادی", en: "Treasury & Sayad Checks" },
-      subtitle: { fa: "کنترل کامل اسناد دریافت و پرداخت", en: "Check Status Workflows" },
+      title: { fa: "خزانه و مدیریت چک صیادی", en: "Treasury & Retail Cash Flow" },
+      subtitle: { fa: "کنترل کامل اسناد دریافت و پرداخت", en: "Payment Workflows & Liquidity" },
       description: {
         fa: "مدیریت صندوق‌ها و حساب‌های بانکی، رصد چرخه چک‌های صیادی و اتصال به سامانه مؤدیان مالیاتی.",
-        en: "Manage cashboxes, bank accounts, track Sayad check lifecycles, and Taxpayer portal compliance.",
+        en: "Manage cashboxes, bank deposits, track multi-tender payment instruments, and automated sales tax compliance.",
       },
       benefits: [
-        { fa: "هشدار هوشمند سررسید چک‌های صیادی", en: "Automated due-date reminders" },
-        { fa: "گزارش‌های فصلی ماده ۱۶۹ و ارزش افزوده", en: "Article 169 & VAT reports" },
-        { fa: "خروجی استاندارد برای سپیدار و هلو", en: "Clean export for Sepidar & Holo" },
+        { fa: "هشدار هوشمند سررسید چک‌های صیادی", en: "Automated payment schedules & due reminders" },
+        { fa: "گزارش‌های فصلی ماده ۱۶۹ و ارزش افزوده", en: "Automated VAT & sales tax summaries" },
+        { fa: "خروجی استاندارد برای سپیدار و هلو", en: "Clean export for QuickBooks, Xero & Excel" },
       ],
       metricBadge: { fa: "مدیریت کامل خزانه", en: "360° Treasury Control" },
     },
@@ -629,7 +632,10 @@ export const siteContent = {
         months: 1,
         name: { fa: '۱ ماهه', en: '1 Month' },
         price: 490000,
+        priceUsd: 19,
         monthlyEquivalent: 490000,
+        monthlyEquivalentUsd: 19,
+        billingPeriodText: { fa: 'ماهانه', en: '/month' },
         tag: { fa: 'شروع سریع', en: 'Quick Start' },
       },
       {
@@ -637,8 +643,11 @@ export const siteContent = {
         months: 3,
         name: { fa: '۳ ماهه', en: '3 Months' },
         price: 1290000,
+        priceUsd: 49,
         monthlyEquivalent: 430000,
-        discountBadge: { fa: '۱۲٪ تخفیف اقتصادی', en: '12% OFF' },
+        monthlyEquivalentUsd: 16.3,
+        billingPeriodText: { fa: 'سه ماهه', en: '/quarter' },
+        discountBadge: { fa: '۱۲٪ تخفیف', en: '14% OFF' },
         tag: { fa: 'محبوب‌ترین', en: 'Most Popular' },
         popular: true,
       },
@@ -647,8 +656,11 @@ export const siteContent = {
         months: 6,
         name: { fa: '۶ ماهه', en: '6 Months' },
         price: 2390000,
+        priceUsd: 89,
         monthlyEquivalent: 398333,
-        discountBadge: { fa: '۱۸٪ تخفیف', en: '18% OFF' },
+        monthlyEquivalentUsd: 14.8,
+        billingPeriodText: { fa: 'شش ماهه', en: '/half-year' },
+        discountBadge: { fa: '۱۸٪ تخفیف', en: '22% OFF' },
         tag: { fa: 'شش ماهه', en: 'Semi-Annual' },
       },
       {
@@ -656,8 +668,11 @@ export const siteContent = {
         months: 12,
         name: { fa: '۱۲ ماهه', en: '12 Months' },
         price: 4490000,
+        priceUsd: 149,
         monthlyEquivalent: 374000,
-        discountBadge: { fa: '۲۴٪ تخفیف', en: '24% OFF' },
+        monthlyEquivalentUsd: 12.4,
+        billingPeriodText: { fa: 'سالانه', en: '/year' },
+        discountBadge: { fa: '۲۴٪ تخفیف', en: '35% OFF' },
         tag: { fa: 'بیشترین صرفه‌جویی', en: 'Best Value' },
       },
     ] as ProPackage[],
@@ -666,7 +681,7 @@ export const siteContent = {
       badge: { fa: 'رایگان همیشگی', en: 'Forever Free' },
       targetAudience: { fa: 'مخصوص تک‌فروشگاه و استفاده آفلاین', en: 'For Single Stores & Offline Use' },
       price: 0,
-      priceFormatted: { fa: '۰ تومان (رایگان همیشگی)', en: '0 Toman (Free Forever)' },
+      priceFormatted: { fa: '۰ تومان (رایگان همیشگی)', en: '$0 (Forever Free, No Expiry)' },
       shortDescription: {
         fa: 'تمام امکانات مدیریت فروش، انبارداری و سایزبندی به صورت نامحدود و امن روی سیستم خودتان.',
         en: 'Complete sales management, inventory, and size guide operations without limits, stored securely on your own system.',
@@ -723,7 +738,7 @@ export const siteContent = {
       {
         feature: { fa: 'هزینه اشتراک', en: 'Subscription Cost' },
         free: { fa: 'رایگان برای همیشه', en: 'Free Forever' },
-        pro: { fa: 'ماهانه از ۳۷۴,۰۰۰ ت (در پلن سالانه)', en: 'From 374,000 T/mo (Annual plan)' },
+        pro: { fa: 'ماهانه از ۳۷۴,۰۰۰ ت (در پلن سالانه)', en: 'From $12.4/mo ($149 billed annually)' },
       },
       {
         feature: { fa: 'تعداد کالا و تراکنش', en: 'Products & Transactions' },
@@ -849,11 +864,11 @@ export const siteContent = {
       id: "faq-2",
       question: {
         fa: "تعرفه‌ها و شرایط پرداخت اشتراک Pro چگونه است؟",
-        en: "What are the pricing plans and payment options for Pro?",
+        en: "What are the subscription plans, USD pricing, and payment options for Pro?",
       },
       answer: {
         fa: "اشتراک Pro تنخور به صورت ۱ ماهه (۴۹۰,۰۰۰ تومان)، ۳ ماهه (۱,۲۹۰,۰۰۰ تومان با ۱۲٪ تخفیف)، ۶ ماهه (۲,۳۹۰,۰۰۰ تومان) و ۱۲ ماهه (۴,۴۹۰,۰۰۰ تومان با ۲۴٪ تخفیف) از طریق درگاه مستقیم بانکی زیبال قابل پرداخت و فعال‌سازی آنی است.",
-        en: "Tankhor Pro is available in 1-month (490k T), 3-month (1.29M T - 12% off), 6-month (2.39M T), and 12-month (4.49M T - 24% off) tiers via Zibal gateway with instant activation.",
+        en: "Tankhor Pro is offered in 1-month ($19/mo), 3-month ($49/quarter - $16.3/mo), 6-month ($89/half-year - $14.8/mo), and 12-month ($149/year - $12.4/mo, best value) plans with instant activation via credit/debit card on my.tankhor.com.",
       },
       category: { fa: "تعرفه‌ها", en: "Pricing" },
     },
@@ -921,13 +936,13 @@ export const siteContent = {
       id: "faq-7",
       question: {
         fa: "امکانات ماژول چک صیادی و سامانه مؤدیان چیست؟",
-        en: "What are the Sayad check and Taxpayer portal capabilities?",
+        en: "What are the automated sales tax, VAT, and retail cash flow ledger capabilities?",
       },
       answer: {
         fa: "ثبت کامل وضعیت چک‌ها (سررسید، وصول، برگشتی، خرج‌شده)، هشدار اتوماتیک موعد پاس شدن، صدور صورت‌حساب الکترونیکی سامانه مؤدیان و گزارش ارزش افزوده و ماده ۱۶۹ فصلی.",
-        en: "Full check status tracking (clearance, bounce, endorsement), due-date reminders, electronic Taxpayer portal invoicing, and Article 169 seasonal statements.",
+        en: "Configurable regional sales tax and VAT computation, automated periodic filing summaries, multi-tender payment tracking, cash drawer controls, and seamless journal export to QuickBooks, Xero, and Excel.",
       },
-      category: { fa: "چک و مالیات", en: "Checks & Tax" },
+      category: { fa: "چک و مالیات", en: "Tax & Cash Flow" },
     },
     {
       id: "faq-8",

@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://tankhor.com/sitemap',
+    languages: {
+      fa: 'https://tankhor.com/sitemap',
+      en: 'https://tankhor.com/en/sitemap',
+      'x-default': 'https://tankhor.com/sitemap',
+    },
   },
   openGraph: {
     title: 'نقشه سایت تنخور | فهرست کامل صفحات و امکانات نرم افزار پوشاک',

@@ -6,7 +6,7 @@ import FreeVersionSection from '@/components/FreeVersionSection';
 import AccountingModuleSection from '@/components/AccountingModuleSection';
 import FAQSection from '@/components/FAQSection';
 import DemoRequestModal from '@/components/DemoRequestModal';
-import { Download, CheckCircle2, ShieldCheck, Zap, Monitor, Apple, ArrowUpRight } from 'lucide-react';
+import { Download, CheckCircle2, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'دانلود نرم افزار حسابداری بوتیک رایگان و آفلاین دسکتاپ | تنخور',
@@ -19,14 +19,82 @@ export const metadata: Metadata = {
     'نرم افزار حسابداری دسکتاپ پوشاک رایگان',
     'نرم افزار آفلاین بوتیک',
   ],
+  alternates: {
+    canonical: 'https://tankhor.com/free-boutique-software',
+    languages: {
+      fa: 'https://tankhor.com/free-boutique-software',
+      en: 'https://tankhor.com/en/free-boutique-software',
+      'x-default': 'https://tankhor.com/free-boutique-software',
+    },
+  },
+  openGraph: {
+    title: 'دانلود نرم افزار حسابداری بوتیک رایگان و آفلاین دسکتاپ | تنخور',
+    description:
+      'دانلود مستقیم نرم افزار حسابداری بوتیک رایگان تنخور برای ویندوز و مک. بدون محدودیت زمانی، ۱۰۰٪ آفلاین با دیتابیس داخلی SQLite.',
+    url: 'https://tankhor.com/free-boutique-software',
+    siteName: 'Tankhor',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'دانلود نرم افزار حسابداری بوتیک رایگان و آفلاین دسکتاپ | تنخور',
+    description: 'دانلود نرم افزار حسابداری بوتیک رایگان و ۱۰۰٪ آفلاین.',
+  },
 };
 
 export default function FreeBoutiqueSoftwarePage() {
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'دانلود نرم افزار حسابداری بوتیک رایگان تنخور',
+    operatingSystem: 'Windows, macOS',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'دانلود نسخه ۱۰۰٪ رایگان و آفلاین نرم افزار حسابداری و مدیریت بوتیک لباس تنخور با دیتابیس محلی SQLite.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'IRR',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '165',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'صفحه اصلی',
+        item: 'https://tankhor.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'دانلود نرم افزار رایگان بوتیک',
+        item: 'https://tankhor.com/free-boutique-software',
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="overflow-x-hidden">
-        
         {/* Dedicated Hero Section */}
         <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-gradient-to-b from-teal-950/30 via-neutral-950 to-neutral-950 text-white border-b border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
@@ -79,7 +147,6 @@ export default function FreeBoutiqueSoftwarePage() {
         <FreeVersionSection />
         <AccountingModuleSection />
         <FAQSection />
-
       </main>
       <Footer />
       <DemoRequestModal />

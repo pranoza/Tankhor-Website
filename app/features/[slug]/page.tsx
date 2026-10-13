@@ -81,6 +81,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [feature.targetKeyword, ...feature.lsiKeywords, 'نرم افزار تنخور', 'حسابداری پوشاک', 'انبارداری بوتیک'],
     alternates: {
       canonical: url,
+      languages: {
+        fa: url,
+        en: `https://tankhor.com/en/features/${feature.slug}`,
+        'x-default': url,
+      },
     },
     openGraph: {
       title: feature.metaTitle,

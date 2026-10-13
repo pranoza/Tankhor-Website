@@ -45,7 +45,7 @@ export default function PricingSection() {
   // ROI Calculator state
   const [monthlyOrders, setMonthlyOrders] = useState<number>(400);
   const [returnRate, setReturnRate] = useState<number>(18); // 18%
-  const avgShippingLoss = 85000; // 85,000 Toman average return shipping & packaging loss per order
+  const avgShippingLoss = isFa ? 85000 : 15; // 85,000 Toman or $15 USD average return shipping & packaging loss per order
 
   const calculateMonthlySavings = () => {
     const totalReturns = (monthlyOrders * returnRate) / 100;
@@ -90,7 +90,7 @@ export default function PricingSection() {
               {isFa ? 'دوره اشتراک پلن Pro را انتخاب کنید:' : 'Select Pro Subscription Cycle:'}
             </div>
 
-            <div className="inline-flex p-1.5 rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-inner max-w-full overflow-x-auto">
+            <div className="inline-flex p-1 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-inner max-w-full overflow-x-auto">
               {pricing.proPackages.map((pkg: ProPackage) => {
                 const isSelected = selectedPackageId === pkg.id;
                 return (
@@ -98,9 +98,9 @@ export default function PricingSection() {
                     key={pkg.id}
                     type="button"
                     onClick={() => setSelectedPackageId(pkg.id)}
-                    className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all relative flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
+                    className={`px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition-all relative flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
                       isSelected
-                        ? 'bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-md'
+                        ? 'bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-sm'
                         : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'
                     }`}
                   >
@@ -148,10 +148,10 @@ export default function PricingSection() {
               <div className="p-5 rounded-2xl bg-white dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 space-y-1.5">
                 <div className="flex items-baseline gap-2">
                   <span className="font-caption-mono text-3xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white">
-                    ۰
+                    {isFa ? '۰' : '$0'}
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-neutral-500 dark:text-neutral-400">
-                    {isFa ? 'تومان (رایگان همیشگی بدون محدودیت زمانی)' : 'Toman (Forever Free, No Expiry)'}
+                    {isFa ? 'تومان (رایگان همیشگی بدون محدودیت زمانی)' : 'USD (Forever Free, No Expiry)'}
                   </span>
                 </div>
                 <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal">
@@ -251,10 +251,20 @@ export default function PricingSection() {
                       {isFa ? `مبلغ کل دوره (${selectedPackage.name[language]}):` : `Total for ${selectedPackage.name[language]}:`}
                     </div>
                     <div className="font-caption-mono text-3xl sm:text-4xl font-extrabold text-white flex items-baseline gap-1.5">
-                      <span className="font-en">{selectedPackage.price.toLocaleString()}</span>
-                      <span className="text-xs font-semibold text-neutral-400">
-                        {isFa ? 'تومان' : 'Toman'}
-                      </span>
+                      {isFa ? (
+                        <>
+                          <span className="font-en">{selectedPackage.price.toLocaleString()}</span>
+                          <span className="text-xs font-semibold text-neutral-400">تومان</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-2xl text-teal-400 font-bold">$</span>
+                          <span className="font-en">{selectedPackage.priceUsd}</span>
+                          <span className="text-xs font-semibold text-neutral-400">
+                            USD {selectedPackage.billingPeriodText?.en || ''}
+                          </span>
+                        </>
+                      )}
                     </div>
                   </div>
 
@@ -263,7 +273,9 @@ export default function PricingSection() {
                       {isFa ? 'معادل هزینه ماهانه:' : 'Monthly Equivalent:'}
                     </div>
                     <div className="text-sm sm:text-base font-bold text-teal-300 font-caption-mono font-en bg-teal-950/80 px-2.5 py-1 rounded-lg border border-teal-800/80 inline-block mt-0.5">
-                      {Math.round(selectedPackage.monthlyEquivalent).toLocaleString()} {isFa ? 'تومان / ماه' : 'T/mo'}
+                      {isFa
+                        ? `${Math.round(selectedPackage.monthlyEquivalent).toLocaleString()} تومان / ماه`
+                        : `$${selectedPackage.monthlyEquivalentUsd} / mo`}
                     </div>
                   </div>
                 </div>
@@ -286,7 +298,12 @@ export default function PricingSection() {
                       <Check className="w-3 h-3 text-teal-300" />
                     </div>
                     <span>
-                      <strong className="text-white font-semibold">دسترسی تحت وب (my.tankhor.com):</strong> ورود با موبایل، تبلت و لپ‌تاپ از هر نقطه‌ای بدون نیاز به نصب برنامه.
+                      <strong className="text-white font-semibold">
+                        {isFa ? 'دسترسی تحت وب (my.tankhor.com):' : 'Anywhere Web Access (my.tankhor.com):'}
+                      </strong>{' '}
+                      {isFa
+                        ? 'ورود با موبایل، تبلت و لپ‌تاپ از هر نقطه‌ای بدون نیاز به نصب برنامه.'
+                        : 'Log in from any phone, tablet, or laptop via browser with zero installation.'}
                     </span>
                   </li>
 
@@ -295,7 +312,12 @@ export default function PricingSection() {
                       <Check className="w-3 h-3 text-teal-300" />
                     </div>
                     <span>
-                      <strong className="text-white font-semibold">همگام‌سازی ابری زنده بین شعب:</strong> انتقال لحظه‌ای کالا، بررسی کاردکس و موجودی انبار مرکزی و فروشگاه‌ها.
+                      <strong className="text-white font-semibold">
+                        {isFa ? 'همگام‌سازی ابری زنده بین شعب:' : 'Real-Time Multi-Branch Cloud Sync:'}
+                      </strong>{' '}
+                      {isFa
+                        ? 'انتقال لحظه‌ای کالا، بررسی کاردکس و موجودی انبار مرکزی و فروشگاه‌ها.'
+                        : 'Instant stock transfers, central inventory visibility, and unified variant cardex.'}
                     </span>
                   </li>
 
@@ -304,7 +326,12 @@ export default function PricingSection() {
                       <Check className="w-3 h-3 text-teal-300" />
                     </div>
                     <span>
-                      <strong className="text-white font-semibold">کاربران نامحدود با سطح دسترسی (RBAC):</strong> تعریف صندوقدار، انباردار، مدیر و حسابدار با دسترسی اختصاصی.
+                      <strong className="text-white font-semibold">
+                        {isFa ? 'کاربران نامحدود با سطح دسترسی (RBAC):' : 'Unlimited Users & Granular RBAC:'}
+                      </strong>{' '}
+                      {isFa
+                        ? 'تعریف صندوقدار، انباردار، مدیر و حسابدار با دسترسی اختصاصی.'
+                        : 'Cashier, storekeeper, accountant, and branch manager roles with custom permissions.'}
                     </span>
                   </li>
 
@@ -313,7 +340,12 @@ export default function PricingSection() {
                       <Check className="w-3 h-3 text-teal-300" />
                     </div>
                     <span>
-                      <strong className="text-white font-semibold">پشتیبان‌گیری ابری روزانه:</strong> بیمه کامل و خودکار اطلاعات در برابر سوختن هارد، سرقت یا خطای انسانی.
+                      <strong className="text-white font-semibold">
+                        {isFa ? 'پشتیبان‌گیری ابری روزانه:' : 'Automated Daily Cloud Backups:'}
+                      </strong>{' '}
+                      {isFa
+                        ? 'بیمه کامل و خودکار اطلاعات در برابر سوختن هارد، سرقت یا خطای انسانی.'
+                        : 'Encrypted daily snapshots safeguarding against hardware failures or computer crashes.'}
                     </span>
                   </li>
 
@@ -322,7 +354,14 @@ export default function PricingSection() {
                       <Check className="w-3 h-3 text-teal-300" />
                     </div>
                     <span>
-                      <strong className="text-white font-semibold">اتصال ووکامرس، چک صیادی و سپیدار:</strong> صدور فاکتور مودیان و هماهنگی آنلاین‌شاپ با انبار.
+                      <strong className="text-white font-semibold">
+                        {isFa
+                          ? 'اتصال ووکامرس، چک صیادی و سپیدار:'
+                          : 'VAT / Automated Sales Tax & Accounting Bridges:'}
+                      </strong>{' '}
+                      {isFa
+                        ? 'صدور فاکتور مودیان و هماهنگی آنلاین‌شاپ با انبار.'
+                        : 'Multi-currency ledger, automated tax invoicing, and export to QuickBooks, Xero & Excel.'}
                     </span>
                   </li>
                 </ul>
@@ -337,12 +376,12 @@ export default function PricingSection() {
                 rel="noopener noreferrer"
                 className="w-full py-3.5 px-4 rounded-xl bg-teal-400 hover:bg-teal-300 text-neutral-950 font-extrabold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-950/40 active:scale-[0.98]"
               >
-                <span>{isFa ? 'شروع ۱۴ روز تست رایگان بدون نیاز به پرداخت' : 'Start 14-Day Free Trial'}</span>
+                <span>{isFa ? 'شروع ۱۴ روز تست رایگان بدون نیاز به پرداخت' : 'Start 14-Day Free Trial (Instant Cloud Access)'}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-neutral-400">
-                <span>{isFa ? 'فعال‌سازی آنی با درگاه زیبال' : 'Instant Zibal Gateway'}</span>
+                <span>{isFa ? 'فعال‌سازی آنی با درگاه زیبال' : 'Instant International Card Activation on my.tankhor.com'}</span>
                 <span>•</span>
                 <span>{isFa ? 'انتقال خودکار اطلاعات بدون از دست رفتن دیتا' : 'Zero Data Loss Migration'}</span>
               </div>
@@ -480,7 +519,9 @@ export default function PricingSection() {
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-semibold text-neutral-700 dark:text-neutral-300 font-caption-mono">
                   <span>{isFa ? 'تعداد سفارشات ماهانه فروشگاه:' : 'Monthly Orders Volume:'}</span>
-                  <span className="text-teal-600 dark:text-teal-400 font-bold font-en text-sm">{monthlyOrders.toLocaleString()} سفارش</span>
+                  <span className="text-teal-600 dark:text-teal-400 font-bold font-en text-sm">
+                    {monthlyOrders.toLocaleString()} {isFa ? 'سفارش' : 'orders'}
+                  </span>
                 </div>
                 <input
                   type="range"
@@ -518,7 +559,7 @@ export default function PricingSection() {
               </span>
 
               <div className="font-caption-mono text-2xl sm:text-3xl font-extrabold text-teal-600 dark:text-teal-300 font-en">
-                {monthlySavings.toLocaleString()} {isFa ? 'تومان' : 'Toman'}
+                {isFa ? `${monthlySavings.toLocaleString()} تومان` : `$${monthlySavings.toLocaleString()} USD`}
               </div>
 
               <p className="text-[11px] text-neutral-500 dark:text-neutral-400 leading-relaxed">

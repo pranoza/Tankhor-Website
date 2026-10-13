@@ -21,9 +21,12 @@ export default function SolutionsGrid() {
       },
       description: {
         fa: 'راهکار تخصصی بوتیک‌های لباس زنانه، مردانه و کیف/کفش. انبارداری ماتریسی رنگ/سایز، صندوق سریع POS، مدیریت چک صیادی و دفتر معین.',
-        en: 'Specialized for menswear, womenswear & footwear boutiques. Variant matrices, touch POS cashier, Sayad check management & ledgers.',
+        en: 'Specialized for menswear, womenswear & footwear boutiques. Variant matrices, touch POS cashier, automated sales tax & accounting ledgers.',
       },
-      keywords: ['نرم افزار حسابداری بوتیک', 'نرم افزار حسابداری بوتیک رایگان', 'مدیریت بوتیک لباس'],
+      keywords: {
+        fa: ['نرم افزار حسابداری بوتیک', 'نرم افزار حسابداری بوتیک رایگان', 'مدیریت بوتیک لباس'],
+        en: ['Boutique POS', 'Variant Matrix', 'Retail Cashier'],
+      },
       highlightColor: 'from-blue-500/10 to-teal-500/10 border-blue-500/30',
     },
     {
@@ -39,7 +42,10 @@ export default function SolutionsGrid() {
         fa: 'مدیریت سفارشات دوخت، بیعانه، ثبت اندازه‌گیری‌های شخصی، راهنمای سایز داینامیک، محاسبه بهای تمام‌شده و حسابداری طرف‌حساب‌ها.',
         en: 'Custom tailoring orders, measurement archives, deposit tracking, landed cost calculation, and client accounting ledgers.',
       },
-      keywords: ['نرم افزار حسابداری مزون', 'نرم افزار مدیریت مزون رایگان', 'حسابداری مزون لباس'],
+      keywords: {
+        fa: ['نرم افزار حسابداری مزون', 'نرم افزار مدیریت مزون رایگان', 'حسابداری مزون لباس'],
+        en: ['Fashion Atelier', 'Tailoring POS', 'Made-to-Measure'],
+      },
       highlightColor: 'from-amber-500/10 to-orange-500/10 border-amber-500/30',
     },
     {
@@ -55,7 +61,10 @@ export default function SolutionsGrid() {
         fa: 'محاسبه دقیق بهای تمام‌شده (Landed Cost)، خیاطی، پارچه و خرج‌کار، مدیریت بنکداران، سفارشات عمده و گزارش‌های سامانه مؤدیان.',
         en: 'True landed cost allocation (stitching, fabric, trim), wholesaler credit limits, bulk PO processing & tax compliance.',
       },
-      keywords: ['نرم افزار حسابداری تولیدی پوشاک', 'نرم افزار حسابداری تولیدی لباس', 'مدیریت تولیدی پوشاک'],
+      keywords: {
+        fa: ['نرم افزار حسابداری تولیدی پوشاک', 'نرم افزار حسابداری تولیدی لباس', 'مدیریت تولیدی پوشاک'],
+        en: ['Garment Manufacturing', 'Landed Cost BOM', 'Wholesale PO'],
+      },
       highlightColor: 'from-emerald-500/10 to-teal-500/10 border-emerald-500/30',
     },
   ];
@@ -112,7 +121,7 @@ export default function SolutionsGrid() {
 
                   {/* Keywords Pills */}
                   <div className="flex flex-wrap gap-1.5 pt-2">
-                    {item.keywords.map((kw, idx) => (
+                    {item.keywords[language].map((kw, idx) => (
                       <span
                         key={idx}
                         className="text-[10px] font-caption-mono bg-neutral-50 dark:bg-neutral-800/60 text-neutral-500 dark:text-neutral-400 px-2 py-0.5 rounded border border-neutral-200/60 dark:border-neutral-700/60"
@@ -125,7 +134,7 @@ export default function SolutionsGrid() {
 
                 <div className="pt-6 border-t border-neutral-100 dark:border-neutral-800/80 mt-6">
                   <Link
-                    href={item.slug}
+                    href={language === 'en' ? `/en${item.slug}` : item.slug}
                     className="w-full py-2.5 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-teal-600 hover:text-white dark:hover:bg-teal-500 dark:hover:text-neutral-950 text-neutral-800 dark:text-neutral-200 font-semibold text-xs transition-all flex items-center justify-center gap-2 group-hover:bg-neutral-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-neutral-900"
                   >
                     <span>{language === 'fa' ? 'مشاهده امکانات و توضیحات تخصصی' : 'Explore Industry Solution'}</span>

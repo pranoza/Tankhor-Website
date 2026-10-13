@@ -1021,3 +1021,6 @@ export function getFeatureBySlug(slug: string): FeatureDetail | undefined {
 export function getAllFeatureSlugs(): string[] {
   return featuresList.map((f) => f.slug);
 }
+
+// Re-export English features dataset & functions for unified access
+export * from './featuresDataEn';

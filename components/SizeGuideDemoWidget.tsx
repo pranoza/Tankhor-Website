@@ -240,7 +240,7 @@ export default function SizeGuideDemoWidget() {
                 </div>
               </div>
 
-              <div className="text-right border-r border-neutral-200 dark:border-neutral-800 pr-4">
+              <div className="rtl:text-right ltr:text-left rtl:border-r ltr:border-l border-neutral-200 dark:border-neutral-800 rtl:pr-4 ltr:pl-4">
                 <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block mb-1">
                   {language === 'fa' ? 'وضعیت ریسک مرجوعی:' : 'Return Risk:'}
                 </span>

@@ -37,6 +37,14 @@ export const metadata: Metadata = {
     'نرم افزار فروشگاهی پوشاک',
     'نرم افزار مدیریت مزون رایگان',
   ],
+  alternates: {
+    canonical: 'https://tankhor.com',
+    languages: {
+      fa: 'https://tankhor.com',
+      en: 'https://tankhor.com/en',
+      'x-default': 'https://tankhor.com',
+    },
+  },
   openGraph: {
     title: 'نرم افزار مدیریت فروشگاه پوشاک رایگان | تنخور',
     description: 'تنخور، نرم افزار رایگان مدیریت فروشگاه پوشاک برای مدیریت محصولات، رنگ و سایز، موجودی، انبار و سفارش‌ها. رایگان، آفلاین و مخصوص کسب‌وکارهای پوشاک.',
@@ -60,6 +68,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `
               (function() {
                 try {
+                  var p = window.location.pathname;
+                  if (p && (p === '/en' || p.indexOf('/en/') === 0)) {
+                    document.documentElement.setAttribute('lang', 'en');
+                    document.documentElement.setAttribute('dir', 'ltr');
+                  }
                   var saved = localStorage.getItem('tankhor_theme');
                   if (saved === 'light') {
                     document.documentElement.classList.remove('dark');

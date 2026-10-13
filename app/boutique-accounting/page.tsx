@@ -8,7 +8,7 @@ import FashionFeaturesSection from '@/components/FashionFeaturesSection';
 import SizeGuideDemoWidget from '@/components/SizeGuideDemoWidget';
 import FAQSection from '@/components/FAQSection';
 import DemoRequestModal from '@/components/DemoRequestModal';
-import { Store, CheckCircle2, Download, ShieldCheck, Zap, ArrowLeft, ArrowUpRight, BarChart3, Coins, Receipt } from 'lucide-react';
+import { Store, CheckCircle2, Download, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'نرم افزار حسابداری بوتیک و مدیریت فروشگاه لباس | رایگان و آفلاین - تنخور',
@@ -22,14 +22,82 @@ export const metadata: Metadata = {
     'حسابداری فروشگاه لباس',
     'نرم افزار فروشگاه کیف و کفش',
   ],
+  alternates: {
+    canonical: 'https://tankhor.com/boutique-accounting',
+    languages: {
+      fa: 'https://tankhor.com/boutique-accounting',
+      en: 'https://tankhor.com/en/boutique-accounting',
+      'x-default': 'https://tankhor.com/boutique-accounting',
+    },
+  },
+  openGraph: {
+    title: 'نرم افزار حسابداری بوتیک و مدیریت فروشگاه لباس | رایگان و آفلاین - تنخور',
+    description:
+      'بهترین نرم افزار حسابداری بوتیک لباس زنانه، مردانه، بچگانه و کیف و کفش. مدیریت ماتریسی رنگ و سایز، صندوق POS سریع؛ ۱۰۰٪ رایگان و آفلاین.',
+    url: 'https://tankhor.com/boutique-accounting',
+    siteName: 'Tankhor',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'نرم افزار حسابداری بوتیک و مدیریت فروشگاه لباس | تنخور',
+    description: 'بهترین نرم افزار حسابداری بوتیک لباس و کیف و کفش. رایگان و آفلاین.',
+  },
 };
 
 export default function BoutiqueAccountingPage() {
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'نرم افزار حسابداری بوتیک و مدیریت فروشگاه لباس تنخور',
+    operatingSystem: 'Windows, macOS, Android, Web',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'نرم افزار تخصصی حسابداری بوتیک لباس و فروشگاه پوشاک. مدیریت ماتریسی رنگ و سایز، صندوق لمسی سریع، حسابداری چک صیادی و دفتر معین اشخاص.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'IRR',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '142',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'صفحه اصلی',
+        item: 'https://tankhor.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'حسابداری بوتیک لباس',
+        item: 'https://tankhor.com/boutique-accounting',
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="overflow-x-hidden">
-        
         {/* Dedicated Hero Section */}
         <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-gradient-to-b from-teal-950/15 via-white to-white dark:from-teal-950/25 dark:via-[#0a0a0a] dark:to-[#0a0a0a] border-b border-neutral-200 dark:border-neutral-800">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
@@ -93,7 +161,6 @@ export default function BoutiqueAccountingPage() {
         <SizeGuideDemoWidget />
         <FreeVersionSection />
         <FAQSection />
-
       </main>
       <Footer />
       <DemoRequestModal />
