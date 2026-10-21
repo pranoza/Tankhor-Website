@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import FreeVersionSection from '@/components/FreeVersionSection';
 import AccountingModuleSection from '@/components/AccountingModuleSection';
 import FAQSection from '@/components/FAQSection';
-import DemoRequestModal from '@/components/DemoRequestModal';
-import { Download, CheckCircle2, Zap } from 'lucide-react';
+import { InternalStickyBar, InternalDoubleCtaSection } from '@/components/InternalConversionBar';
+import { Download, Cloud, ArrowUpRight, CheckCircle2, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'دانلود نرم افزار حسابداری بوتیک رایگان و آفلاین دسکتاپ | تنخور',
@@ -114,10 +114,20 @@ export default function FreeBoutiqueSoftwarePage() {
             <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#free-version"
-                className="px-8 py-4 rounded-xl bg-teal-500 hover:bg-teal-400 text-neutral-950 font-bold text-sm shadow-lg transition-all flex items-center gap-2"
+                className="px-7 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-sm shadow-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
               >
-                <Download className="w-5 h-5 text-neutral-950" />
-                <span>دانلود مستقیم نسخه رایگان ویندوز و مک</span>
+                <Download className="w-4 h-4 text-teal-400 dark:text-teal-600" />
+                <span>دانلود رایگان نسخه دسکتاپ</span>
+              </a>
+              <a
+                href="https://my.tankhor.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-neutral-950 font-bold text-sm shadow-md transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
+              >
+                <Cloud className="w-4 h-4" />
+                <span>نسخه ابری (شروع رایگان)</span>
+                <ArrowUpRight className="w-4 h-4 opacity-75" />
               </a>
             </div>
 
@@ -143,13 +153,16 @@ export default function FreeBoutiqueSoftwarePage() {
           </div>
         </section>
 
+        {/* Focused 2-Option Conversion Section */}
+        <InternalDoubleCtaSection categoryName="نسخه رایگان بوتیک" />
+
         {/* Download Buttons Section */}
         <FreeVersionSection />
         <AccountingModuleSection />
         <FAQSection />
       </main>
       <Footer />
-      <DemoRequestModal />
+      <InternalStickyBar />
     </>
   );
 }

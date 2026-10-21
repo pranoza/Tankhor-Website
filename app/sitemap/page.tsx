@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import DemoRequestModal from '@/components/DemoRequestModal';
+import { InternalStickyBar } from '@/components/InternalConversionBar';
 import SitemapClient from '@/components/SitemapClient';
 import { ChevronLeft, Compass, ShieldCheck } from 'lucide-react';
 
@@ -122,7 +122,7 @@ export default function SitemapPage() {
         </main>
 
         <Footer />
-        <DemoRequestModal />
+        <InternalStickyBar />
       </div>
     </>
   );

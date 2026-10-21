@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FreeVersionSection from '@/components/FreeVersionSection';
-import DemoRequestModal from '@/components/DemoRequestModal';
+import { InternalStickyBar, InternalDoubleCtaSection } from '@/components/InternalConversionBar';
 import { featuresListEn } from '@/data/featuresDataEn';
 import {
   Boxes,
@@ -21,6 +21,7 @@ import {
   ChevronRight,
   Sparkles,
   Download,
+  Cloud,
   Layers,
 } from 'lucide-react';
 
@@ -118,19 +119,20 @@ export default function EnglishFeaturesHubPage() {
             <div className="pt-4 flex flex-wrap items-center justify-center gap-3.5">
               <a
                 href="#free-version"
-                className="px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm shadow-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all flex items-center gap-2"
+                className="px-7 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm shadow-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-teal-400 dark:text-teal-600" />
-                <span>Download Free Desktop App (Windows & Mac)</span>
+                <span>Free Desktop Download</span>
               </a>
               <a
                 href="https://my.tankhor.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 font-semibold text-xs sm:text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all flex items-center gap-1.5"
+                className="px-7 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
               >
-                <span>14-Day Free Cloud Pro Trial</span>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+                <Cloud className="w-4 h-4" />
+                <span>Cloud Edition (Start Free)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
               </a>
             </div>
           </div>
@@ -179,6 +181,9 @@ export default function EnglishFeaturesHubPage() {
           </div>
         </section>
 
+        {/* Focused 2-Option Conversion Section */}
+        <InternalDoubleCtaSection categoryName="All Capabilities" />
+
         {/* Free Desktop Download Section */}
         <section id="free-version">
           <FreeVersionSection />
@@ -186,7 +191,7 @@ export default function EnglishFeaturesHubPage() {
       </main>
 
       <Footer />
-      <DemoRequestModal />
+      <InternalStickyBar />
     </>
   );
 }

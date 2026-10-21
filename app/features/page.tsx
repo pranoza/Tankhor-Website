@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FreeVersionSection from '@/components/FreeVersionSection';
-import DemoRequestModal from '@/components/DemoRequestModal';
+import { InternalStickyBar, InternalDoubleCtaSection } from '@/components/InternalConversionBar';
 import { featuresList } from '@/data/featuresData';
 import {
   Boxes,
@@ -21,6 +21,7 @@ import {
   ChevronLeft,
   Sparkles,
   Download,
+  Cloud,
   CheckCircle2,
   ShieldCheck,
   Layers,
@@ -109,19 +110,20 @@ export default function FeaturesHubPage() {
             <div className="pt-4 flex flex-wrap items-center justify-center gap-3.5">
               <a
                 href="#free-version"
-                className="px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm shadow-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all flex items-center gap-2"
+                className="px-7 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm shadow-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-teal-400 dark:text-teal-600" />
-                <span>دانلود نسخه رایگان ویندوز، مک و اندروید</span>
+                <span>دانلود رایگان نسخه دسکتاپ</span>
               </a>
               <a
                 href="https://my.tankhor.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 font-semibold text-xs sm:text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all flex items-center gap-1.5"
+                className="px-7 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
               >
-                <span>تست رایگان ۱۴ روزه پلن پرو</span>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+                <Cloud className="w-4 h-4" />
+                <span>نسخه ابری (شروع رایگان)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
               </a>
             </div>
           </div>
@@ -170,6 +172,9 @@ export default function FeaturesHubPage() {
           </div>
         </section>
 
+        {/* Focused 2-Option Conversion Section */}
+        <InternalDoubleCtaSection categoryName="تمام امکانات" />
+
         {/* Free Desktop Download Section */}
         <section id="free-version">
           <FreeVersionSection />
@@ -178,7 +183,7 @@ export default function FeaturesHubPage() {
       </main>
 
       <Footer />
-      <DemoRequestModal />
+      <InternalStickyBar />
     </>
   );
 }

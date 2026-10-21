@@ -5,10 +5,9 @@ import Footer from '@/components/Footer';
 import FreeVersionSection from '@/components/FreeVersionSection';
 import AccountingModuleSection from '@/components/AccountingModuleSection';
 import FashionFeaturesSection from '@/components/FashionFeaturesSection';
-import SizeGuideDemoWidget from '@/components/SizeGuideDemoWidget';
 import FAQSection from '@/components/FAQSection';
-import DemoRequestModal from '@/components/DemoRequestModal';
-import { Scissors, CheckCircle2, Download, ArrowUpRight } from 'lucide-react';
+import { InternalStickyBar, InternalDoubleCtaSection } from '@/components/InternalConversionBar';
+import { Scissors, CheckCircle2, Download, Cloud, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'نرم افزار حسابداری مزون و مدیریت سفارشات دوخت | تنخور',
@@ -117,7 +116,7 @@ export default function MaisonAccountingPage() {
             <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#free-version"
-                className="px-7 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-sm shadow-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all flex items-center gap-2"
+                className="px-7 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-sm shadow-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-amber-400 dark:text-amber-600" />
                 <span>دانلود رایگان نسخه دسکتاپ مزون</span>
@@ -126,10 +125,11 @@ export default function MaisonAccountingPage() {
                 href="https://my.tankhor.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-xl bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 font-semibold text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all flex items-center gap-1.5"
+                className="px-7 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-md transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
               >
-                <span>ورود به پنل ابری مزون</span>
-                <ArrowUpRight className="w-4 h-4 opacity-60" />
+                <Cloud className="w-4 h-4" />
+                <span>نسخه ابری مزون (شروع رایگان)</span>
+                <ArrowUpRight className="w-4 h-4 opacity-80" />
               </a>
             </div>
 
@@ -156,14 +156,17 @@ export default function MaisonAccountingPage() {
         </section>
 
         {/* Feature Modules Breakdown */}
-        <SizeGuideDemoWidget />
         <AccountingModuleSection />
         <FashionFeaturesSection />
+
+        {/* Focused 2-Option Conversion Section */}
+        <InternalDoubleCtaSection categoryName="مزون و طراحی دوخت" />
+
         <FreeVersionSection />
         <FAQSection />
       </main>
       <Footer />
-      <DemoRequestModal />
+      <InternalStickyBar />
     </>
   );
 }

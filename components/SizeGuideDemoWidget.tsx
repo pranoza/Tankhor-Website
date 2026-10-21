@@ -100,14 +100,22 @@ export default function SizeGuideDemoWidget() {
               </div>
             </div>
 
-            <div className="pt-2">
-              <button
-                onClick={openDemoModal}
-                className="px-6 py-3 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold text-xs sm:text-sm shadow-vercel-md hover:opacity-90 transition-all flex items-center gap-2"
+            <div className="pt-2 flex flex-wrap items-center gap-2.5">
+              <a
+                href="#free-version"
+                className="px-5 py-2.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs shadow-sm hover:opacity-90 transition-all flex items-center gap-1.5"
               >
-                <span>{language === 'fa' ? 'فعالسازی راهنمای سایز در فروشگاه شما' : 'Enable Size Guide on Your Store'}</span>
-                {direction === 'rtl' ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
-              </button>
+                <span>{language === 'fa' ? 'دانلود رایگان دسکتاپ' : 'Free Desktop Download'}</span>
+              </a>
+              <a
+                href="https://my.tankhor.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs shadow-sm transition-all flex items-center gap-1.5"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{language === 'fa' ? 'ورود به نسخه ابری' : 'Start Cloud Trial'}</span>
+              </a>
             </div>
           </FadeIn>
 

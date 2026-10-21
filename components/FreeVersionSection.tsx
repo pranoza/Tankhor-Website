@@ -17,6 +17,8 @@ import {
   Sparkles,
   ArrowDownToLine,
   Zap,
+  Cloud,
+  ArrowUpRight,
 } from 'lucide-react';
 import { FadeIn } from '@/components/ScrollAnimation';
 
@@ -204,6 +206,38 @@ export default function FreeVersionSection() {
                 </div>
               );
             })}
+          </div>
+        </FadeIn>
+
+        {/* Cloud Edition Quick Switcher */}
+        <FadeIn delay={0.15}>
+          <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-teal-950/40 via-neutral-900 to-neutral-950 border border-teal-500/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5 text-right rtl:text-right ltr:text-left">
+              <div className="p-2.5 rounded-xl bg-teal-500/15 border border-teal-500/30 text-teal-300 shrink-0">
+                <Cloud className="w-5 h-5" />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-xs sm:text-sm font-bold text-white">
+                  {isFa ? 'ترجیح می‌دهید بدون نیاز به دانلود، روی مرورگر یا موبایل کار کنید؟' : 'Prefer instant browser or mobile access with zero download?'}
+                </p>
+                <p className="text-[11px] text-neutral-400">
+                  {isFa
+                    ? 'نسخه ابری تنخور بدون نصب روی لپ‌تاپ، تبلت و گوشی با همگام‌سازی خودکار فعال است.'
+                    : 'Tankhor Cloud Edition runs immediately with automated multi-device sync.'}
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://my.tankhor.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-neutral-950 font-bold text-xs shadow-md transition-all flex items-center gap-1.5 shrink-0"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{isFa ? 'ورود به نسخه ابری (تست رایگان)' : 'Launch Cloud Edition Free'}</span>
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-75" />
+            </a>
           </div>
         </FadeIn>
 
