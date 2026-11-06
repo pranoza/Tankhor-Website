@@ -84,6 +84,29 @@ export default function EnglishFreeBoutiqueSoftwarePage() {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Does the free desktop version expire?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No, Tankhor Free Desktop Edition has no time limits or trial expiration. Core POS, barcode printing, and color/size matrix inventory are free forever.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does it work completely offline without internet?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, the desktop app runs on a fast local SQLite database on your Windows or macOS computer with zero internet dependency.',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -93,6 +116,10 @@ export default function EnglishFreeBoutiqueSoftwarePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       <main className="overflow-x-hidden">

@@ -86,6 +86,29 @@ export default function EnglishBoutiqueAccountingPage() {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Is Tankhor Boutique Accounting Software really free?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, the desktop edition of Tankhor for Windows and macOS is 100% free forever with offline SQLite storage, and the Cloud Edition also offers a free starter tier.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does it support color and size matrix inventory for clothing stores?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, Tankhor features a dedicated 2D Color/Size Matrix engine, barcode label printing, and rapid POS checkout tailored for fashion boutiques.',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -95,6 +118,10 @@ export default function EnglishBoutiqueAccountingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       <main className="overflow-x-hidden">

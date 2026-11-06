@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Vazirmatn, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { LanguageAndThemeProvider } from '@/context/LanguageAndThemeContext';
+import { DownloadLinksProvider } from '@/context/DownloadLinksContext';
 
 const vazirmatn = Vazirmatn({
   subsets: ['arabic', 'latin'],
@@ -139,9 +140,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen bg-neutral-50 dark:bg-[#0a0a0a] text-neutral-900 dark:text-neutral-100 font-sans antialiased selection:bg-teal-500 selection:text-neutral-950 transition-colors duration-200">
-        <LanguageAndThemeProvider>
-          {children}
-        </LanguageAndThemeProvider>
+        <DownloadLinksProvider>
+          <LanguageAndThemeProvider>
+            {children}
+          </LanguageAndThemeProvider>
+        </DownloadLinksProvider>
       </body>
     </html>
   );

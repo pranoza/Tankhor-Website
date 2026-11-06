@@ -11,15 +11,16 @@ import { InternalStickyBar, InternalDoubleCtaSection } from '@/components/Intern
 import { Store, CheckCircle2, Download, Cloud, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'نرم افزار حسابداری بوتیک و مدیریت فروشگاه لباس | رایگان و آفلاین - تنخور',
+  title: 'نرم افزار حسابداری بوتیک لباس (رایگان و آفلاین با بارکدخوان) | تنخور',
   description:
-    'بهترین نرم افزار حسابداری بوتیک لباس زنانه، مردانه، بچگانه و کیف و کفش. مدیریت ماتریسی رنگ و سایز، صندوق POS سریع، حسابداری چک صیادی و دفتر معین؛ ۱۰۰٪ رایگان و آفلاین.',
+    'بهترین نرم افزار حسابداری بوتیک لباس زنانه، مردانه، بچگانه و کیف و کفش؛ ماتریس رنگ و سایز، صندوق POS سریع و چک صیادی. دانلود مستقیم نسخه رایگان دسکتاپ بدون کارت بانکی + نسخه ابری.',
   keywords: [
     'نرم افزار حسابداری بوتیک',
     'نرم افزار حسابداری بوتیک رایگان',
-    'نرم افزار مدیریت بوتیک لباس',
-    'نرم افزار انبارداری بوتیک',
-    'حسابداری فروشگاه لباس',
+    'دانلود نرم افزار حسابداری مغازه لباس',
+    'نرم افزار مدیریت بوتیک لباس آفلاین',
+    'نرم افزار انبارداری و بارکدخوان بوتیک',
+    'حسابداری فروشگاه لباس و پوشاک',
     'نرم افزار فروشگاه کیف و کفش',
   ],
   alternates: {
@@ -31,18 +32,18 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'نرم افزار حسابداری بوتیک و مدیریت فروشگاه لباس | رایگان و آفلاین - تنخور',
+    title: 'نرم افزار حسابداری بوتیک لباس (رایگان و آفلاین با بارکدخوان) | تنخور',
     description:
-      'بهترین نرم افزار حسابداری بوتیک لباس زنانه، مردانه، بچگانه و کیف و کفش. مدیریت ماتریسی رنگ و سایز، صندوق POS سریع؛ ۱۰۰٪ رایگان و آفلاین.',
+      'بهترین نرم افزار حسابداری بوتیک لباس و کیف و کفش؛ ماتریس رنگ و سایز، صندوق فروش سریع و چاپ بارکد. دانلود مستقیم نسخه رایگان دسکتاپ + شروع آنی نسخه ابری.',
     url: 'https://tankhor.com/boutique-accounting',
-    siteName: 'Tankhor',
+    siteName: 'تنخور | TANKHOR',
     locale: 'fa_IR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'نرم افزار حسابداری بوتیک و مدیریت فروشگاه لباس | تنخور',
-    description: 'بهترین نرم افزار حسابداری بوتیک لباس و کیف و کفش. رایگان و آفلاین.',
+    title: 'نرم افزار حسابداری بوتیک لباس (رایگان و آفلاین با بارکدخوان) | تنخور',
+    description: 'دانلود مستقیم نرم افزار حسابداری بوتیک لباس و کیف و کفش؛ رایگان و آفلاین + نسخه ابری.',
   },
 };
 
@@ -63,7 +64,7 @@ export default function BoutiqueAccountingPage() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      ratingCount: '142',
+      ratingCount: '184',
     },
   };
 
@@ -86,6 +87,37 @@ export default function BoutiqueAccountingPage() {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'آیا نسخه رایگان نرم افزار حسابداری بوتیک تنخور محدودیت زمانی دارد؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'خیر، نسخه دسکتاپ تنخور ۱۰۰٪ رایگان و دائمی است، بدون نیاز به اینترنت روی کامپیوتر شما نصب می‌شود و هیچ محدودیتی برای ثبت فاکتور و کالا ندارد.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'چگونه رنگ‌بندی و سایزبندی لباس‌ها در بوتیک مدیریت می‌شود؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'در تنخور نیازی به تعریف کدهای جداگانه برای هر سایز نیست؛ یک مدل لباس تعریف می‌کنید و جدول ماتریسی رنگ و سایز به همراه بارکد اختصاصی به صورت خودکار ساخته می‌شود.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'آیا نرم افزار به بارکدخوان، لیبل پرینتر و کارتخوان متصل می‌شود؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'بله، تنخور با تمامی بارکدخوان‌های سیمی و بی‌سیم، پرینترهای حرارتی چاپ اتیکت و دستگاه‌های کارتخوان بانکی سازگار است.',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -95,6 +127,10 @@ export default function BoutiqueAccountingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       <main className="overflow-x-hidden">

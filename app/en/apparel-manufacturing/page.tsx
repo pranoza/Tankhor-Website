@@ -86,6 +86,29 @@ export default function EnglishApparelManufacturingPage() {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How does Tankhor calculate true landed cost for garment production?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Tankhor combines fabric consumption, trims, cutting and sewing wages, and overhead freight expenses to compute the exact cost per garment SKU.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Tankhor support wholesale size-pack billing?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, garment manufacturers and wholesalers can issue size-pack invoices, manage B2B customer credit ledgers, and track multi-warehouse inventory.',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -95,6 +118,10 @@ export default function EnglishApparelManufacturingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       <main className="overflow-x-hidden">

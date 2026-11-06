@@ -10,16 +10,17 @@ import { InternalStickyBar, InternalDoubleCtaSection } from '@/components/Intern
 import { Scissors, CheckCircle2, Download, Cloud, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'نرم افزار حسابداری مزون و مدیریت سفارشات دوخت | تنخور',
+  title: 'نرم افزار حسابداری مزون؛ مدیریت بیعانه، سفارش دوخت و اندازه‌گیری (رایگان) | تنخور',
   description:
-    'نرم افزار اختصاصی مدیریت مزون لباس عروس، شب، مانتو و طراحی پارچه. ثبت پرو، بیعانه، آرشیو اندازه‌گیری‌های شخصی، محاسبه قیمت تمام‌شده پارچه و خرج‌کار؛ رایگان و آفلاین.',
+    'بهترین نرم افزار مدیریت و حسابداری مزون لباس عروس، مجلسی و مانتو؛ ثبت اندازه‌گیری شخصی مشتری، مدیریت بیعانه، نوبت پرو و بهای تمام‌شده پارچه. دانلود رایگان دسکتاپ + نسخه ابری.',
   keywords: [
     'نرم افزار حسابداری مزون',
     'نرم افزار مدیریت مزون رایگان',
-    'حسابداری مزون لباس',
-    'نرم افزار سفارشات مزون',
-    'نرم افزار ثبت اندازه گیری مزون',
+    'حسابداری مزون لباس عروس و مجلسی',
+    'نرم افزار ثبت سفارشات دوخت و خیاطی',
+    'نرم افزار ثبت اندازه گیری مشتری مزون',
     'نرم افزار حسابداری طراحان لباس',
+    'مدیریت بیعانه و پرو مزون',
   ],
   alternates: {
     canonical: 'https://tankhor.com/maison-accounting',
@@ -30,18 +31,18 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'نرم افزار حسابداری مزون و مدیریت سفارشات دوخت | تنخور',
+    title: 'نرم افزار حسابداری مزون؛ مدیریت بیعانه، سفارش دوخت و اندازه‌گیری | تنخور',
     description:
-      'نرم افزار اختصاصی مدیریت مزون لباس عروس، شب، مانتو و طراحی پارچه. ثبت پرو، بیعانه، آرشیو اندازه‌گیری‌های شخصی؛ رایگان و آفلاین.',
+      'نرم افزار اختصاصی مدیریت مزون لباس عروس، مجلسی و مانتو؛ ثبت پرو، بیعانه و آرشیو اندازه‌گیری شخصی. دانلود مستقیم نسخه رایگان دسکتاپ + نسخه ابری.',
     url: 'https://tankhor.com/maison-accounting',
-    siteName: 'Tankhor',
+    siteName: 'تنخور | TANKHOR',
     locale: 'fa_IR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'نرم افزار حسابداری مزون و مدیریت سفارشات دوخت | تنخور',
-    description: 'نرم افزار اختصاصی مدیریت مزون لباس و دوخت سفارشی. رایگان و آفلاین.',
+    title: 'نرم افزار حسابداری مزون؛ مدیریت بیعانه و جدول اندازه‌گیری | تنخور',
+    description: 'نرم افزار اختصاصی مدیریت مزون لباس و دوخت سفارشی؛ رایگان و آفلاین + نسخه ابری.',
   },
 };
 
@@ -62,7 +63,7 @@ export default function MaisonAccountingPage() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      ratingCount: '138',
+      ratingCount: '158',
     },
   };
 
@@ -85,6 +86,37 @@ export default function MaisonAccountingPage() {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'آیا در نرم افزار مزون تنخور امکان ثبت اندازه‌های شخصی هر مشتری وجود دارد؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'بله، برای هر مشتری پرونده اختصاصی شامل دور سینه، دور کمر، قد، سرشانه، قد آستین و یادداشت‌های خیاطی ذخیره می‌شود تا در سفارشات بعدی فوراً در دسترس باشد.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'نحوه مدیریت بیعانه و تسویه حساب سفارشات دوخت چگونه است؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'هنگام ثبت سفارش دوخت می‌توانید مبلغ پیش‌پرداخت (بیعانه) را ثبت کرده و مانده حساب مشتری را در زمان پرو یا تحویل نهایی لباس تسویه نمایید.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'آیا امکان محاسبه هزینه پارچه، خرج‌کار و دستمزد خیاط وجود دارد؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'بله، سیستم بهای تمام‌شده تنخور تمام هزینه‌های پارچه، مروارید، دانتل، یراق و اجرت دوخت را جمع زده و سود خالص هر سفارش یا کالکشن مزون را محاسبه می‌کند.',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -94,6 +126,10 @@ export default function MaisonAccountingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       <main className="overflow-x-hidden">

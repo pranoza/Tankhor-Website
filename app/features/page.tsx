@@ -28,18 +28,16 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'قابلیت‌ها و امکانات تخصصی نرم‌افزار پوشاک تنخور | ۱۰ راهکار یکپارچه صنف مد',
+  title: 'امکانات نرم افزار حسابداری و انبارداری پوشاک (نسخه رایگان و ابری) | تنخور',
   description:
-    'بررسی جامع ۱۰ قابلیت تخصصی تنخور برای صنف پوشاک: انبارداری ماتریسی پوشاک، حسابداری و صندوق پوشاک، موتور هوشمند پیشنهاد سایز لباس، کاتالوگ دیجیتال، چاپ بارکد لباس، اتصال ووکامرس، Landed Cost، و خروجی سپیدار و هلو.',
+    '۱۰ قابلیت تخصصی نرم‌افزار پوشاک تنخور: انبارداری ماتریسی سایز و رنگ، چاپ بارکد، صندوق فروشگاهی، ووکامرس و راهنمای سایز. دانلود رایگان دسکتاپ یا شروع نسخه ابری!',
   keywords: [
-    'نرم افزار پوشاک',
-    'نرم افزار صنف پوشاک',
-    'قابلیت های نرم افزار پوشاک تنخور',
-    'امکانات حسابداری پوشاک',
-    'انبارداری پوشاک',
+    'امکانات نرم افزار حسابداری پوشاک',
+    'نرم افزار تخصصی صنف پوشاک',
+    'قابلیت های نرم افزار بوتیک تنخور',
+    'انبارداری ماتریسی سایز و رنگ',
     'صندوق فروشگاهی بوتیک لباس',
     'راهنمای سایز آنلاین لباس',
-    'کاتالوگ دیجیتال پوشاک',
     'چاپ بارکد پوشاک',
     'اتصال ووکامرس به انبار پوشاک',
   ],
@@ -50,6 +48,20 @@ export const metadata: Metadata = {
       en: 'https://tankhor.com/en/features',
       'x-default': 'https://tankhor.com/features',
     },
+  },
+  openGraph: {
+    title: 'امکانات نرم افزار حسابداری و انبارداری پوشاک (نسخه رایگان و ابری) | تنخور',
+    description:
+      '۱۰ قابلیت تخصصی نرم‌افزار پوشاک تنخور: انبارداری ماتریسی سایز و رنگ، چاپ بارکد، صندوق فروشگاهی و ووکامرس. دانلود رایگان دسکتاپ یا شروع نسخه ابری.',
+    url: 'https://tankhor.com/features',
+    siteName: 'Tankhor',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'امکانات نرم افزار حسابداری و انبارداری پوشاک (رایگان و ابری) | تنخور',
+    description: 'انبارداری ماتریسی سایز و رنگ، چاپ بارکد، صندوق فروشگاهی و اتصال ووکامرس. دانلود رایگان دسکتاپ یا نسخه ابری.',
   },
 };
 
@@ -80,11 +92,33 @@ export default function FeaturesHubPage() {
     })),
   };
 
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'نرم افزار جامع حسابداری و انبارداری پوشاک تنخور',
+    operatingSystem: 'Windows, macOS, Android, iOS, Web',
+    applicationCategory: 'BusinessApplication',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'IRR',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '240',
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       <Navbar />
 

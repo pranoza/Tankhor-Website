@@ -86,6 +86,29 @@ export default function EnglishMaisonAccountingPage() {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Can I store client body measurements and fitting schedules in Tankhor?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, Tankhor includes a digital client measurement archive, bespoke order tracking, down-payment management, and fitting session scheduling for ateliers and bridal maisons.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How can I start using Tankhor for my fashion maison?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'You can either download the 100% free offline desktop version for Windows and macOS or launch the Cloud Edition instantly.',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -95,6 +118,10 @@ export default function EnglishMaisonAccountingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       <main className="overflow-x-hidden">

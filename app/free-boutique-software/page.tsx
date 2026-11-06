@@ -9,15 +9,16 @@ import { InternalStickyBar, InternalDoubleCtaSection } from '@/components/Intern
 import { Download, Cloud, ArrowUpRight, CheckCircle2, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'دانلود نرم افزار حسابداری بوتیک رایگان و آفلاین دسکتاپ | تنخور',
+  title: 'دانلود نرم افزار حسابداری بوتیک رایگان؛ ۱۰۰٪ آفلاین و بدون انقضا | تنخور',
   description:
-    'دانلود مستقیم نرم افزار حسابداری بوتیک رایگان تنخور برای ویندوز و مک. بدون محدودیت زمانی، ۱۰۰٪ آفلاین با دیتابیس داخلی SQLite، بدون نیاز به اشتراک ماهانه.',
+    'دانلود مستقیم نسخه رایگان نرم‌افزار حسابداری بوتیک و فروشگاه لباس تنخور (ویندوز و مک). ۱۰۰٪ آفلاین بدون نیاز به اینترنت و بدون محدودیت زمانی + نسخه ابری رایگان!',
   keywords: [
     'دانلود نرم افزار حسابداری بوتیک رایگان',
     'نرم افزار حسابداری بوتیک رایگان',
     'دانلود نرم افزار مدیریت فروشگاه لباس رایگان',
     'نرم افزار حسابداری دسکتاپ پوشاک رایگان',
-    'نرم افزار آفلاین بوتیک',
+    'نرم افزار آفلاین بوتیک بدون اینترنت',
+    'برنامه حسابداری مغازه لباس فروشی رایگان',
   ],
   alternates: {
     canonical: 'https://tankhor.com/free-boutique-software',
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'دانلود نرم افزار حسابداری بوتیک رایگان و آفلاین دسکتاپ | تنخور',
+    title: 'دانلود نرم افزار حسابداری بوتیک رایگان؛ ۱۰۰٪ آفلاین و بدون انقضا | تنخور',
     description:
-      'دانلود مستقیم نرم افزار حسابداری بوتیک رایگان تنخور برای ویندوز و مک. بدون محدودیت زمانی، ۱۰۰٪ آفلاین با دیتابیس داخلی SQLite.',
+      'دانلود مستقیم نسخه رایگان نرم‌افزار حسابداری بوتیک و فروشگاه لباس تنخور (ویندوز و مک). ۱۰۰٪ آفلاین بدون نیاز به اینترنت و بدون محدودیت زمانی.',
     url: 'https://tankhor.com/free-boutique-software',
     siteName: 'Tankhor',
     locale: 'fa_IR',
@@ -38,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'دانلود نرم افزار حسابداری بوتیک رایگان و آفلاین دسکتاپ | تنخور',
-    description: 'دانلود نرم افزار حسابداری بوتیک رایگان و ۱۰۰٪ آفلاین.',
+    title: 'دانلود نرم افزار حسابداری بوتیک رایگان (آفلاین و بدون انقضا) | تنخور',
+    description: 'دانلود مستقیم نرم افزار حسابداری بوتیک رایگان برای ویندوز و مک یا شروع آنی نسخه ابری.',
   },
 };
 
@@ -83,6 +84,37 @@ export default function FreeBoutiqueSoftwarePage() {
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'آیا نسخه رایگان دسکتاپ تنخور واقعاً بدون محدودیت زمانی است؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'بله، نسخه دسکتاپ تنخور هیچ‌گونه محدودیت زمانی (Trial) ندارد و امکانات اصلی فروش، صدور فاکتور، چاپ بارکد و انبارداری ماتریسی سایز و رنگ برای همیشه رایگان است.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'آیا برای کار با نسخه دسکتاپ تنخور به اینترنت نیاز داریم؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'خیر، نسخه دسکتاپ با دیتابیس محلی پرسرعت SQLite کار می‌کند و ۱۰۰٪ آفلاین است. اطلاعات شما روی سیستم خودتان ذخیره شده و در زمان قطع اینترنت نیز بدون وقفه کار می‌کند.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'تفاوت نسخه رایگان دسکتاپ با نسخه ابری تنخور چیست؟',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'نسخه دسکتاپ به صورت آفلاین روی یک کامپیوتر در فروشگاه نصب می‌شود؛ اما نسخه ابری به شما امکان دسترسی آنلاین از موبایل، تبلت و چند شعبه به صورت همزمان به همراه اتصال به ووکامرس و کاتالوگ دیجیتال را می‌دهد.',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -92,6 +124,10 @@ export default function FreeBoutiqueSoftwarePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
       <main className="overflow-x-hidden">
