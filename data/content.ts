@@ -92,12 +92,12 @@ export interface MatrixSampleVariant {
 export const siteContent = {
   meta: {
     title: {
-      fa: "نرم افزار مدیریت و حسابداری فروشگاه پوشاک، بوتیک و مزون | تنخور",
-      en: "Clothing Store, Boutique & Apparel Management Software | Tankhor",
+      fa: "تنخور | نرم‌افزار مدیریت و حسابداری فروشگاه پوشاک",
+      en: "TanKhor | Specialized Apparel Store Management & POS Software",
     },
     description: {
-      fa: "تنخور؛ نرم افزار مدیریت و حسابداری تخصصی فروشگاه پوشاک، بوتیک، مزون و تولیدی لباس. مدیریت یکپارچه محصولات، انبارداری رنگ/سایز، حسابداری مالی و چک صیادی؛ رایگان و آفلاین.",
-      en: "Tankhor: Clothing store, boutique, maison & fashion manufacturing accounting software. Integrated product management, variant inventory, 360° financial accounting; 100% free & offline.",
+      fa: "با نرم‌افزار تنخور فروش، انبارداری و مدیریت رنگ و سایز پوشاک، کیف و کفش را ساده‌تر کنید. نسخه رایگان آفلاین و نسخه ابری Pro برای مدیریت حرفه‌ای فروشگاه.",
+      en: "Simplify clothing, footwear, and accessory inventory, color/size variants, and sales with TanKhor. Free offline desktop edition and Pro cloud sync.",
     },
     keywords: [
       "نرم افزار مدیریت فروشگاه پوشاک",
@@ -848,134 +848,122 @@ export const siteContent = {
     {
       id: "faq-1",
       question: {
-        fa: "تفاوت اصلی نسخه رایگان و نسخه Pro تنخور در چیست؟",
-        en: "What is the primary difference between Tankhor Free and Pro?",
+        fa: "آیا تنخور واقعاً رایگان است؟",
+        en: "Is TanKhor really free?",
       },
       answer: {
-        fa: "تفاوت در «محل ذخیره داده و نحوه دسترسی» است. نسخه رایگان روی سیستم محلی شما با دیتابیس SQLite بدون نیاز به اینترنت و با حداکثر سرعت کار می‌کند. نسخه Pro قفل دسترسی تحت وب، همگام‌سازی ابری بی‌درنگ و اتصال چند شعبه و چند کاربر را باز می‌کند.",
-        en: "The difference lies in data storage and access method. Free runs locally on your hardware via SQLite with zero internet dependency and maximum speed. Pro unlocks real-time cloud sync, web browser access, multi-branch, and multi-user RBAC.",
+        fa: "بله، نسخه دسکتاپ تنخور (برای ویندوز و مک) به‌صورت ۱۰۰٪ رایگان و بدون پایان مهلت تست ارائه می‌شود. امکانات اصلی شامل تعریف نامحدود کالا، ماتریس رنگ و سایز، صدور فاکتور فروش و انبارداری بدون پرداخت هیچ هزینه‌ای فعال است.",
+        en: "Yes, TanKhor Desktop edition is 100% free with no trial expiry. Core features including unlimited products, color/size matrices, POS invoicing, and inventory are forever functional without fees.",
       },
-      category: { fa: "پلن‌ها و تفاوت‌ها", en: "Plans & Architecture" },
+      category: { fa: "پلن‌ها", en: "Plans" },
     },
     {
       id: "faq-2",
       question: {
-        fa: "تعرفه‌ها و شرایط پرداخت اشتراک Pro چگونه است؟",
-        en: "What are the subscription plans, USD pricing, and payment options for Pro?",
+        fa: "تفاوت نسخه Free و Pro چیست؟",
+        en: "What is the difference between TanKhor Free and Pro?",
       },
       answer: {
-        fa: "اشتراک Pro تنخور به صورت ۱ ماهه (۴۹۰,۰۰۰ تومان)، ۳ ماهه (۱,۲۹۰,۰۰۰ تومان با ۱۲٪ تخفیف)، ۶ ماهه (۲,۳۹۰,۰۰۰ تومان) و ۱۲ ماهه (۴,۴۹۰,۰۰۰ تومان با ۲۴٪ تخفیف) از طریق درگاه مستقیم بانکی زیبال قابل پرداخت و فعال‌سازی آنی است.",
-        en: "Tankhor Pro is offered in 1-month ($19/mo), 3-month ($49/quarter - $16.3/mo), 6-month ($89/half-year - $14.8/mo), and 12-month ($149/year - $12.4/mo, best value) plans with instant activation via credit/debit card on my.tankhor.com.",
+        fa: "نسخه Free به صورت محلی و آفلاین روی سیستم شما اجرا می‌شود و مخصوص یک فروشگاه است. نسخه Pro امکانات ابری را اضافه می‌کند: همگام‌سازی لحظه‌ای بین چند سیستم یا چند شعبه، دسترسی از طریق مرورگر وب (PWA) روی موبایل یا لپ‌تاپ، تعریف کاربران متعدد و پشتیبان‌گیری خودکار ابری.",
+        en: "Free runs locally offline for single-store PCs. Pro adds real-time cloud synchronization across branches, web browser dashboard access on mobile/laptop, multi-user role management, and automated cloud backups.",
       },
-      category: { fa: "تعرفه‌ها", en: "Pricing" },
-    },
-    {
-      id: "faq-trial",
-      question: {
-        fa: "آیا پلن Pro امکان تست رایگان دارد؟",
-        en: "Does Tankhor Pro offer a free trial?",
-      },
-      answer: {
-        fa: "بله، شما می‌توانید تمامی قابلیت‌های نسخه ابری Pro (همگام‌سازی ابری، دسترسی وب و اتصال شعب) را به مدت ۱۴ روز به صورت کاملاً رایگان و بدون نیاز به پرداخت یا ثبت کارت بانکی تست و ارزیابی نمایید.",
-        en: "Yes, you can test all Pro cloud features (real-time sync, web access, and branch management) completely free for 14 days with no credit card or upfront payment required.",
-      },
-      category: { fa: "تست رایگان", en: "Free Trial" },
+      category: { fa: "پلن‌ها", en: "Plans" },
     },
     {
       id: "faq-3",
       question: {
-        fa: "چگونه داده‌های نسخه رایگان را به نسخه ابری Pro منتقل کنیم؟",
-        en: "How do we migrate local data from Free to Pro Cloud?",
+        fa: "آیا بدون اینترنت می‌توان از برنامه استفاده کرد؟",
+        en: "Can TanKhor be used without internet?",
       },
       answer: {
-        fa: "انتقال با ویزارد ۱-کلیکه درون نرم‌افزار انجام می‌شود. تمامی کالاها، ماتریس رنگ و سایز، طرف‌حساب‌ها و فاکتورهای شما به صورت خودکار و امن به پایگاه ابری منتقل شده و دسترسی وب و شعب بلافاصله فعال می‌گردد.",
-        en: "Migration is fully automated with a built-in 1-click wizard. All items, variant matrices, customer records, and invoices migrate securely to the cloud database without any data loss.",
+        fa: "بله، پایگاه داده نسخه دسکتاپ از نوع SQLite محلی است و تمامی عملیات ثبت فاکتور، بارکد اسکن، انبارداری و گزارش‌ها کاملاً مستقل از اینترنت کار می‌کنند. در صورت قطعی اینترنت، فعالیت فروشگاه حتی ۱ ثانیه هم متوقف نخواهد شد.",
+        en: "Yes, the desktop database is local SQLite. All checkout, barcode scanning, and inventory operations run completely independently of network status.",
       },
-      category: { fa: "مهاجرت ابری", en: "Cloud Migration" },
+      category: { fa: "آفلاین", en: "Offline" },
     },
     {
       id: "faq-4",
       question: {
-        fa: "امنیت داده‌ها و کارکرد ۱۰۰٪ آفلاین نسخه رایگان چگونه است؟",
-        en: "How secure is the 100% offline Free version?",
+        fa: "اطلاعات محصولات و فروش کجا ذخیره می‌شوند؟",
+        en: "Where are product and sales data stored?",
       },
       answer: {
-        fa: "نسخه رایگان داده‌ها را در پایگاه داده محلی SQLite روی هارد دیسک خودتان نگهداری می‌کند. هیچ اطلاعاتی از فروش یا سود شما بدون اجازه به اینترنت ارسال نمی‌شود و در صورت قطعی شبکه، صندوق فروشگاه بدون ۱ ثانیه وقفه کار می‌کند.",
-        en: "Tankhor Free stores encrypted data on your local device using SQLite. No sales or profit records leave your machine, and your cashiers operate continuously during network drops.",
+        fa: "در نسخه رایگان دسکتاپ، تمام اطلاعات فاکتورها، مشتریان و موجودی منحصراً روی هارد دیسک کامپیوتر خودتان ذخیره می‌شود و هیچ داده‌ای بدون اجازه شما به سرورهای خارجی فرستاده نمی‌شود. در نسخه Pro، اطلاعات به‌صورت رمزنگاری‌شده و امن در سرور ابری اختصاصی همگام می‌گردد.",
+        en: "In the Free desktop edition, all records reside strictly on your own hardware. In Pro, data is safely synchronized to an encrypted cloud server for remote access.",
       },
-      category: { fa: "امنیت و آفلاین", en: "Offline & Security" },
+      category: { fa: "امنیت", en: "Security" },
     },
     {
       id: "faq-5",
       question: {
-        fa: "چگونه اطلاعاتمان را از سپیدار، هلو یا فایل اکسل منتقل کنیم؟",
-        en: "How do we import existing data from Sepidar, Holo, or Excel?",
+        fa: "آیا می‌توان چند کاربر با دسترسی‌های مختلف تعریف کرد؟",
+        en: "Can multiple users with different permissions be created?",
       },
       answer: {
-        fa: "تنخور دارای ورودی اختصاصی فایل اکسل برای محصولات، سایزها، مشتریان و موجودی اول‌دوره است. همچنین تیم فنی تنخور فایل‌های پایگاه داده سیستم قبلی شما را به‌طور کامل و رایگان تبدیل و وارد می‌کند.",
-        en: "Tankhor includes a dedicated Excel Importer for inventory, variant sizes, customer ledgers, and opening stock, with free white-glove migration assistance from legacy software.",
+        fa: "در نسخه رایگان دسکتاپ، ۱ کاربر محلی اصلی فعال است. برای مدیریت پرسنل متعدد (مانند صندوقدار، مدیر فروشگاه و انباردار) با سطوح دسترسی مجزا، می‌توانید از نسخه ابری Pro استفاده کنید.",
+        en: "Free desktop has 1 primary local user. For multiple staff members (cashiers, managers, auditors) with role-based permissions, TanKhor Pro is designed for this purpose.",
       },
-      category: { fa: "انتقال دیتا", en: "Data Import" },
+      category: { fa: "کاربران", en: "Users" },
     },
     {
       id: "faq-6",
       question: {
-        fa: "محاسبه بهای تمام‌شده Landed Cost چگونه سود واقعی را نشان می‌دهد؟",
-        en: "How does true Landed Cost calculate real profit margins?",
+        fa: "آیا امکان مدیریت چند شعبه وجود دارد؟",
+        en: "Is multi-branch management supported?",
       },
       answer: {
-        fa: "تنخور هزینه‌های جانبی مانند حمل، گمرک، خیاطی و بسته‌بندی را روی هر تکه لباس تسهیم می‌کند؛ بنابراین به جای دیدن سود کاذب فاکتوری، سود خالص واقعی هر مدل لباس و واریانت را مشاهده می‌نمایید.",
-        en: "Tankhor distributes shipping, customs, stitching, and packaging costs over each SKU, preventing misleading invoice margins and displaying true net profitability.",
+        fa: "بله، قابلیت مدیریت چند شعبه و چند انبار متمرکز و رصد لحظه‌ای انتقال کالا در نسخه Pro فعال است و مدیر می‌تواند از هر نقطه، وضعیت موجودی همه شعب را در یک پنل مشاهده کند.",
+        en: "Yes, multi-branch and multi-warehouse centralized stock tracking and inter-branch transfers are supported in TanKhor Pro.",
       },
-      category: { fa: "حسابداری و سود", en: "Accounting & Margin" },
+      category: { fa: "شعب", en: "Branches" },
     },
     {
       id: "faq-7",
       question: {
-        fa: "امکانات ماژول چک صیادی و سامانه مؤدیان چیست؟",
-        en: "What are the automated sales tax, VAT, and retail cash flow ledger capabilities?",
+        fa: "آیا اطلاعات نرم‌افزار قبلی قابل انتقال است؟",
+        en: "Can data from previous software be imported?",
       },
       answer: {
-        fa: "ثبت کامل وضعیت چک‌ها (سررسید، وصول، برگشتی، خرج‌شده)، هشدار اتوماتیک موعد پاس شدن، صدور صورت‌حساب الکترونیکی سامانه مؤدیان و گزارش ارزش افزوده و ماده ۱۶۹ فصلی.",
-        en: "Configurable regional sales tax and VAT computation, automated periodic filing summaries, multi-tender payment tracking, cash drawer controls, and seamless journal export to QuickBooks, Xero, and Excel.",
+        fa: "بله، تنخور قالب ورود استاندارد اکسل (Excel) برای ثبت کالاها، سایزها، مشتریان و موجودی اول‌دوره دارد که انتقال اطلاعات را سریع و آسان می‌کند.",
+        en: "Yes, standard Excel import templates allow quick migration of inventory, variants, customer ledgers, and opening stock.",
       },
-      category: { fa: "چک و مالیات", en: "Tax & Cash Flow" },
+      category: { fa: "انتقال داده", en: "Migration" },
     },
     {
       id: "faq-8",
       question: {
-        fa: "ماتریس رنگ و سایز تنخور چه مزیتی نسبت به نرم‌افزارهای عمومی دارد؟",
-        en: "Why is Tankhor's color/size matrix better than generic software?",
+        fa: "آیا برای نصب و راه‌اندازی پشتیبانی دریافت می‌کنم؟",
+        en: "Do I receive setup and installation support?",
       },
       answer: {
-        fa: "در نرم‌افزارهای عمومی برای ۱ مدل لباس با ۵ رنگ و ۴ سایز باید ۲۰ کالای جداگانه بسازید. در تنخور فقط مدل را تعریف می‌کنید و سیستم اتوماتیک ماتریس ۲۰ واریانت را با بارکد و قیمت مجزا مدیریت می‌کند.",
-        en: "Generic tools force creating 20 separate items for 1 shirt with 5 colors and 4 sizes. In Tankhor, define the style once and auto-generate the 20-variant grid with unique barcodes.",
+        fa: "بله، راهنمای ویدیویی و متنی گام‌به‌گام نصب در دسترس است و در صورت نیاز به راهنمایی در اتصال بارکدخوان یا چاپگر فیش، پشتیبانی تلفنی تنخور (۰۲۱-۵۵۴۱۶۲۷۴) در ساعات اداری همراه شماست.",
+        en: "Yes, step-by-step guides are available, along with direct phone support (021-55416274) during business hours for hardware setup assistance.",
       },
-      category: { fa: "رنگ و سایز", en: "Variant Matrix" },
+      category: { fa: "پشتیبانی", en: "Support" },
     },
     {
       id: "faq-9",
       question: {
-        fa: "راهنمای سایز هوشمند چگونه مرجوعی فروشگاه آنلاین را کاهش می‌دهد؟",
-        en: "How does the Size Guide engine reduce online fashion returns?",
+        fa: "آیا امکان اتصال به فروشگاه اینترنتی وجود دارد؟",
+        en: "Can TanKhor connect to an online store?",
       },
       answer: {
-        fa: "با ثبت جدول اندازه‌گیری سانتیمتری (قد، دور سینه، دور کمر، عرض شانه) و ویجت هوشمند محاسبه سایز مشتری، خطاهای انتخاب سایز خریداران بیش از ۶۵٪ کاهش می‌یابد.",
-        en: "Precise centimeter measurements (chest, sleeve, waist, shoulder) paired with a smart sizing calculator slash online return rates by up to 65%.",
+        fa: "ماژول اتصال انبار پوشاک به ووکامرس (WooCommerce) در حال حاضر در دست توسعه نهایی است و به‌زودی به عنوان یکپارچگی اختصاصی در دسترس قرار خواهد گرفت.",
+        en: "The specialized WooCommerce stock synchronization module is in final development and will be available as an add-on.",
       },
-      category: { fa: "راهنمای سایز", en: "Size Guide" },
+      category: { fa: "فروشگاه آنلاین", en: "E-Commerce" },
     },
     {
       id: "faq-10",
       question: {
-        fa: "نرم‌افزار تنخور روی چه پلتفرم‌هایی نصب و اجرا می‌شود؟",
-        en: "Which operating systems and platforms does Tankhor support?",
+        fa: "اگر اشتراک Pro تمام شود، اطلاعات من چه وضعیتی پیدا می‌کند؟",
+        en: "What happens to my data if my Pro subscription expires?",
       },
       answer: {
-        fa: "نسخه پایه دسکتاپ برای ویندوز (Windows 10/11) و مک (macOS)، نسخه موبایل برای اندروید، و نسخه تحت وب مدرن (PWA) برای دسترسی با مرورگر در لپ‌تاپ، تبلت و گوشی.",
-        en: "Native desktop apps for Windows 10/11 and macOS, an Android mobile app, and a responsive web application (PWA) accessible from any modern browser.",
+        fa: "اطلاعات شما به‌هیچ‌وجه حذف نمی‌شود. نسخه دسکتاپ با تمام داده‌های موجود همچنان به صورت آفلاین قابل استفاده است، و پس از تمدید اشتراک، دسترسی وب و همگام‌سازی شعب مجدداً متصل می‌شود.",
+        en: "Your data is never deleted. The local desktop application remains completely operational offline with all records, and cloud sync resumes upon renewal.",
       },
-      category: { fa: "پلتفرم‌ها", en: "Platforms" },
+      category: { fa: "اشتراک", en: "Subscription" },
     },
   ] as FAQItem[],
 };

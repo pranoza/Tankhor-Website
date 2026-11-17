@@ -4,22 +4,21 @@ import React from 'react';
 import SeoHead from '@/components/SeoHead';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import WhyTankhorSection from '@/components/WhyTankhorSection';
-import SolutionsGrid from '@/components/SolutionsGrid';
-import FreeVersionSection from '@/components/FreeVersionSection';
-import InteractiveDashboardSection from '@/components/InteractiveDashboardSection';
-import AccountingModuleSection from '@/components/AccountingModuleSection';
-import FashionFeaturesSection from '@/components/FashionFeaturesSection';
-import PainPointsComparison from '@/components/PainPointsComparison';
-import SizeGuideDemoWidget from '@/components/SizeGuideDemoWidget';
+import ProblemValueSection from '@/components/ProblemValueSection';
+import ProductWorkflowSection from '@/components/ProductWorkflowSection';
+import CoreFeaturesSection from '@/components/CoreFeaturesSection';
+import FreeVsProSection from '@/components/FreeVsProSection';
+import TargetAudiencesSection from '@/components/TargetAudiencesSection';
+import OfflineFirstSection from '@/components/OfflineFirstSection';
+import IntegrationsSection from '@/components/IntegrationsSection';
+import TrustAndCredibilitySection from '@/components/TrustAndCredibilitySection';
 import PricingSection from '@/components/PricingSection';
-import TestimonialsAndStats from '@/components/TestimonialsAndStats';
-import SeoArticleSection from '@/components/SeoArticleSection';
 import FAQSection from '@/components/FAQSection';
-import DemoRequestModal from '@/components/DemoRequestModal';
-import MacDownloadModal from '@/components/MacDownloadModal';
+import FinalCtaSection from '@/components/FinalCtaSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import DemoRequestModal from '@/components/DemoRequestModal';
+import MacDownloadModal from '@/components/MacDownloadModal';
 import { useLanguageAndTheme } from '@/context/LanguageAndThemeContext';
 import { useDownloadLinks } from '@/hooks/useDownloadLinks';
 
@@ -32,20 +31,44 @@ export default function EnglishHomePage() {
       <SeoHead />
       <Navbar />
       <main className="overflow-x-hidden">
+        {/* Section 1: Hero */}
         <Hero />
-        <WhyTankhorSection />
-        <SolutionsGrid />
-        <FreeVersionSection />
-        <InteractiveDashboardSection />
-        <AccountingModuleSection />
-        <FashionFeaturesSection />
-        <PainPointsComparison />
-        <SizeGuideDemoWidget />
+
+        {/* Section 2: Problem / Value Proposition */}
+        <ProblemValueSection />
+
+        {/* Section 3: Product Workflow (3 Stages with real UI) */}
+        <ProductWorkflowSection />
+
+        {/* Section 4: Core Features */}
+        <CoreFeaturesSection />
+
+        {/* Section 5: Free vs Pro */}
+        <FreeVsProSection />
+
+        {/* Section 6: Target Audiences */}
+        <TargetAudiencesSection />
+
+        {/* Section 7: Offline First */}
+        <OfflineFirstSection />
+
+        {/* Section 8: Integrations */}
+        <IntegrationsSection />
+
+        {/* Section 9: Customer Stories / Trust & Credibility */}
+        <TrustAndCredibilitySection />
+
+        {/* Pricing Matrix & Plans */}
         <PricingSection />
-        <TestimonialsAndStats />
-        <SeoArticleSection />
+
+        {/* Section 10: FAQ */}
         <FAQSection />
+
+        {/* Section 11: Final CTA */}
+        <FinalCtaSection />
       </main>
+
+      {/* Section 12: Footer */}
       <Footer />
       <ScrollToTop />
       <DemoRequestModal />

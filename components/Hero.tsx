@@ -11,21 +11,12 @@ export default function Hero() {
   const { language, openMacModal } = useLanguageAndTheme();
   const downloadLinks = useDownloadLinks();
 
-  const brandLogos = [
-    { name: 'HAKUPIAN', label: 'هپکو فشن | HAKUPIAN' },
-    { name: 'SUPREME', label: 'مزون سوپریم' },
-    { name: 'DOORDASH', label: 'پوشاک دوورداش' },
-    { name: 'MAISON', label: 'مزون الگانس' },
-    { name: 'CHARLES', label: 'پوشاک چارلز' },
-    { name: 'POLYMARKET', label: 'بوتیک پولی' },
-  ];
-
   return (
     <section className="relative pt-36 sm:pt-44 pb-16 sm:pb-24 bg-white dark:bg-[#0a0a0a] text-neutral-900 dark:text-neutral-100 border-b border-neutral-200/80 dark:border-neutral-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Vercel Style Hero 3-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Main Title & CTAs */}
           <div className="lg:col-span-5 space-y-6 text-right rtl:text-right ltr:text-left">
@@ -146,20 +137,6 @@ export default function Hero() {
             </div>
           </div>
 
-        </div>
-
-        {/* Minimalist Vercel Partner Brand Strip */}
-        <div className="border-t border-b border-neutral-200/80 dark:border-neutral-800/80 py-6 overflow-hidden">
-          <div className="text-[11px] font-caption-mono text-center text-neutral-400 dark:text-neutral-500 mb-4 uppercase tracking-widest">
-            {language === 'fa' ? 'مورد اعتماد برندها، مزون‌ها و فروشگاه‌های معتبر پوشاک' : 'Trusted by leading fashion brands and ateliers'}
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-xs font-bold font-caption-mono text-neutral-400 dark:text-neutral-600 tracking-wider">
-            {brandLogos.map((brand, i) => (
-              <span key={i} className="hover:text-neutral-900 dark:hover:text-white transition-colors cursor-default">
-                {brand.name}
-              </span>
-            ))}
-          </div>
         </div>
 
       </div>
